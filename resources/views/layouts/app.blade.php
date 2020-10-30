@@ -27,7 +27,7 @@
                     <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                         <div class="flex">
                             <a href="{{ url('/') }}"
-                               class=" px-3 py-2  mx-5 rounded-md text-xl font-bold leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">E-Market</a>
+                               class=" px-3 py-2  mx-5 rounded-md text-xl font-bold leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Social-App</a>
                         </div>
                         <div class="hidden sm:block sm:ml-6">
                             <div class="flex">
@@ -64,9 +64,15 @@
                                     <a href="#"
                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
                                        role="menuitem">Your Profile</a>
+
                                     <a href="{{route('user.edit',['user'=>auth()->user()->id])}}"
                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
                                        role="menuitem">Edit Profile</a>
+
+                                    <a href="{{route('update_password')}}"
+                                       class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                       role="menuitem">Change Password</a>
+
                                     <a href="#"
                                        class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
                                        role="menuitem"

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -28,3 +29,11 @@ Route::resource('user', UserController::class)->only([
     'edit',
     'update',
 ]);
+
+// routes for updating the password of the user .
+Route::patch('/updatepassword/user/{user}', [ResetPasswordController::class, 'changePassword'])->name('update_password')->middleware('auth');
+
+Route::get('/updatepassword', function () {
+    return view('users.change_password');
+})->name('update_password')->middleware('auth');
+
