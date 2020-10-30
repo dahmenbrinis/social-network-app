@@ -1906,17 +1906,11 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @license
- * Lodash <https://lodash.com/>
- * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-;(function() {
-
-  /** Used as a safe reference for `undefined` in pre-ES5 environments. */
+        /* WEBPACK VAR INJECTION */
+        (function (global, module) {
+            var __WEBPACK_AMD_DEFINE_RESULT__;
+            (function () {
+                /** Used as a safe reference for `undefined` in pre-ES5 environments. */
   var undefined;
 
   /** Used as the semantic version number. */
@@ -19107,7 +19101,7 @@ function defaultClearTimeout () {
     } catch (e) {
         cachedClearTimeout = defaultClearTimeout;
     }
-} ())
+}());
 function runTimeout(fun) {
     if (cachedSetTimeout === setTimeout) {
         //normal enviroments in sane situations
@@ -19244,7 +19238,9 @@ process.emit = noop;
 process.prependListener = noop;
 process.prependOnceListener = noop;
 
-process.listeners = function (name) { return [] }
+        process.listeners = function (name) {
+            return []
+        };
 
 process.binding = function (name) {
     throw new Error('process.binding is not supported');
@@ -19395,8 +19391,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! I:\web\social-app\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! I:\web\social-app\resources\css\app.css */"./resources/css/app.css");
+        __webpack_require__(/*! I:\web\yellow\learning\resources\js\app.js */"./resources/js/app.js");
+        module.exports = __webpack_require__(/*! I:\web\yellow\learning\resources\css\app.css */"./resources/css/app.css");
 
 
 /***/ })
