@@ -56,7 +56,7 @@
                             <option value="1" class="{{old('gender') == 1? 'selected':''}}">female</option>
                         </select>
 
-                        @error('name')
+                        @error('gender')
                         <p class="text-red-500 text-xs italic mt-4">
                             {{ $message }}
                         </p>
@@ -69,7 +69,7 @@
 
                         <input id="date_of_birth" type="date"
                                class="form-date w-full @error('date_of_birth')  border-red-500 @enderror"
-                               name="date_of_birth" value="{{ old('date_of_birth') }}" required
+                               name="date_birth" value="{{ old('date_of_birth') }}" required
                                autocomplete="Date of birth" autofocus>
 
                         @error('date_of_birth')

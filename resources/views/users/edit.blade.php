@@ -17,12 +17,96 @@
                 <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     Edit Page
                 </header>
+                @if(session()->has('feedback'))
+                    <div
+                        class="w-11/12 rounded-b-lg shadow-md mt-2 mx-auto space-y-6 sm:px-10 sm:space-y-8 bg-green-500 text-white font-semibold text-center py-5">
+                        {{session()->get('feedback')}}
+                    </div>
+                @endif
+                <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST"
+                      action="{{ route('user.update',['user'=>$user]) }}">
+                    @csrf
+                    @method('put')
+                    <div class="flex flex-wrap">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Name') }}:
+                        </label>
 
-                <div class="w-full p-6">
-                    <p class="text-gray-700">
-                        the editable information about the user here .
-                    </p>
-                </div>
+                        <input id="name" type="text" class="form-input w-full @error('name')  border-red-500 @enderror"
+                               name="name" value="{{ old('name') ?? $user->name }}" required autocomplete="name"
+                               autofocus>
+
+                        @error('name')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+
+
+                    <div class="flex flex-wrap">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('E-Mail Address') }}:
+                        </label>
+
+                        <input id="email" type="email"
+                               class="form-input w-full @error('email') border-red-500 @enderror" name="email"
+                               value="{{ old('email') ?? $user->email }}" required autocomplete="email">
+
+                        @error('email')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-wrap">
+                        <label for="gender" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Sex') }}:
+                        </label>
+
+                        <select name="gender" id="gender"
+                                class="form-select w-full @error('name')  border-red-500 @enderror">
+                            <option value="0"
+                                    class="{{(old('gender') == 0? 'selected':'') ?? $user->gender == 0? 'selected':''  }}">
+                                male
+                            </option>
+                            <option value="1"
+                                    class="{{(old('gender') == 1? 'selected':'') ?? $user->gender == 1? 'selected':''  }}">
+                                female
+                            </option>
+                        </select>
+
+                        @error('name')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-wrap">
+                        <label for="date_of_birth" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Date of birth') }}:
+                        </label>
+
+                        <input id="date_of_birth" type="date"
+                               class="form-date w-full @error('date_of_birth')  border-red-500 @enderror"
+                               name="date_birth" value="{{ old('date_of_birth')?? $user->date_birth }}" required
+                               autocomplete="Date of birth" autofocus>
+
+                        @error('date_of_birth')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-wrap">
+                        <button type="submit"
+                                class="w-full select-none shadow-lg font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                            {{ __('Save') }}
+                        </button>
+
+                    </div>
+                    <br>
+                </form>
             </section>
         </div>
     </main>

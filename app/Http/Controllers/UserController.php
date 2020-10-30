@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -72,9 +72,10 @@ class UserController extends Controller
     public function edit($id)
     {
         if (Auth::user()->id == $id) {
-            return view('users.edit');
+            $user = User::findOrFail($id);
+            return view('users.edit', compact('user'));
         } else return view('errors.not_authorised');
-        Auth::user()->send_message($id, 'this is a message ');
+//        Auth::user()->send_message($id, 'this is a message ');
     }
 
     /**
@@ -86,12 +87,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        if (Auth::user()->id == $id) {
-            $data = validator($request);
-            User::find($id)->update($data);
-            $feedback = 'updated successfully ';
-            return view('users.edit', compact('feedback'));
+        $user = Auth::user();
+        if ($user->id == $id) {
+            $data = [];
+            $data = $this->validator($request->merge(['id' => $id]));
+            $user->update($data);
+            $feedback = 'your information has been updated successfully ';
+            session()->flash('feedback', $feedback);
+            return view('users.edit', compact('user'));
         } else return view('errors.not_authorised');
 
     }
@@ -108,22 +111,17 @@ class UserController extends Controller
     }
 
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param array $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(Request $request)
     {
-        return Validator::make($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'gender' => ['required', 'in:0,1'],
-            'date_of_birth' => ['required', 'date'],
-            'state' => ['string', 'max:8'],
-
+        return $request->validate([
+            'name' => ['sometimes', 'required', 'string', 'max:255'],
+            'email' => ['sometimes', 'required', 'string', 'email', 'max:255',
+                Rule::unique('users')->ignore($request->input('id'))
+            ],
+            'password' => ['sometimes', 'required', 'string', 'min:8', 'confirmed'],
+            'gender' => ['sometimes', 'required', 'in:0,1'],
+            'date_birth' => ['sometimes', 'required', 'date'],
+            'state' => ['sometimes', 'string', 'max:8'],
         ]);
     }
 
