@@ -20,7 +20,7 @@
                         </label>
 
                         <input id="name" type="text" class="form-input w-full @error('name')  border-red-500 @enderror"
-                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                               name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                         @error('name')
                         <p class="text-red-500 text-xs italic mt-4">
@@ -28,6 +28,7 @@
                         </p>
                         @enderror
                     </div>
+
 
                     <div class="flex flex-wrap">
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
@@ -44,7 +45,39 @@
                         </p>
                         @enderror
                     </div>
+                    <div class="flex flex-wrap">
+                        <label for="gender" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Sex') }}:
+                        </label>
 
+                        <select name="gender" id="gender"
+                                class="form-select w-full @error('name')  border-red-500 @enderror">
+                            <option value="0" class="{{old('gender') == 0? 'selected':''}}">male</option>
+                            <option value="1" class="{{old('gender') == 1? 'selected':''}}">female</option>
+                        </select>
+
+                        @error('name')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
+                    <div class="flex flex-wrap">
+                        <label for="date_of_birth" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                            {{ __('Date of birth') }}:
+                        </label>
+
+                        <input id="date_of_birth" type="date"
+                               class="form-date w-full @error('date_of_birth')  border-red-500 @enderror"
+                               name="date_of_birth" value="{{ old('date_of_birth') }}" required
+                               autocomplete="Date of birth" autofocus>
+
+                        @error('date_of_birth')
+                        <p class="text-red-500 text-xs italic mt-4">
+                            {{ $message }}
+                        </p>
+                        @enderror
+                    </div>
                     <div class="flex flex-wrap">
                         <label for="password" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
                             {{ __('Password') }}:

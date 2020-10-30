@@ -1,9 +1,8 @@
 <?php
 
-use App\Models\Country;
-use App\Models\Product;
-use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,25 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-//    Country::factory()->create();
-//    User::factory()->create();
-    $users = User::all();
-//    foreach ($users as $user) {
-//        $user->products()->save(Product::factory()->create());
-//    }
-    $user = User::first();
-    $country = Country::first();
-    return view('welcome');
-
-});
-
-Auth::routes();
-Route::resource('products',\App\Http\Controllers\ProductController::class);
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 Auth::routes();
 
-Route::get('/ss', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::resource('user', UserController::class)->only([
+    'show',
+    'edit',
+    'update',
+]);
