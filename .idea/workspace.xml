@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
+    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="deleting unused files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_18_182734_create_products_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/create.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/show.blade.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,6 +145,11 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\web\yellow\learning\resources\views\posts" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -191,7 +187,7 @@
       <workItem from="1603465512937" duration="5812000" />
       <workItem from="1604027794515" duration="7069000" />
       <workItem from="1604035112946" duration="2857000" />
-      <workItem from="1604106530488" duration="1345000" />
+      <workItem from="1604106530488" duration="2028000" />
     </task>
     <task id="LOCAL-00001" summary="setting the edit user page">
       <created>1604031773238</created>
@@ -214,7 +210,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604037427399</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="deleting unused files">
+      <created>1604107947846</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604107947846</updated>
+    </task>
+    <task id="LOCAL-00005" summary="deleting unused files">
+      <created>1604108150665</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604108150665</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +232,16 @@
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -240,7 +260,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="setting the edit user page" />
     <MESSAGE value="setting the update password action" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting the update password action" />
+    <MESSAGE value="deleting unused files" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleting unused files" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
