@@ -12,14 +12,15 @@
 
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                Dashboard
+            <header id="header"
+                    class="font-semibold bg-gray-100 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+                <a href="" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded">
+                    New Post
+                </a>
             </header>
 
             <div class="w-full p-6">
-                <p class="text-gray-700">
-                    You are logged in!
-                </p>
+
             </div>
         </section>
     </div>
