@@ -22,7 +22,9 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->jobTitle,
+            'body' => $this->faker->realText(100),
+            'privacy' => $this->faker->boolean,
         ];
     }
 }
