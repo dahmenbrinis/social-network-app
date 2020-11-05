@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
@@ -23,8 +24,9 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->jobTitle,
-            'body' => $this->faker->realText(100),
+            'body' => $this->faker->sentence(rand(50, 100)),
             'privacy' => $this->faker->boolean,
+            'user_id' => $this->faker->randomElement(User::all()),
         ];
     }
 }
