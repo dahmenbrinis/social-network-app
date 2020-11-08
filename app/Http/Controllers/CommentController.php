@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Post;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -34,9 +36,15 @@ class CommentController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Post $post)
     {
-        //
+//        dd('tetst');
+        $data = $request->validate([
+            'content' => 'required|max:200',
+        ]);
+//        dd($data->content);
+        Auth::user()->comments()->attach($post, $data);
+        return redirect()->route('dashboard');
     }
 
     /**

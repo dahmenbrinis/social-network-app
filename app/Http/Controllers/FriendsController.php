@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -14,7 +15,8 @@ class FriendsController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::paginate(16);
+        return view('friends.index', compact('users'));
     }
 
     /**

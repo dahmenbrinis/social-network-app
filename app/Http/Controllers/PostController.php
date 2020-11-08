@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -15,7 +16,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+//        dd(Auth::user()->posts->where('id','=','6'));
+        return view('posts.index', compact('posts'));
     }
 
     /**
@@ -25,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,7 +39,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|max:50',
+            'body' => 'required'
+        ]);
+//        dd($data);
+        $post = Auth::user()->posts()->create($data);
+        $posts = Post::all()->sortByDesc('created_at');
+
+        return view('posts.index', compact('posts'));
     }
 
     /**

@@ -2,20 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Reaction;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class ReactionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * make a like reaction on a post .
      *
      * @return Response
      */
-    public function index()
+    public function like(Post $post)
     {
-        //
+        $user = Auth::user();
+        $user->reactions()->toggle($post);
+        return redirect()->route('post.index');
     }
 
     /**
