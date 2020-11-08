@@ -1,15 +1,25 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  purge: [
-    './resources/views/**/*.blade.php',
-    './resources/css/**/*.css',
-  ],
-  theme: {
-    extend: {}
-  },
-    variants: {
-        animation: ['responsive', 'hover', 'focus'],
+    purge: [
+        './vendor/laravel/jetstream/**/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+    ],
+
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+        },
     },
-  plugins: [
-    require('@tailwindcss/ui'),
-  ]
+
+    variants: {
+        opacity: ['responsive', 'hover', 'focus', 'disabled'],
+        animation: ['responsive', 'hover', 'focus', 'group-hover'],
+        width: ['responsive', 'hover', 'focus'],
+    },
+
+    plugins: [require('@tailwindcss/ui')],
 };
