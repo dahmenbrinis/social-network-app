@@ -82,10 +82,16 @@ class User extends Authenticatable
         return $this->belongsToMany(Post::class, 'reactions', 'user_id', 'post_id')->using(Reaction::class);
     }
 
-    public function friends()
+    public function friendRequests()
     {
         return $this->belongsToMany(User::class, 'friends', 'profile_id1', 'profile_id2')
-            ->withTimestamps();
+            ->withTimestamps()->withPivot('confirmed');
+    }
+
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, 'friends', 'profile_id2', 'profile_id1')
+            ->withTimestamps()->withPivot('confirmed');
     }
 
     // send a message to a specific user this logic should be on the controller side but it is here for the testing purpose .

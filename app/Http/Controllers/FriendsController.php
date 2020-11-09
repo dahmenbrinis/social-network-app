@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -15,7 +16,9 @@ class FriendsController extends Controller
      */
     public function index()
     {
-        $users = User::paginate(16);
+//        dd(Auth::user()->friends->pluck('id'));
+        $users = User::whereNotIn('id', Auth::user()->friends->pluck('id'))->paginate(16);
+//        dd($users);
         return view('friends.index', compact('users'));
     }
 
@@ -37,7 +40,13 @@ class FriendsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = $request->validate([
+            'user' => 'required'
+        ])['user'];
+        $user = User::findOrFail($user_id);
+        $user->friends()->syncWithoutDetaching(Auth::user());
+        Auth::user()->friends()->syncWithoutDetaching($user);
+        return redirect(route('friend.index'));
     }
 
     /**

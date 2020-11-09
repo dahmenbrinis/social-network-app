@@ -17,6 +17,7 @@ class CreateFriendsTable extends Migration
             $table->id();
             $table->foreignId('profile_id1');
             $table->foreignId('profile_id2');
+            $table->boolean('confirmed')->default(0);
             $table->timestamps();
 
 

@@ -11,6 +11,8 @@
                 @foreach($users as $user)
                     <form action="{{route('friend.store')}}" method="post"
                           class="p-2 rounded-lg shadow-lg flex items-center justify-between flex-wrap inline-flex border-2 border-indigo-200 ">
+                        @csrf
+                        <input type="hidden" name="user" value="{{$user->id}}">
                         {{--profile of the poster--}}
                         <div class="group flex-wrap inline-flex">
                             <a href="#"
