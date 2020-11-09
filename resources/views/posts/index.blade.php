@@ -225,6 +225,9 @@
                 @endforeach
 
             </div>
+            <div class="m-6 ">
+                {{$posts->links()}}
+            </div>
         </div>
     </div>
 </x-app-layout>

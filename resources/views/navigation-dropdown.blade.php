@@ -100,7 +100,7 @@
                     @endif
 
                     <!-- Authentication -->
-                        <form method="get" action="{{ route('logout') }}">
+                        <form method="post" action="{{ route('logout') }}">
                             @csrf
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
