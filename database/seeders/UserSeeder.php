@@ -14,8 +14,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $number_of_users = 250;
-        User::factory()->create(['email' => 'dahmenhacker41@gmail.com']);
+        $number_of_users = 50;
+        $user1 = User::factory()->create(['email' => 'dahmenhacker41@gmail.com']);
+        $user2 = User::factory()->create(['email' => 'dahmenhacker12@gmail.com']);
+        $user1->friends()->syncWithoutDetaching($user2);
+        $user2->friends()->syncWithoutDetaching($user1);
         User::factory($number_of_users)->create();
         $users = User::all();
         // adding friends to the users

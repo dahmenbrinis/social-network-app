@@ -18,7 +18,7 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->belongsToMany(User::class, 'comments', 'post_id', 'user_id')->withTimestamps()->withPivot('content');
+        return $this->hasMany(Comment::class);
 
     }
 

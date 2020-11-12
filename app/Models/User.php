@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -74,7 +75,7 @@ class User extends Authenticatable
 
     public function comments()
     {
-        return $this->belongsToMany(Post::class, 'comments', 'user_id', 'post_id')->withTimestamps()->withPivot('content');
+        return $this->hasMany(Comment::class);
     }
 
     public function reactions()
@@ -92,6 +93,11 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class, 'friends', 'profile_id2', 'profile_id1')
             ->withTimestamps()->withPivot('confirmed');
+    }
+
+    public function friendsPosts()
+    {
+
     }
 
     // send a message to a specific user this logic should be on the controller side but it is here for the testing purpose .

@@ -4,7 +4,6 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FriendsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReactionController;
-use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,13 +20,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
+    Route::resource('post', PostController::class);
+    Route::resource('post/{post}/comment', CommentController::class)->names([
+        'store' => 'comment.store'
+    ]);
+    Route::post('/like/{post}', [ReactionController::class, 'like'])->name('like');
+});
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [PostController::class, 'index'])->name('dashboard');
-Route::resource('post', PostController::class)->middleware(['auth:sanctum', 'verified']);
-Route::resource('post/{post}/comment', CommentController::class)->middleware(['auth:sanctum', 'verified'])->names([
-    'store' => 'comment.store'
-]);
-Route::post('/like/{post}', [ReactionController::class, 'like'])->name('like');
 //Route::prefix('freinds')->group(function () {
 //    Route::get('/',[\App\Http\Controllers\FriendsController::class, 'index',]);
 //});
@@ -35,8 +36,7 @@ Route::resource('friend', FriendsController::class)->middleware(['auth:sanctum',
 
 // route for testing .
 
-Route::get('posts', function () {
-    $posts = Post::paginate(4);
-    return view('posts.index', compact('posts'));
-})->name('testing');
+Route::get('test1', function () {
+    return view('posts.index');
+})->name('test1');
 Route::get('/test2', [ReactionController::class, 'like'])->name('test2');

@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
 </head>
 <body class="font-sans antialiased">
-<div class="min-h-screen bg-gray-100">
+<div class="min-h-screen bg-gray-100" id="app">
     @livewire('navigation-dropdown')
 
     <!-- Page Heading -->
@@ -36,9 +36,10 @@
 </div>
 
 @stack('modals')
-@if(config('app.env') == 'local')
-    <script src="http://localhost:35729/livereload.js"></script>
-@endif
 @livewireScripts
+@if(config('app.env') == 'local')
+    <script src="http://192.168.1.36:35729/livereload.js"></script>
+@endif
+<script src="js/app.js"></script>
 </body>
 </html>

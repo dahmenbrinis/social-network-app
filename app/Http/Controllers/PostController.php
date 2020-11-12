@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -17,15 +16,17 @@ class PostController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $posts = new Collection();
-        $user->friends->each(function ($friend) use (&$posts, $user) {
-            $posts = $posts->merge($friend->posts);
-        });
-        $posts = $posts->merge($user->posts);
-        $posts = Post::whereIn('id', $posts->pluck('id'))->latest()->paginate(10);
+        //        $user = Auth::user();
+//        $posts = Post::paginate(5);
+//        $posts = new Collection();
+//        $user->friends->each(function ($friend) use (&$posts) {
+//            $posts = $posts->merge($friend->posts);
+//        });
+//        $posts = $posts->merge($user->posts);
+//        $posts = \App\Models\Post::whereIn('id', $posts->pluck('id'))->latest()->paginate(10);
+
 //        dd(Auth::user()->posts->where('id','=','6'));
-        return view('posts.index', compact('posts'));
+        return view('posts.index');
     }
 
     /**

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
 class Comment extends Pivot
 {
     use HasFactory;
+    protected $table = 'comments';
 
     public function user()
     {

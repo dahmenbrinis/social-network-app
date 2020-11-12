@@ -23,18 +23,11 @@ class FriendsController extends Controller
             $friends_suggestion = $friends_suggestion->merge(
                 $friend->friends
             );
-//            dump($friends_suggestion);
         })->whereNotIn('id', $user->friends->pluck('id'));
-
-//        dump($user->friends->pluck('id'));
-//        dump($friends_suggestion->whereNotIn('id',$user->friends->pluck('id')));
-//        dd($friends_suggestion);
 
         $users = User::
         whereIn('id', $friends_suggestion->pluck('id'))
-//            ->whereNotIn('id', $user->friends->pluck('id'))
             ->paginate(16);
-//        dd($users);
         return view('friends.index', compact('users'));
     }
 
