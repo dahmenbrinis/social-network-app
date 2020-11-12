@@ -8,34 +8,13 @@
     <div class="py-6">
         <div class="bg-gray-100 max-w-7xl w-2/3 mx-auto sm:px-6 lg:px-8">
             <div class="sm:rounded-lg">
-                <form action="{{route('post.store')}}" method="post">
-                    @csrf
-                    <div class="bg-white p-6 mb-12 rounded-lg shadow-lg ">
-                        <div class="w-1/3">
-                            <x-jet-label for="title" class="text-lg" value="{{ __('title') }}"/>
-                            <x-jet-input id="title" class="block mt-1 w-full" type="text" name="title"
-                                         :value="old('title')" required autofocus autocomplete="name"/>
-                        </div>
-                        <div class="mt-4 ">
-                            <x-jet-label for="body" class="text-lg" value="{{ __('body') }}"/>
-                            <textarea id="body"
-                                      class=" form-input resize-y rounded-md shadow-sm block h-24 mt-1 w-full "
-                                      type="body" name="body" value="old('body')" required></textarea>
-                        </div>
-                        <div class="flex items-center justify-end mt-4 ">
-                            <x-jet-button class="ml-4 ">
-                                {{ __('Post Now') }}
-                            </x-jet-button>
+                @include('posts.create')
 
-                        </div>
-                    </div>
-                </form>
                 @foreach($posts as $post)
                     <div class="relative bg-white p-6 first:my-0 my-12 rounded-lg shadow-lg">
                         <div class="text-lg text-center text-xl font-semibold">{{$post->title}} </div>
-
                         {{--profile of the poster--}}
-                        <div class="group absolute left-0 top-0 m-6 flex-wrap inline-flex">
+                        <div class="group absolute left-0 top-0 m-6 mt-12 flex-wrap inline-flex">
                             <a href="#"
                                class="h-12 w-12 border-2 border-indigo-500 rounded-full overflow-hidden group-hover:border-blue-400 group-hover:opacity-75">
                                 <img class="  object-cover object-center "
@@ -80,27 +59,30 @@
                                             </x-jet-dropdown-link>
                                         @endcan
                                         @can('delete',$post)
-                                            <x-jet-dropdown-link
-                                                class="flex my-1 items-center justify-between px-3 hover:bg-red-100"
-                                                href="{{ route('profile.show') }}">
-                                                <span class="text-lg">{{ __('Remove') }}</span>
-                                                <svg class="h-6 w-6 text-red-500" viewBox="0 0 24 24" stroke-width="2"
-                                                     stroke="currentColor" fill="none" stroke-linecap="round"
-                                                     stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z"/>
-                                                    <path
-                                                        d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"/>
-                                                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"/>
-                                                    <line x1="16" y1="5" x2="19" y2="8"/>
-                                                </svg>
-                                            </x-jet-dropdown-link>
-                                        @endcan
-                                        <div class="border-t border-gray-100"></div>
+                                            <form action="{{route('post.destroy',compact('post'))}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <x-jet-dropdown-link
+                                                    class="flex my-1 items-center justify-between px-3 hover:bg-red-100"
+                                                    href="#"
+                                                    onclick="event.preventDefault();this.closest('form').submit(); console.log(this.closest('form'))">
+                                                    <span class="text-lg">{{ __('Remove') }}</span>
+                                                    <svg class="h-6 w-6 text-red-500" viewBox="0 0 24 24"
+                                                         stroke-width="2"
+                                                         stroke="currentColor" fill="none" stroke-linecap="round"
+                                                         stroke-linejoin="round">
+                                                        <path stroke="none" d="M0 0h24v24H0z"/>
+                                                        <path
+                                                            d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"/>
+                                                        <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"/>
+                                                        <line x1="16" y1="5" x2="19" y2="8"/>
+                                                    </svg>
+                                                </x-jet-dropdown-link>
+                                            </form>
 
-                                        <!-- Authentication -->
+                                        @endcan
                                     </x-slot>
                                 </x-jet-dropdown>
-
                             </div>
                         @endcan
                         {{--                        todo make the dropdown setting of the post work  --}}

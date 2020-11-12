@@ -23,7 +23,7 @@ class PostController extends Controller
             $posts = $posts->merge($friend->posts);
         });
         $posts = $posts->merge($user->posts);
-        $posts = Post::whereIn('id', $posts->pluck('id'))->paginate(10);
+        $posts = Post::whereIn('id', $posts->pluck('id'))->latest()->paginate(10);
 //        dd(Auth::user()->posts->where('id','=','6'));
         return view('posts.index', compact('posts'));
     }
@@ -54,7 +54,7 @@ class PostController extends Controller
         $post = Auth::user()->posts()->create($data);
         $posts = Post::all()->sortByDesc('created_at');
 
-        return view('posts.index', compact('posts'));
+        return redirect(route('post.index'));
     }
 
     /**
@@ -99,6 +99,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect(route('post.index'));
     }
 }
