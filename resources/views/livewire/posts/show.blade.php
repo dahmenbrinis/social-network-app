@@ -32,42 +32,8 @@
                 </x-slot>
                 <x-slot name="content">
                     <!-- Post Management -->
-                    @can('update',$post)
-                        <x-jet-dropdown-link class="flex my-1 items-center justify-between px-3"
-                                             href="{{ route('profile.show') }}">
-                            <span class="text-lg">{{ __('Edit') }}</span>
-                            <svg class="h-6 w-6 text-indigo-500 ml-2" viewBox="0 0 24 24"
-                                 fill="none" stroke="currentColor" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="3 6 5 6 21 6"/>
-                                <path
-                                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-                            </svg>
-                        </x-jet-dropdown-link>
-                    @endcan
-                    @can('delete',$post)
-                        <form action="{{route('post.destroy',compact('post'))}}" method="post">
-                            @csrf
-                            @method('delete')
-                            <x-jet-dropdown-link
-                                class="flex my-1 items-center justify-between px-3 hover:bg-red-100"
-                                href="#"
-                                onclick="event.preventDefault();this.closest('form').submit(); console.log(this.closest('form'))">
-                                <span class="text-lg">{{ __('Remove') }}</span>
-                                <svg class="h-6 w-6 text-red-500" viewBox="0 0 24 24"
-                                     stroke-width="2"
-                                     stroke="currentColor" fill="none" stroke-linecap="round"
-                                     stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z"/>
-                                    <path
-                                        d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"/>
-                                    <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"/>
-                                    <line x1="16" y1="5" x2="19" y2="8"/>
-                                </svg>
-                            </x-jet-dropdown-link>
-                        </form>
-
-                    @endcan
+                    <livewire:posts.update :post="$post"/>
+                    <livewire:posts.delete :post="$post"/>
                 </x-slot>
             </x-jet-dropdown>
         </div>
@@ -79,7 +45,6 @@
         </p>
     </div>
     <div class="mt-6 flex justify-around ">
-
         <form action="{{route('like',['post'=>$post])}}" method="post"
               class=" w-1/3 h-full   py-3 mr-4 ">
             @csrf
@@ -97,7 +62,7 @@
                         />
                     </svg>
                 </i>
-                <p class="mt-1 text-blue-500">Like ({{$post->reactions->count()}})</p>
+                <p class="mt-1 text-blue-500 md:block hidden ">Like ({{$post->reactions->count()}})</p>
             </button>
         </form>
         <form action="{{route('like',['post'=>$post])}}" method="post"
@@ -117,7 +82,7 @@
                         />
                     </svg>
                 </i>
-                <p class="mt-1 text-blue-500">{{$post->comments->count()}} Comments</p>
+                <p class="mt-1 text-blue-500 md:block hidden ">{{$post->comments->count()}} Comments</p>
             </button>
         </form>
         <form action="{{route('like',['post'=>$post])}}" method="post"
@@ -135,7 +100,7 @@
                         <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
                     </svg>
                 </i>
-                <p class="mt-1 ">Share</p>
+                <p class="mt-1 md:block hidden ">Share</p>
             </button>
         </form>
     </div>

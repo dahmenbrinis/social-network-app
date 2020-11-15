@@ -11,9 +11,16 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
-    protected $listeners = [
-        'postUpdated' => '$refresh',
-    ];
+
+
+    public function getListeners()
+    {
+        return [
+            "echo:postUpdated,PostUpdatedEvent" => '$refresh',
+            'postUpdated' => '$refresh',
+        ];
+
+    }
 
     public function render()
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Posts;
 
+use App\Events\PostUpdatedEvent;
 use Auth;
 use Livewire\Component;
 
@@ -21,10 +22,11 @@ class Create extends Component
 
     public function save()
     {
-        $this->validate();
         $data = $this->validate();
+//        dd($data);
         $post = Auth::user()->posts()->create($data);
         $this->emit('postUpdated');
+        event(new PostUpdatedEvent());
         $this->reset(['title', 'body']);
     }
 }
