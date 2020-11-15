@@ -4,10 +4,11 @@ module.exports = {
     purge: {
         enabled: true,
         content: [
-            './src/**/*.html',
-            './src/**/*.vue',
-            './src/**/*.jsx',
-            './src/**/*.php',
+            path.resolve('resources/**/*.html'),
+            path.resolve('resources/**/*.vue'),
+            path.resolve('resources/**/*.jsx'),
+            path.resolve('resources/**/*.php'),
+            path.resolve('resources/index.php'),
         ],
     },
 
@@ -25,5 +26,9 @@ module.exports = {
         width: ['responsive', 'hover', 'focus'],
     },
 
-    plugins: [require('@tailwindcss/ui')],
+    plugins: [
+        require('@tailwindcss/ui'),
+        require('@fullhuman/postcss-purgecss')
+
+    ],
 };
