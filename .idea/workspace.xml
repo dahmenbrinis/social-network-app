@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -299,7 +298,7 @@
       <workItem from="1605418792941" duration="13554000" />
       <workItem from="1605486832547" duration="26766000" />
       <workItem from="1605531169051" duration="755000" />
-      <workItem from="1605532818011" duration="2936000" />
+      <workItem from="1605532818011" duration="3016000" />
     </task>
     <task id="LOCAL-00001" summary="setting the edit user page">
       <created>1604031773238</created>
@@ -588,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605536797098</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="setting the friends request notification">
+      <created>1605538233768</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1605538233768</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

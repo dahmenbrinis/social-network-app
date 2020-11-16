@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.prevent="save" method="post">
+    <form wire:submit.prevent="save">
         @csrf
         <div class="bg-white p-6 mb-12 rounded-lg shadow-lg ">
             <div class="w-1/3">
