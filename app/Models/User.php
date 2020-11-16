@@ -97,6 +97,7 @@ class User extends Authenticatable
                 $friend->friends->except($this->friends->push($this)->pluck('id')->toArray())
             );
         });
+        if ($friends_suggestion == null) return null;
         return $friends_suggestion->toQuery();
     }
 
