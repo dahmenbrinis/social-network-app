@@ -1,5 +1,5 @@
 <div>
-    <form wire:submit.prevent="save" method="post"
+    <form wire:submit.prevent="save"
           class="mt-6  border-gray-100 border-t-4 pt-4 flex justify-between items-center
             @error('content')border-2 border-red-400 @enderror">
         @csrf
