@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Auth;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -17,18 +16,18 @@ class FriendsController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $friends_suggestion = new Collection();
-        $user->friends->whereNotIn('id', $user)->each(function ($friend) use ($user, &$friends_suggestion) {
-            $friends_suggestion = $friends_suggestion->merge(
-                $friend->friends
-            );
-        })->whereNotIn('id', $user->friends->pluck('id'));
-
-        $users = User::
-        whereIn('id', $friends_suggestion->pluck('id'))
-            ->paginate(16);
-        return view('friends.index', compact('users'));
+//        $user = Auth::user();
+//        $friends_suggestion = new Collection();
+//        $user->friends->whereNotIn('id', $user)->each(function ($friend) use ($user, &$friends_suggestion) {
+//            $friends_suggestion = $friends_suggestion->merge(
+//                $friend->friends
+//            );
+//        })->whereNotIn('id', $user->friends->pluck('id'));
+//
+//        $users = User::
+//        whereIn('id', $friends_suggestion->pluck('id'))
+//            ->paginate(16);
+        return view('friends.index');
     }
 
     /**
