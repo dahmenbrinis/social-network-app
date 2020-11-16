@@ -16,9 +16,10 @@ class Delete extends Component
 
     public function delete()
     {
-        dd($this->post);
+//        dd($this->post);
         $this->post->delete();
-        event(new PostUpdatedEvent($this->post->id));
+        $this->emit('postUpdated');
+        event(new PostUpdatedEvent());
     }
 
     public function render()

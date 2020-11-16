@@ -27,12 +27,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         'store' => 'comment.store'
     ]);
     Route::post('/like/{post}', [ReactionController::class, 'like'])->name('like');
+    Route::resource('friend', FriendsController::class);
 });
 
 //Route::prefix('freinds')->group(function () {
 //    Route::get('/',[\App\Http\Controllers\FriendsController::class, 'index',]);
 //});
-Route::resource('friend', FriendsController::class)->middleware(['auth:sanctum', 'verified']);
 
 // route for testing .
 

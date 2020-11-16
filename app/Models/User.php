@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -60,14 +61,6 @@ class User extends Authenticatable
     ];
 
 
-
-
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public function posts()
     {
         return $this->hasMany(Post::class);
@@ -93,6 +86,18 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class, 'friends', 'profile_id2', 'profile_id1')
             ->withTimestamps()->withPivot('confirmed');
+    }
+
+    public function suggestedFriends()
+    {
+        $friends_suggestion = new Collection();
+
+        $this->friends->whereNotIn('id', $this)->each(function ($friend) use (&$friends_suggestion) {
+            $friends_suggestion = $friends_suggestion->merge(
+                $friend->friends
+            );
+        })->whereNotIn('id', $this->friends->pluck('id'));
+        return $friends_suggestion;
     }
 
     public function friendsPosts()
