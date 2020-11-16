@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $number_of_users = 20;
+        $number_of_users = 150;
         $user1 = User::factory()->create(['email' => 'dahmenhacker41@gmail.com']);
         $user2 = User::factory()->create(['email' => 'dahmenhacker12@gmail.com']);
         $user1->friends()->syncWithoutDetaching($user2);
@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         $users = User::all();
 //         adding friends to the users
         $users->each(function ($user) use ($number_of_users, $users) {
-            $number_of_friends = rand(2, 5);
+            $number_of_friends = rand(2, 10);
             for ($i = 0; $i < $number_of_friends; $i++) {
                 $random_user = $users->whereNotIn('id', $user)->random();
                 $user->friends()->syncWithoutDetaching($random_user);

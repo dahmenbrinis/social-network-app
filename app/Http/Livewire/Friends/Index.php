@@ -12,17 +12,40 @@ class Index extends Component
     use WithPagination;
     public $search = '';
 
+    public function addFriend($user)
+    {
+        $user = User::findOrFail($user);
+        $user->friends()->syncWithoutDetaching(Auth::user());
+        Auth::user()->friends()->syncWithoutDetaching($user);
+//        $this->emit('s');
+    }
+
+    public function removeFriend($user)
+    {
+        $user = User::findOrFail($user);
+        $user->friends()->detach(Auth::user());
+        Auth::user()->friends()->detach($user);
+    }
+
+    private function getFreinds($user)
+    {
+        return
+            $user->friends()->Where('name', 'like', '%' . $this->search . '%');
+    }
+
+    private function getSuggestedFriends($user)
+    {
+        return ($this->search == '') ?
+            $user->suggestedFriends() :
+            User::Where('name', 'like', '%' . $this->search . '%')->whereNotIn('id', $user->friends->push($user)->pluck('id'));
+    }
+
     public function render()
     {
         $user = Auth::user();
-        $users = $this->getSuggetedFreinds($user)->paginate(16);
-        return view('livewire.friends.index', compact('users'));
+        $friends = $this->getFreinds($user)->paginate(8);
+        $suggestedFriends = $this->getSuggestedFriends($user)->paginate(8);
+        return view('livewire.friends.index', compact('friends'), compact('suggestedFriends'));
     }
 
-    private function getSuggetedFreinds($user)
-    {
-        return ($this->search == '') ?
-            User::whereIn('id', $user->suggestedFriends()->pluck('id')) :
-            User::Where('name', 'like', '%' . $this->search . '%');
-    }
 }

@@ -92,12 +92,12 @@ class User extends Authenticatable
     {
         $friends_suggestion = new Collection();
 
-        $this->friends->whereNotIn('id', $this)->each(function ($friend) use (&$friends_suggestion) {
+        $this->friends->each(function ($friend) use (&$friends_suggestion) {
             $friends_suggestion = $friends_suggestion->merge(
-                $friend->friends
+                $friend->friends->except($this->friends->push($this)->pluck('id')->toArray())
             );
-        })->whereNotIn('id', $this->friends->pluck('id'));
-        return $friends_suggestion;
+        });
+        return $friends_suggestion->toQuery();
     }
 
     public function friendsPosts()
