@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-6">
-        <div class="bg-gray-100  w-full xl:w-2/3 mx-auto sm:px-6 lg:px-8">
+        <div class="bg-gray-100  w-full xl:w-3/5 mx-auto sm:px-6 lg:px-8">
             <div class="sm:rounded-lg">
                 {{--                <test-component></test-component>--}}
                 <livewire:posts.create/>

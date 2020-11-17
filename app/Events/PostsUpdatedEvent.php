@@ -4,24 +4,21 @@ namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class CommentsEvent implements ShouldBroadcast
+class PostsUpdatedEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    private $post;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($post)
+    public function __construct()
     {
-        $this->post = $post;
+        //
     }
 
     /**
@@ -31,7 +28,6 @@ class CommentsEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel("commentsUpdated.$this->post");
-//        return new PrivateChannel("comment-updated-on-post-$this->post");
+        return new Channel('postsUpdated');
     }
 }

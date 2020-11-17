@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Friends;
 
+use App\Events\FriendRequest;
 use App\Models\User;
 use Auth;
 use Livewire\Component;
@@ -14,9 +15,16 @@ class Index extends Component
 
     public function addFriend($user)
     {
-        $user = User::findOrFail($user);
-        $user->friends()->syncWithoutDetaching(Auth::user());
-        Auth::user()->friends()->syncWithoutDetaching($user);
+        $user = User::find($user);
+//        $user->friends()->syncWithoutDetaching(Auth::user());
+        if (!Auth::user()->hasRequestedFriendInvitation($user)) {
+            $user->notify(new \App\Notifications\FriendRequest());
+//            dump('sent');
+        }
+        $user->friendRequests()->syncWithoutDetaching(Auth::user());
+//        dump($user->friendRequests);
+//        dump(Auth::user()->hasRequestedFriendInvitation($user));
+//            event(new FriendRequest($user->id));
 //        $this->emit('s');
     }
 

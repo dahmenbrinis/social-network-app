@@ -79,13 +79,24 @@ class User extends Authenticatable
     public function friendRequests()
     {
         return $this->belongsToMany(User::class, 'friends', 'profile_id1', 'profile_id2')
-            ->withTimestamps()->withPivot('confirmed');
+            ->withTimestamps()->withPivot('confirmed')->withPivot('confirmed')->wherePivot('confirmed', 0);
     }
 
     public function friends()
     {
         return $this->belongsToMany(User::class, 'friends', 'profile_id2', 'profile_id1')
-            ->withTimestamps()->withPivot('confirmed');
+            ->withTimestamps()->withPivot('confirmed')->wherePivot('confirmed', 1);
+    }
+
+
+    public function isFriend($user)
+    {
+        return (boolean)$this->friends->contains($user);
+    }
+
+    public function hasRequestedFriendInvitation($user)
+    {
+        return (boolean)$user->friendRequests->contains($this);
     }
 
     public function suggestedFriends()

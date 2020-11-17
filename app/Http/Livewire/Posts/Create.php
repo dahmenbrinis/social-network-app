@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Posts;
 
-use App\Events\PostUpdatedEvent;
+use App\Notifications\PostAdded;
 use Auth;
+use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 
 class Create extends Component
@@ -23,10 +24,11 @@ class Create extends Component
     public function save()
     {
         $data = $this->validate();
-//        dd($data);
         $post = Auth::user()->posts()->create($data);
-        $this->emit('postUpdated');
-        event(new PostUpdatedEvent());
+//        $this->emit('postUpdated');
+        $this->emit('postAdded');
+        Notification::send(Auth::user()->friends, new PostAdded());
         $this->reset(['title', 'body']);
+
     }
 }

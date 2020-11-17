@@ -12,9 +12,5 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        require('postcss-import'),
-        require('tailwindcss'),
-    ])
-    .webpackConfig(require('./webpack.config'));
-mix.browserSync({proxy: "http://192.168.1.36:8000"});
+    .sass('resources/sass/app.scss', 'public/css')
+    .sourceMaps();

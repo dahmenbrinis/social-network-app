@@ -14,8 +14,8 @@
             <x-friends-card :user="$user" wire:key="{{$user->id}}">
                 <x-slot name="rightSide">
                     <button wire:click="addFriend({{$user->id}})"
-                            class="px-6 py-4 h-12 group font-semibold rounded-lg text-lg bg-white text-green-600 shadow-md flex items-center ">
-                        <p class=" text-black group-hover:text-green-500 transition duration-200">add friend</p>
+                            class="px-6 py-4 h-12 group font-semibold bg-white text-teal-400 shadow flex items-center ">
+                        <p class=" text-black group-hover:text-teal-400 transition duration-200">add friend</p>
                         <svg class="h-full pl-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
@@ -23,6 +23,7 @@
                     </button>
                 </x-slot>
             </x-friends-card>
+            <div class="w-full border-b"></div>
         @endforeach
     </div>
     <div class="m-6 ">
@@ -30,20 +31,23 @@
     </div>
 
     <p class="text-2xl py-4">Friends List :</p>
-    <div class="sm:rounded-lg grid grid-cols-1 gap-4">
+    <div class="sm:rounded grid grid-cols-1 gap-4">
         @foreach($friends as $user)
             <x-friends-card :user="$user" wire:key="{{$user->id}}">
                 <x-slot name="rightSide">
                     <button wire:click="removeFriend({{$user->id}})"
-                            class="px-6 py-4 group h-12 font-semibold rounded-lg text-lg bg-white text-red-400 shadow-md flex items-center ">
+                            class="px-6 py-4 group h-12 font-semibold bg-white text-red-400 shadow flex items-center ">
                         <p class=" text-black group-hover:text-red-400 transition duration-200">Remove friend</p>
-                        <svg class="h-full pl-2 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                        <svg class="h-full pl-2 " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="8.5" cy="7" r="4"/>
+                            <line x1="23" y1="11" x2="17" y2="11"/>
                         </svg>
                     </button>
                 </x-slot>
             </x-friends-card>
+            <div class="w-full border-b"></div>
         @endforeach
     </div>
     <div class="m-6">

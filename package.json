@@ -4,7 +4,7 @@
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
-        "server": "php artisan serve --host=192.168.1.36 --port=8000",
+        "server": "php artisan serve ",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
@@ -12,9 +12,11 @@
     },
     "devDependencies": {
         "@tailwindcss/ui": "^0.6.0",
+        "bootstrap": "^4.0.0",
         "browser-sync": "^2.26.13",
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^7.0",
+        "jquery": "^3.2",
         "laravel-echo": "^1.9.0",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.19",
@@ -22,11 +24,11 @@
         "postcss-import": "^12.0.1",
         "pusher-js": "^7.0.1",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.20.1",
+        "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "socket.io-client": "^3.0.1",
         "tailwindcss": "^1.8.0",
         "vue-template-compiler": "^2.6.12"
     },
-    "dependencies": {}
+    "dependencies": []
 }
