@@ -14,7 +14,8 @@ class Index extends Component
     public function getListeners()
     {
         return [
-            "echo:comment-updated-on-post-{$this->post->id},CommentsEvent" => '$refresh',
+            "echo-private:commentsUpdated.{$this->post->id},CommentsEvent" => '$refresh',
+            'commentAdded' => '$refresh',
         ];
     }
 

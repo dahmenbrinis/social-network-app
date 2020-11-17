@@ -45,11 +45,8 @@
         </p>
     </div>
     <div class="mt-6 flex justify-around ">
-        <form action="{{route('like',['post'=>$post])}}" method="post"
-              class=" w-1/3 h-full   py-3 mr-4 ">
-            @csrf
-            <button type="button"
-                    class="flex items-center w-full h-full justify-center focus:outline-none hover:opacity-75">
+        <button type="button" wire:click="like"
+                class="flex items-center w-full h-full justify-center focus:outline-none hover:opacity-75">
                 <i class="mr-2 ">
                     <svg
                         class="fill-current text-indigo-500 w-6 h-6"
@@ -64,10 +61,6 @@
                 </i>
                 <p class="mt-1 text-blue-500 md:block hidden ">Like ({{$post->reactions->count()}})</p>
             </button>
-        </form>
-        <form action="{{route('like',['post'=>$post])}}" method="post"
-              class=" w-1/3 h-full  py-3 mx-4 ">
-            @csrf
             <button type="submit"
                     class="flex items-center w-full h-full justify-center focus:outline-none hover:opacity-75 mr-4">
                 <i class="mr-2">
@@ -84,10 +77,6 @@
                 </i>
                 <p class="mt-1 text-blue-500 md:block hidden ">{{$post->comments->count()}} Comments</p>
             </button>
-        </form>
-        <form action="{{route('like',['post'=>$post])}}" method="post"
-              class=" w-1/3 h-full  py-3 mx-4 ">
-            @csrf
             <button disabled
                     class="flex text-gray-600 items-center w-full h-full justify-center focus:outline-none ">
                 <i class="mr-2">
@@ -102,7 +91,6 @@
                 </i>
                 <p class="mt-1 md:block hidden ">Share</p>
             </button>
-        </form>
     </div>
     {{--                        todo make these buttons work --}}
     {{--                             todo show the comments of the post --}}

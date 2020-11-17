@@ -13,17 +13,10 @@ class Index extends Component
     use WithPagination;
 
 
-    public function getListeners()
-    {
-        return [
-            "echo:postUpdated,PostUpdatedEvent" => '$refresh',
-            'postUpdated' => '$refresh',
-        ];
-
-    }
 
     public function render()
     {
+
         $user = Auth::user();
         $posts = new Collection();
         $user->friends->each(function ($friend) use (&$posts) {

@@ -9,15 +9,19 @@ class FriendsCard extends Component
 {
     public $user;
     public $rightSide;
+    public $size;
+    public $info;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($user, $size = 'h-full', $info = '')
     {
         $this->user = $user;
+        $this->size = $size;
+        $this->info = $info;
     }
 
     /**

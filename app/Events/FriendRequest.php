@@ -9,19 +9,19 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class CommentsEvent implements ShouldBroadcast
+class FriendRequest implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    private $post;
+    public $id;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($post)
+    public function __construct($id)
     {
-        $this->post = $post;
+        $this->id = $id;
     }
 
     /**
@@ -31,7 +31,7 @@ class CommentsEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel("commentsUpdated.$this->post");
-//        return new PrivateChannel("comment-updated-on-post-$this->post");
+        return new PrivateChannel('friendRequests.' . $this->id);
+//        return new Channel('friendRequests.'.$this->user);
     }
 }

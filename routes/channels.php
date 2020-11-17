@@ -14,5 +14,18 @@ use Illuminate\Support\Facades\Broadcast;
 */
 
 Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
+    return (int)$user->id === (int)$id;
+});
+
+Broadcast::channel('friendRequests.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
+});
+Broadcast::channel('postUpdated.{post}', function ($user, $post) {
+//    return  $post->user->friends->contains($user);
+    return true;
+});
+
+Broadcast::channel('commentsUpdated.{post}', function ($user, $post) {
+//    return  $post->user->friends->contains($user);
+    return true;
 });
