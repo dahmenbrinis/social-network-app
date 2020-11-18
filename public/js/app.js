@@ -2858,7 +2858,7 @@
     for (var i = 0, len = elements.length; i < len; i++) {
       var _ret = _loop(i);
 
-      if (_ret === "continue") continue;
+        if (_ret === "continue")
     }
 
     return createdDocument.body.innerHTML;
@@ -7549,8 +7549,9 @@ function nodeName( elem, name ) {
 
   return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 
-};
-var rsingleTag = ( /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i );
+}
+
+    var rsingleTag = (/^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i);
 
 
 
@@ -15405,17 +15406,11 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @license
- * Lodash <https://lodash.com/>
- * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-;(function() {
-
-  /** Used as a safe reference for `undefined` in pre-ES5 environments. */
+        /* WEBPACK VAR INJECTION */
+        (function (global, module) {
+            var __WEBPACK_AMD_DEFINE_RESULT__;
+            (function () {
+                /** Used as a safe reference for `undefined` in pre-ES5 environments. */
   var undefined;
 
   /** Used as the semantic version number. */
@@ -35264,7 +35259,7 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nReferenceError: colors is not defined\n    at Object.<anonymous> (I:\\web\\yellow\\learning\\tailwind.config.js:22:24)\n    at Module._compile (I:\\web\\yellow\\learning\\node_modules\\v8-compile-cache\\v8-compile-cache.js:192:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)\n    at Module.load (internal/modules/cjs/loader.js:928:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:769:14)\n    at Module.require (internal/modules/cjs/loader.js:952:19)\n    at require (I:\\web\\yellow\\learning\\node_modules\\v8-compile-cache\\v8-compile-cache.js:159:20)\n    at I:\\web\\yellow\\learning\\node_modules\\tailwindcss\\lib\\index.js:76:107\n    at I:\\web\\yellow\\learning\\node_modules\\tailwindcss\\lib\\processTailwindFeatures.js:50:20\n    at LazyResult.run (I:\\web\\yellow\\learning\\node_modules\\postcss\\lib\\lazy-result.js:288:14)\n    at LazyResult.asyncTick (I:\\web\\yellow\\learning\\node_modules\\postcss\\lib\\lazy-result.js:212:26)\n    at LazyResult.asyncTick (I:\\web\\yellow\\learning\\node_modules\\postcss\\lib\\lazy-result.js:225:14)\n    at I:\\web\\yellow\\learning\\node_modules\\postcss\\lib\\lazy-result.js:217:17\n    at I:\\web\\yellow\\learning\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at I:\\web\\yellow\\learning\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at I:\\web\\yellow\\learning\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (I:\\web\\yellow\\learning\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at I:\\web\\yellow\\learning\\node_modules\\postcss-loader\\src\\index.js:208:9");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -35280,7 +35275,8 @@ throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //
+// window.Vue = require('vue');
 
 /**
  * The following block of code may be used to automatically register your
@@ -35289,11 +35285,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-//
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-// Vue.component('post-component', require('./components/PostComponent.vue').default);
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
@@ -35332,10 +35325,10 @@ try {
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
+// window.axios = require('axios');
+//
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-
-window.axios = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'axios'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -35352,14 +35345,27 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+    /***/ "./resources/sass/app.scss":
+    /*!*********************************!*\
+      !*** ./resources/sass/app.scss ***!
+      \*********************************/
+    /*! no static exports found */
+    /***/ (function (module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+        /***/
+    }),
+
 /***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
+    /*!*************************************************************************************!*\
+      !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/css/app.css ***!
+      \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! I:\web\yellow\learning\resources\js\app.js */"./resources/js/app.js");
+        __webpack_require__(/*! I:\web\yellow\learning\resources\sass\app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! I:\web\yellow\learning\resources\css\app.css */"./resources/css/app.css");
 
 
