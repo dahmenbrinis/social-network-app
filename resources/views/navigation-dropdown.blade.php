@@ -1,217 +1,264 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto"/>
-                    </a>
+<div class="">
+    <div class="header-top sticky bg-white d-none d-lg-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <!-- header top navigation start -->
+                    <div class="header-top-navigation">
+                        <nav>
+                            <ul>
+                                <li class="active"><a href="{{route('home')}}">home</a></li>
+                                {{--                                    todo make these nav notifications buttons work --}}
+                                <li class="msg-trigger"><a class="msg-trigger-btn" href="#a">message</a>
+                                    <div class="message-dropdown" id="a">
+                                        <div class="dropdown-title">
+                                            <p class="recent-msg">recent message</p>
+                                            <div class="message-btn-group">
+                                                <button>New group</button>
+                                                <button>New Message</button>
+                                            </div>
+                                        </div>
+                                        <ul class="dropdown-msg-list">
+                                            <li class="msg-list-item d-flex justify-content-between">
+                                                <!-- profile picture end -->
+                                                <div class="profile-thumb">
+                                                    <figure class="profile-thumb-middle">
+                                                        <img src="assets/images/profile/profile-small-3.jpg"
+                                                             alt="profile picture">
+                                                    </figure>
+                                                </div>
+                                                <!-- profile picture end -->
+
+                                                <!-- message content start -->
+                                                <div class="msg-content">
+                                                    <h6 class="author"><a href="profile.html">Mili Raoulin</a></h6>
+                                                    <p>Many desktop publishing packages and web page editors now use
+                                                        Lorem Ipsum as their default</p>
+                                                </div>
+                                                <!-- message content end -->
+
+                                                <!-- message time start -->
+                                                <div class="msg-time">
+                                                    <p>25 Apr 2019</p>
+                                                </div>
+                                                <!-- message time end -->
+                                            </li>
+                                            <li class="msg-list-item d-flex justify-content-between">
+                                                <!-- profile picture end -->
+                                                <div class="profile-thumb">
+                                                    <figure class="profile-thumb-middle">
+                                                        <img src="assets/images/profile/profile-small-4.jpg"
+                                                             alt="profile picture">
+                                                    </figure>
+                                                </div>
+                                                <!-- profile picture end -->
+
+                                                <!-- message content start -->
+                                                <div class="msg-content">
+                                                    <h6 class="author"><a href="profile.html">Jhon Doe</a></h6>
+                                                    <p>Many desktop publishing packages and web page editors now use
+                                                        Lorem Ipsum as their default</p>
+                                                </div>
+                                                <!-- message content end -->
+
+                                                <!-- message time start -->
+                                                <div class="msg-time">
+                                                    <p>15 May 2019</p>
+                                                </div>
+                                                <!-- message time end -->
+                                            </li>
+                                            <li class="msg-list-item d-flex justify-content-between">
+                                                <!-- profile picture end -->
+                                                <div class="profile-thumb">
+                                                    <figure class="profile-thumb-middle">
+                                                        <img src="assets/images/profile/profile-small-5.jpg"
+                                                             alt="profile picture">
+                                                    </figure>
+                                                </div>
+                                                <!-- profile picture end -->
+
+                                                <!-- message content start -->
+                                                <div class="msg-content">
+                                                    <h6 class="author"><a href="profile.html">Jon Wileyam</a></h6>
+                                                    <p>Many desktop publishing packages and web page editors now use
+                                                        Lorem Ipsum as their default</p>
+                                                </div>
+                                                <!-- message content end -->
+
+                                                <!-- message time start -->
+                                                <div class="msg-time">
+                                                    <p>20 Jun 2019</p>
+                                                </div>
+                                                <!-- message time end -->
+                                            </li>
+                                        </ul>
+                                        <div class="msg-dropdown-footer">
+                                            <button>See all in messenger</button>
+                                            <button>Mark All as Read</button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification-trigger"><a class="msg-trigger-btn" href="#b">notification</a>
+                                    <div class="message-dropdown" id="b">
+                                        <div class="dropdown-title">
+                                            <p class="recent-msg">Notification</p>
+                                            <button>
+                                                <i class="flaticon-settings"></i>
+                                            </button>
+                                        </div>
+                                        <ul class="dropdown-msg-list">
+                                            <li class="msg-list-item d-flex justify-content-between">
+                                                <!-- profile picture end -->
+                                                <div class="profile-thumb">
+                                                    <figure class="profile-thumb-middle">
+                                                        <img src="assets/images/profile/profile-small-3.jpg"
+                                                             alt="profile picture">
+                                                    </figure>
+                                                </div>
+                                                <!-- profile picture end -->
+
+                                                <!-- message content start -->
+                                                <div class="msg-content notification-content">
+                                                    <a href="profile.html">Robert Faul</a>,
+                                                    <a href="profile.html">william jhon</a>
+                                                    <p>and 35 other people reacted to your photo</p>
+                                                </div>
+                                                <!-- message content end -->
+
+                                                <!-- message time start -->
+                                                <div class="msg-time">
+                                                    <p>25 Apr 2019</p>
+                                                </div>
+                                                <!-- message time end -->
+                                            </li>
+                                            <li class="msg-list-item d-flex justify-content-between">
+                                                <!-- profile picture end -->
+                                                <div class="profile-thumb">
+                                                    <figure class="profile-thumb-middle">
+                                                        <img src="assets/images/profile/profile-small-4.jpg"
+                                                             alt="profile picture">
+                                                    </figure>
+                                                </div>
+                                                <!-- profile picture end -->
+
+                                                <!-- message content start -->
+                                                <div class="msg-content notification-content">
+                                                    <a href="profile.html">Robert mushkil</a>,
+                                                    <a href="profile.html">Terry jhon</a>
+                                                    <p>and 20 other people reacted to your photo</p>
+                                                </div>
+                                                <!-- message content end -->
+
+                                                <!-- message time start -->
+                                                <div class="msg-time">
+                                                    <p>20 May 2019</p>
+                                                </div>
+                                                <!-- message time end -->
+                                            </li>
+                                            <li class="msg-list-item d-flex justify-content-between">
+                                                <!-- profile picture end -->
+                                                <div class="profile-thumb">
+                                                    <figure class="profile-thumb-middle">
+                                                        <img src="assets/images/profile/profile-small-6.jpg"
+                                                             alt="profile picture">
+                                                    </figure>
+                                                </div>
+                                                <!-- profile picture end -->
+
+                                                <!-- message content start -->
+                                                <div class="msg-content notification-content">
+                                                    <a href="profile.html">Horijon Mbala</a>,
+                                                    <a href="profile.html">Bashu jhon</a>
+                                                    <p>and 55 other people reacted to your post</p>
+                                                </div>
+                                                <!-- message content end -->
+
+                                                <!-- message time start -->
+                                                <div class="msg-time">
+                                                    <p>15 Jan 2019</p>
+                                                </div>
+                                                <!-- message time end -->
+                                            </li>
+                                        </ul>
+                                        <div class="msg-dropdown-footer">
+                                            <button>See all in messenger</button>
+                                            <button>Mark All as Read</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- header top navigation start -->
                 </div>
 
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-jet-nav-link>
+                <div class="col-md-2">
+                    <!-- brand logo start -->
+                    <div class="brand-logo text-center">
+                        <a href="index.html">
+                            {{--                                todo change the logo image--}}
+                            <img src="assets/images/logo/logo.png" alt="brand logo">
+                        </a>
+                    </div>
+                    <!-- brand logo end -->
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('friend.index') }}">
-                        {{ __('Add Friends') }}
-                    </x-jet-nav-link>
-                </div>
-            </div>
 
-
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <!-- Friend Requests Dropdown -->
-                <div class="mx-8">
-                    <livewire:friends.show-friend-requests-notification/>
-                </div><!-- Settings Dropdown -->
-
-                <x-jet-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <button
-                                class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
-                                <img class="h-10 w-10 rounded-full object-cover"
-                                     src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"/>
-                            </button>
-                        @else
-                            <button
-                                class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div>{{ Auth::user()->name }}</div>
-
-                                <div class="ml-1">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                         viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd"
-                                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                              clip-rule="evenodd"/>
-                                    </svg>
-                                </div>
-                            </button>
-                        @endif
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
-                            {{ __('Manage Account') }}
+                <div class="col-md-5">
+                    <div class="header-top-right d-flex align-items-center justify-content-end">
+                        <!-- header top search start -->
+                        {{--                            todo try to make this search field useful--}}
+                        <div class="header-top-search">
+                            <form class="top-search-box">
+                                <input type="text" placeholder="Search" class="top-search-field">
+                                <button class="top-search-btn"><i class="flaticon-search"></i></button>
+                            </form>
                         </div>
+                        <!-- header top search end -->
 
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Profile') }}
-                        </x-jet-dropdown-link>
+                        <!-- profile picture start -->
+                        <div class="profile-setting-box">
+                            <div class="profile-thumb-small">
+                                <a href="javascript:void(0)" class="profile-triger">
+                                    <figure>
+                                        <img src="{{Auth::user()->profile_photo_url}}">
+                                    </figure>
+                                </a>
+                                <div class="profile-dropdown">
+                                    <div class="profile-head">
+                                        <h5 class="name"><a
+                                                href="{{route('userProfile.show',['userProfile'=>Auth::user()])}}">{{Auth::user()->name}}</a>
+                                        </h5>
+                                        <a class="mail"
+                                           href="{{route('userProfile.show',['userProfile'=>Auth::user()])}}">{{Auth::user()->email}}</a>
+                                    </div>
+                                    <div class="profile-body">
+                                        <ul>
+                                            <li>
+                                                <a href="{{route('userProfile.show',['userProfile'=>Auth::user()->id])}}"><i
+                                                        class="flaticon-user"></i>Profile</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="{{route('profile.show')}}"><i class="flaticon-settings"></i>Setting</a>
+                                            </li>
+                                            <li>
 
-                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
-                                {{ __('API Tokens') }}
-                            </x-jet-dropdown-link>
-                        @endif
-
-                        <div class="border-t border-gray-100"></div>
-
-                        <!-- Team Management -->
-                        @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Team') }}
+                                                <form method="post" action="{{ route('logout') }}">
+                                                    @csrf
+                                                    <a href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
+                                                        this.closest('form').submit();"><i class="flaticon-unlock"></i>Sing
+                                                        out</a>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-
-                            <!-- Team Settings -->
-                            <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                {{ __('Team Settings') }}
-                            </x-jet-dropdown-link>
-
-                            @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
-                                <x-jet-dropdown-link href="{{ route('teams.create') }}">
-                                    {{ __('Create New Team') }}
-                                </x-jet-dropdown-link>
-                            @endcan
-
-                            <div class="border-t border-gray-100"></div>
-
-                            <!-- Team Switcher -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Switch Teams') }}
-                            </div>
-
-                            @foreach (Auth::user()->allTeams() as $team)
-                                <x-jet-switchable-team :team="$team"/>
-                            @endforeach
-
-                            <div class="border-t border-gray-100"></div>
-                    @endif
-
-                    <!-- Authentication -->
-                        <form method="post" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-jet-dropdown-link href="{{ route('logout') }}"
-                                                 onclick="event.preventDefault();
-                                                            this.closest('form').submit();">
-                                {{ __('Logout') }}
-                            </x-jet-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-jet-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
-                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M4 6h16M4 12h16M4 18h16"/>
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
-                              stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
+                        </div>
+                        <!-- profile picture end -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-jet-responsive-nav-link>
-        </div>
-
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="flex items-center px-4">
-                <div class="flex-shrink-0">
-                    <img class="h-10 w-10 rounded-full" src="{{ Auth::user()->profile_photo_url }}"
-                         alt="{{ Auth::user()->name }}"/>
-                </div>
-
-                <div class="ml-3">
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                </div>
-            </div>
-
-            <div class="mt-3 space-y-1">
-                <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
-                                           :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
-                </x-jet-responsive-nav-link>
-
-                @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}"
-                                               :active="request()->routeIs('api-tokens.index')">
-                        {{ __('API Tokens') }}
-                    </x-jet-responsive-nav-link>
-                @endif
-
-            <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                        {{ __('Logout') }}
-                    </x-jet-responsive-nav-link>
-                </form>
-
-                <!-- Team Management -->
-                @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
-                    <div class="border-t border-gray-200"></div>
-
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Manage Team') }}
-                    </div>
-
-                    <!-- Team Settings -->
-                    <x-jet-responsive-nav-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
-                                               :active="request()->routeIs('teams.show')">
-                        {{ __('Team Settings') }}
-                    </x-jet-responsive-nav-link>
-
-                    <x-jet-responsive-nav-link href="{{ route('teams.create') }}"
-                                               :active="request()->routeIs('teams.create')">
-                        {{ __('Create New Team') }}
-                    </x-jet-responsive-nav-link>
-
-                    <div class="border-t border-gray-200"></div>
-
-                    <!-- Team Switcher -->
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                        {{ __('Switch Teams') }}
-                    </div>
-
-                    @foreach (Auth::user()->allTeams() as $team)
-                        <x-jet-switchable-team :team="$team" component="jet-responsive-nav-link"/>
-                    @endforeach
-                @endif
-            </div>
-        </div>
-    </div>
-</nav>
+</div>

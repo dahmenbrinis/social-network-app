@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+    @include('layouts.styles')
     @livewireStyles
 
     <!-- Scripts -->
@@ -21,13 +21,6 @@
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-gray-100" id="app">
     @livewire('navigation-dropdown')
-
-    <!-- Page Heading -->
-    <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            {{ $header }}
-        </div>
-    </header>
 
     <!-- Page Content -->
     <main>
@@ -40,6 +33,7 @@
 @if(config('app.env') == 'local')
     <script src="http://localhost:35729/livereload.js"></script>
 @endif
+@include('layouts.scripts')
 <script src="js/app.js"></script>
 </body>
 </html>

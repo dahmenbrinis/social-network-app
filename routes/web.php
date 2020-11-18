@@ -23,6 +23,15 @@ Route::get('/', function () {
 })->name('home');
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
+    Route::get('/home', [PostController::class, 'index'])->name('home');
+    Route::resource('userProfile', PostController::class);
+
+
+
+
+
+
+
     Route::resource('post', PostController::class);
     Route::resource('post/{post}/comment', CommentController::class)->names([
         'store' => 'comment.store'

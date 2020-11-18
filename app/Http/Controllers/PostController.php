@@ -26,7 +26,7 @@ class PostController extends Controller
 //        $posts = \App\Models\Post::whereIn('id', $posts->pluck('id'))->latest()->paginate(10);
 
 //        dd(Auth::user()->posts->where('id','=','6'));
-        return view('posts.index');
+        return view('home');
     }
 
     /**

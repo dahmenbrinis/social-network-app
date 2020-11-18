@@ -18,5 +18,5 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ])
     .webpackConfig(require('./webpack.config'));
-mix.browserSync({proxy: "http://192.168.1.36:8000"});
+mix.browserSync({proxy: "http://localhost:8000"});
 
