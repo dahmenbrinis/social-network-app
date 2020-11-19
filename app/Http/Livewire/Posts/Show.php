@@ -3,36 +3,65 @@
 namespace App\Http\Livewire\Posts;
 
 use App\Events\PostUpdatedEvent;
+use App\Notifications\PostAdded;
 use Auth;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 
 class Show extends Component
 {
+    use AuthorizesRequests;
     public $post;
+    public $likes;
+    public $commentsCount;
+    public $update;
 
     public function getListeners()
     {
         return [
-            "echo-private:postUpdated.{$this->post->id},PostUpdatedEvent" => '$refresh',
-            'postUpdated' => '$refresh',
+            "echo-private:postUpdated.{$this->post->id},PostUpdatedEvent" => 'initData',
+            'postUpdated' => 'initData',
         ];
 
     }
 
+    public function initData()
+    {
+        $this->likes = $this->post->reactions->count();
+        $this->commentsCount = $this->post->comments->count();
+    }
+
+
     public function render()
     {
-
         return view('livewire.posts.show');
     }
 
     public function mount($post)
     {
+        $this->initData();
         $this->post = $post;
+    }
+
+    public function delete()
+    {
+        $this->authorize('delete', $this->post);
+        $this->post->delete();
+        $this->emit('postAdded');
+        Notification::send(Auth::user()->friends, new PostAdded());
     }
 
     public function like()
     {
-        Auth::user()->reactions()->toggle($this->post);
+//        dump('hit');
+        if ($this->post->isReactedBy(Auth::user())) {
+            Auth::user()->reactions()->detach($this->post);
+        } else {
+            Auth::user()->reactions()->attach($this->post);
+        }
+        $this->initData();
         event(new PostUpdatedEvent($this->post->id));
+        $this->emitself('postUpdated');
     }
 }

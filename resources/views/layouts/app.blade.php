@@ -19,12 +19,15 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
 </head>
 <body class="font-sans antialiased">
-<div class="min-h-screen bg-gray-100" id="app">
+<div class="" id="app">
     @livewire('navigation-dropdown')
 
     <!-- Page Content -->
-    <main>
-        {{ $slot }}
+    <main class="">
+        <div class="main-wrapper">
+            <br><br><br><br>
+            {{ $slot }}
+        </div>
     </main>
 </div>
 

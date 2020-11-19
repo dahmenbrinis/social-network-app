@@ -14,6 +14,7 @@ class Index extends Component
     use WithPagination;
     private $posts;
 
+
     public function getListeners()
     {
         $user_id = Auth::id();

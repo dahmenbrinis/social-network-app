@@ -26,4 +26,9 @@ class Post extends Model
     {
         return $this->belongsToMany(User::class, 'reactions', 'post_id', 'user_id');
     }
+
+    public function isReactedBy(User $user)
+    {
+        return (boolean)$this->reactions->contains($user);
+    }
 }
