@@ -23,8 +23,9 @@
     <!-- Page Content -->
     <main class="">
         <div class="main-wrapper">
-
-
+            @auth
+                <script>window.location.href = "{{route('home')}}";</script>
+            @endif
             <div class="timeline-wrapper">
                 <div class="timeline-header">
                     <div class="container-fluid p-0">
@@ -80,45 +81,57 @@
                                     <h1 class="create-acc text-center">Create An Account</h1>
                                     <div class="signup-inner text-center">
                                         <h3 class="title">Wellcome to Adda</h3>
-                                        <form class="signup-inner--form">
+
+                                        <form method="POST" action="{{ route('register') }}" class="signup-inner--form">
+                                            @csrf
                                             <div class="row">
+
                                                 <div class="col-12">
-                                                    <input type="email" class="single-field" placeholder="Email">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="text" class="single-field" placeholder="First Name">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <input type="text" class="single-field" placeholder="Last Name">
+                                                    @error('name')
+                                                    <div class="text-white bg-danger rounded-lg my-2">{{$message}}</div>
+                                                    @enderror
+                                                    <input type="text" name="name" value="{{old('name')}}"
+                                                           class="single-field" placeholder="Name">
                                                 </div>
                                                 <div class="col-12">
-                                                    <input type="password" class="single-field" placeholder="Password">
+                                                    @error('email')
+                                                    <div class="text-white bg-danger rounded-lg my-2">{{$message}}</div>
+                                                    @enderror
+                                                    <input type="email" name="email" value="{{old('email')}}"
+                                                           class="single-field" placeholder="Email">
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <select class="nice-select" name="sortby">
-                                                        <option value="trending">Gender</option>
-                                                        <option value="sales">Male</option>
-                                                        <option value="sales">Female</option>
+                                                <div class="col-12">
+                                                    @error('password')
+                                                    <div class="text-white bg-danger rounded-lg my-2">{{$message}}</div>
+                                                    @enderror
+                                                    <input type="password" name="password" class="single-field"
+                                                           placeholder="Password">
+                                                </div>
+                                                <div class="col-12">
+                                                    @error('password_confirmation')
+                                                    <div class="text-white bg-danger rounded-lg my-2">{{$message}}</div>
+                                                    @enderror
+                                                    <input type="password" name="password_confirmation"
+                                                           class="single-field" placeholder="Confirm Password">
+                                                </div>
+                                                <div class="col-md-6 ">
+                                                    @error('gender')
+                                                    <div class="text-white bg-danger rounded-lg my-2">{{$message}}</div>
+                                                    @enderror
+                                                    <select class="nice-select" name="gender">
+                                                        <option value="0">Male</option>
+                                                        <option value="1">Female</option>
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <select class="nice-select" name="sortby">
-                                                        <option value="trending">Age</option>
-                                                        <option value="sales">18+</option>
-                                                        <option value="sales">18-</option>
-                                                    </select>
+                                                <div class="col-6">
+                                                    @error('password_confirmation')
+                                                    <div class="text-white bg-danger rounded-lg my-2">{{$message}}</div>
+                                                    @enderror
+                                                    <input type="date" name="password_confirmation" class="single-field"
+                                                           placeholder="Confirm Password">
                                                 </div>
                                                 <div class="col-12">
-                                                    <select class="nice-select" name="sortby">
-                                                        <option value="trending">Country</option>
-                                                        <option value="sales">Bangladesh</option>
-                                                        <option value="sales">Noakhali</option>
-                                                        <option value="sales">Australia</option>
-                                                        <option value="sales">China</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-12">
-                                                    <button class="submit-btn">Create Account</button>
+                                                    <button type="submit" class="submit-btn">Create Account</button>
                                                 </div>
                                             </div>
                                             <h6 class="terms-condition">I have read & accepted the <a href="#">terms of

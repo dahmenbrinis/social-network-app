@@ -31,4 +31,9 @@ class Post extends Model
     {
         return (boolean)$this->reactions->contains($user);
     }
+
+    public function images()
+    {
+        return $this->morphToMany(Image::class, 'imageable');
+    }
 }

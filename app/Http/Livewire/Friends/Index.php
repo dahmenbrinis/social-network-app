@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire\Friends;
 
-use App\Events\FriendRequest;
+
 use App\Models\User;
+use App\Notifications\FriendRequest;
 use Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -18,7 +19,7 @@ class Index extends Component
         $user = User::find($user);
 //        $user->friends()->syncWithoutDetaching(Auth::user());
         if (!Auth::user()->hasRequestedFriendInvitation($user)) {
-            $user->notify(new \App\Notifications\FriendRequest());
+            $user->notify(new FriendRequest());
 //            dump('sent');
         }
         $user->friendRequests()->syncWithoutDetaching(Auth::user());

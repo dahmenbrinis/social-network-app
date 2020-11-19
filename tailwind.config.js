@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     purge: {
-        enabled: true,
+        enabled: false,
         content: [
             path.resolve('resources/**/*.html'),
             path.resolve('resources/**/*.vue'),
@@ -17,6 +17,7 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+
         },
     },
 

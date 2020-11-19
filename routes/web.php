@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\FriendsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReactionController;
 use App\Notifications\FreindRequest;
@@ -22,22 +20,16 @@ Route::get('/', function () {
     return view('layouts.guest');
 })->name('home');
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
     Route::get('/home', [PostController::class, 'index'])->name('home');
     Route::resource('userProfile', PostController::class);
+    Route::resource('post', PostController::class)->except(['index']);
 
 
-
-
-
-
-
-    Route::resource('post', PostController::class);
-    Route::resource('post/{post}/comment', CommentController::class)->names([
-        'store' => 'comment.store'
-    ]);
-    Route::post('/like/{post}', [ReactionController::class, 'like'])->name('like');
-    Route::resource('friend', FriendsController::class);
+//    Route::resource('post/{post}/comment', CommentController::class)->names([
+//        'store' => 'comment.store'
+//    ]);
+//    Route::post('/like/{post}', [ReactionController::class, 'like'])->name('like');
+//    Route::resource('friend', FriendsController::class);
 });
 
 //Route::prefix('freinds')->group(function () {

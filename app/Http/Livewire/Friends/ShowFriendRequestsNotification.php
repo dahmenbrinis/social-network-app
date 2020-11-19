@@ -10,7 +10,8 @@ use Livewire\Component;
 class ShowFriendRequestsNotification extends Component
 {
     public $friendRequests;
-    public $notificationCount = false;
+    public $notificationCount = 0;
+    public $screen;
 
     public function getListeners()
     {
@@ -26,8 +27,9 @@ class ShowFriendRequestsNotification extends Component
         $this->notificationCount = Auth::user()->unreadNotifications->where('type', FriendRequest::class)->count();
     }
 
-    public function mount()
+    public function mount($screen)
     {
+        $this->screen = $screen;
         $this->initData();
     }
 
@@ -36,11 +38,17 @@ class ShowFriendRequestsNotification extends Component
         return view('livewire.friends.show-friend-requests-notification');
     }
 
-    public function accept($user)
+    public function acceptInvitation($user)
     {
         $user = User::find($user);
         $user->friendRequests()->syncWithoutDetaching([Auth::id() => ['confirmed' => 1]]);
         Auth::user()->friendRequests()->syncWithoutDetaching([$user->id => ['confirmed' => 1]]);
+        $this->initData();
+    }
+
+    public function denyInvitation($user)
+    {
+        Auth::user()->friendRequests()->detach($user);
         $this->initData();
     }
 

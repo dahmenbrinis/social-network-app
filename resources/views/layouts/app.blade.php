@@ -29,6 +29,9 @@
             {{ $slot }}
         </div>
     </main>
+    <div class="scroll-top bg-red-500">
+        <i class="bi bi-finger-index"></i>
+    </div>
 </div>
 
 @stack('modals')

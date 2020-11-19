@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Posts;
 
-use App\Models\Post;
 use App\Notifications\PostAdded;
 use Auth;
 use Illuminate\Database\Eloquent\Collection;
@@ -12,7 +11,11 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
-    private $posts;
+    public $posts;
+    public $postsPaginationSteps;
+    public $postsPaginated;
+    public $postsCount;
+    public $test = false;
 
 
     public function getListeners()
@@ -26,12 +29,14 @@ class Index extends Component
 
     public function mount()
     {
+        $this->postsPaginationSteps = 6;
+        $this->postsPaginated = $this->postsPaginationSteps;
         $this->initData();
     }
 
     public function render()
     {
-        return view('livewire.posts.index', ['posts' => $this->posts]);
+        return view('livewire.posts.index');
     }
 
     public function notification($notification)
@@ -41,15 +46,22 @@ class Index extends Component
         }
     }
 
+    public function showMore()
+    {
+        $this->postsPaginated += $this->postsPaginationSteps;
+        $this->initData();
+    }
+
     public function initData()
     {
 //        dump('hit');
         $user = Auth::user();
-        $posts = new Collection();
-        $user->friends->each(function ($friend) use (&$posts) {
-            $posts = $posts->merge($friend->posts);
+        $tmpPosts = new Collection();
+        $user->friends->each(function ($friend) use (&$tmpPosts) {
+            $tmpPosts = $tmpPosts->merge($friend->posts);
         });
-        $posts = $posts->merge($user->posts);
-        $this->posts = Post::whereIn('id', $posts->pluck('id'))->latest()->paginate(10);
+        $tmpPosts = $tmpPosts->merge($user->posts);
+        $this->postsCount = $tmpPosts->count();
+        $this->posts = $tmpPosts->take($this->postsPaginated);
     }
 }
