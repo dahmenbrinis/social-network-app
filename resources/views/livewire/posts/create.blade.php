@@ -1,23 +1,52 @@
-<div>
-    <form wire:submit.prevent="save">
-        @csrf
-        <div class="bg-white p-6 mb-12 rounded-lg shadow-lg ">
-            <div class="w-1/3">
-                <x-jet-label for="title" class="text-lg" value="{{ __('title') }}"/>
-                <x-jet-input id="title" class="block mt-1 w-full" type="text"
-                             wire:model="title" required autofocus autocomplete="name"/>
-            </div>
-            <div class="mt-4 ">
-                <x-jet-label for="body" class="text-lg" value="{{ __('body') }}"/>
-                <textarea id="body"
-                          class=" form-input resize-y rounded-md shadow-sm block h-24 mt-1 w-full "
-                          type="body" wire:model="body" required></textarea>
-            </div>
-            <div class="flex items-center justify-end mt-4 ">
-                <x-jet-button class="ml-4 ">
-                    {{ __('Post Now') }}
-                </x-jet-button>
+<div class="card card-small">
+    <div class="share-box-inner">
+        <!-- profile picture end -->
+        <div class="profile-thumb">
+            <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">
+                <figure class="profile-thumb-middle">
+                    <img src="{{Auth::user()->profile_photo_url}}">
+                </figure>
+            </a>
+        </div>
+        <!-- profile picture end -->
+
+        <!-- share content box start -->
+        <div class="share-content-box w-100">
+            <div class="share-text-box">
+                <textarea name="share" class="share-text-field" aria-disabled="true" placeholder="Say Something"
+                          data-toggle="modal" data-target="#textbox" id="email"></textarea>
+                <button class="btn-share">share</button>
             </div>
         </div>
-    </form>
+        <!-- share content box end -->
+
+        <!-- Modal start -->
+        <div class="modal fade" id="textbox" aria-labelledby="textbox" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Share Your Mood</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body custom-scroll ps">
+                        <div class="flex">
+                            <input class=" custom-scroll border px-3 py-2 my-2 "
+                                   placeholder="Post Title" wire:model.defer="title">
+                        </div>
+                        <textarea class="share-field-big custom-scroll ps"
+                                  placeholder="Say Something" wire:model.defer="body">
+                        </textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button wire:click="save" type="button" data-dismiss="modal" class="post-share-btn">post
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal end -->
+    </div>
 </div>
+

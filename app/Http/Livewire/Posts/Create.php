@@ -25,7 +25,6 @@ class Create extends Component
     {
         $data = $this->validate();
         $post = Auth::user()->posts()->create($data);
-//        $this->emit('postUpdated');
         $this->emit('postAdded');
         Notification::send(Auth::user()->friends, new PostAdded());
         $this->reset(['title', 'body']);

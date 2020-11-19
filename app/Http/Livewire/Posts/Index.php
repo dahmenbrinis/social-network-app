@@ -43,6 +43,7 @@ class Index extends Component
 
     public function initData()
     {
+//        dump('hit');
         $user = Auth::user();
         $posts = new Collection();
         $user->friends->each(function ($friend) use (&$posts) {

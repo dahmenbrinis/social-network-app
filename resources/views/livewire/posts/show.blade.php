@@ -12,7 +12,8 @@
         <!-- profile picture end -->
 
         <div class="posted-author">
-            <h6 class="author"><a href="profile.html">{{$post->user->name}}</a></h6>
+            <h6 class="author"><a
+                    href="{{route('userProfile.show',['userProfile'=>$post->user])}}">{{$post->user->name}}</a></h6>
             <span class="post-time">{{$post->created_at->diffForHumans()}}</span>
         </div>
         @can('update',$post)
@@ -23,9 +24,6 @@
                 <div class="post-settings arrow-shape">
                     <ul>
                         {{--                        todo make these post buttons work--}}
-                        <li>
-                            <button></button>
-                        </li>
                         <li>
                             <button>edit post</button>
                         </li>
@@ -86,7 +84,7 @@
             </button>
             <ul class="comment-share-meta">
                 <li>
-                    <button class="post-comment">
+                    <button wire:click="$emit('showComments' , '{{$post->id}}')">
                         <i class="bi bi-chat-bubble"></i>
                         <span>{{$commentsCount}}</span>
                     </button>
@@ -100,10 +98,11 @@
             </ul>
         </div>
 
+
         {{--                        todo make these buttons work --}}
         {{--                             todo show the comments of the post --}}
-        {{--        <livewire:comments.index :post="$post" :key="'comments-'.$post->id"/>--}}
-        {{--        <livewire:comments.create :post="$post"/>--}}
+        <livewire:comments.index :post="$post" :key="'comments-'.$post->id"/>
+        <livewire:comments.create :post="$post"/>
     </div>
 </div>
 

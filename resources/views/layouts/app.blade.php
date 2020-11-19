@@ -33,9 +33,10 @@
 
 @stack('modals')
 @livewireScripts
-@if(config('app.env') == 'local')
-    <script src="http://localhost:35729/livereload.js"></script>
-@endif
+{{--@if(config('app.env') == 'local')--}}
+{{--    <script src="http://localhost:35729/livereload.js"></script>--}}
+{{--    <script src="http://127.0.0.1:35729/livereload.js"></script>--}}
+{{--@endif--}}
 @include('layouts.scripts')
 <script src="js/app.js"></script>
 </body>

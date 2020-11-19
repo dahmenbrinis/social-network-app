@@ -16,31 +16,41 @@ class Index extends Component
         return [
             "echo-private:commentsUpdated.{$this->post->id},CommentsEvent" => '$refresh',
             'commentAdded' => '$refresh',
+            'showMore' => 'showMore',
+            'showComments' => 'showComments',
         ];
     }
 
     public function render()
     {
         $comments = $this->post->comments()->orderByDesc('created_at')->take($this->commentSize)->get()->reverse();
-        $this->canShowMore = ($comments->count() >= $this->commentSize);
+        $this->canShowMore = (boolean)($comments->count() >= $this->commentSize) && ($comments->count() != 0);
         return view('livewire.comments.index', compact('comments'));
     }
 
     public function mount($post)
     {
         $this->commentSizeSteps = 3;
-        $this->commentSize = $this->commentSizeSteps;
+        $this->commentSize = 0;
         $this->post = $post;
     }
 
     public function showMore()
     {
-        $this->commentSize += $this->commentSizeSteps;
+        if ($this->post->comments->count() > $this->commentSize) {
+            $this->commentSize += $this->commentSizeSteps;
+        }
     }
 
+    public function showComments($post)
+    {
+        if ($this->post->id == $post) {
+            $this->commentSize = ($this->commentSize == $this->commentSizeSteps) ? 0 : $this->commentSizeSteps;
+        }
+    }
     public function hideComments()
     {
-        $this->commentSize = $this->commentSizeSteps;
+        $this->commentSize = 0;
     }
 
 }
