@@ -110,10 +110,13 @@
                 <div class="col-md-2">
                     <!-- brand logo start -->
                     <div class="brand-logo text-center">
-                        <a href="index.html">
-                            {{--                                todo change the logo image--}}
-                            <img src="assets/images/logo/logo.png" alt="brand logo">
-                        </a>
+                        {{--                        <a href="index.html">--}}
+                        {{--                            --}}{{--                                todo change the logo image--}}
+                        {{--                            <img src="assets/images/logo/logo.png" alt="brand logo">--}}
+                        {{--                        </a>--}}
+                        <div class="w-12  ">
+                            <x-logo></x-logo>
+                        </div>
                     </div>
                     <!-- brand logo end -->
                 </div>
@@ -182,11 +185,13 @@
     {{--    on small screen --}}
     <div class="mobile-header-wrapper sticky d-block d-lg-none">
         <div class="mobile-header position-relative ">
-            <div class="mobile-logo">
-                <a href="{{route('home')}}">
-                    <img src="{{asset('assets/images/logo/logo-white.png')}}">
+
+            <a class="pl-3" href="{{route('home')}}">
+                <div class="w-10  ">
+                    <x-logo></x-logo>
+                </div>
                 </a>
-            </div>
+
             <div class="mobile-menu w-100">
                 <ul>
                     <li>
@@ -291,7 +296,7 @@
                 <div class="profile-thumb profile-setting-box">
                     <a href="javascript:void(0)" class="profile-triger">
                         <figure class="profile-thumb-middle">
-                            <img src="{{Auth::user()->profile_photo_url}}" alt="profile picture">
+                            <img src="{{Auth::user()->profile_photo_url}}">
                         </figure>
                     </a>
                     <div class="profile-dropdown text-left" style="display: block;">
@@ -302,13 +307,19 @@
                         </div>
                         <div class="profile-body">
                             <ul>
-                                <li><a href="profile.html"><i class="flaticon-user"></i>Profile</a></li>
-                                <li><a href="#"><i class="flaticon-message"></i>Inbox</a></li>
-                                <li><a href="#"><i class="flaticon-document"></i>Activity</a></li>
+                                <li><a href="{{route('profile.show')}}"><i class="flaticon-user"></i>Profile</a></li>
                             </ul>
                             <ul>
                                 <li><a href="#"><i class="flaticon-settings"></i>Setting</a></li>
-                                <li><a href="signup.html"><i class="flaticon-unlock"></i>Sing out</a></li>
+                                <li>
+                                    <form method="post" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                        this.closest('form').submit();"><i class="flaticon-unlock"></i>Sing
+                                            out</a>
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                     </div>

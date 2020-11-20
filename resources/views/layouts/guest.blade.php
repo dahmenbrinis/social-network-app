@@ -127,11 +127,14 @@
                                                     @error('password_confirmation')
                                                     <div class="text-white bg-danger rounded-lg my-2">{{$message}}</div>
                                                     @enderror
-                                                    <input type="date" name="password_confirmation" class="single-field"
+                                                    <input type="date" name="dob" class="single-field"
                                                            placeholder="Confirm Password">
                                                 </div>
                                                 <div class="col-12">
-                                                    <button type="submit" class="submit-btn">Create Account</button>
+                                                    <button type="button"
+                                                            onclick="event.preventDefault();this.closest('form').submit();"
+                                                            class="submit-btn">Create Account
+                                                    </button>
                                                 </div>
                                             </div>
                                             <h6 class="terms-condition">I have read & accepted the <a href="#">terms of

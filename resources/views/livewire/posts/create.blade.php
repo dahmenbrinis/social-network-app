@@ -11,7 +11,7 @@
                 <input class="  border px-3 py-2 my-2 "
                        placeholder="Post Title" wire:model.lazy="title">
             </div>
-            <textarea class="w-full h-24 resize-y border px-3  my-2 "
+            <textarea class="w-full h-24 resize-y border p-3  my-2 "
                       placeholder="Say Something" wire:model.lazy="body">
                         </textarea>
         </div>
