@@ -37185,22 +37185,16 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //
         __webpack_require__.r(__webpack_exports__);
         /* harmony import */
         var laravel_echo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! laravel-echo */ "./node_modules/laravel-echo/dist/echo.js");
-window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
  * code may be modified to fit the specific needs of your application.
  */
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 try {
   window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-    __webpack_require__(!(function webpackMissingModule() {
-        var e = new Error("Cannot find module 'bootstrap'");
-        e.code = 'MODULE_NOT_FOUND';
-        throw e;
-    }()));
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
