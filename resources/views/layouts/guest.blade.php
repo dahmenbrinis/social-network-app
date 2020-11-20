@@ -33,9 +33,9 @@
                             <div class="col-lg-6">
                                 <div class="timeline-logo-area d-flex align-items-center">
                                     <div class="timeline-logo">
-                                        <a href="index.blade.php">
-                                            <img src="{{asset('assets/images/logo/logo-white.png')}}">
-                                        </a>
+                                        <div class="w-12 ">
+                                            <x-logo></x-logo>
+                                        </div>
                                     </div>
                                     <div class="timeline-tagline">
                                         <h6 class="tagline">Connect and share with the people in your life </h6>
@@ -68,19 +68,20 @@
                 <div class="timeline-page-wrapper">
                     <div class="container-fluid p-0">
                         <div class="row no-gutters">
-                            <div class="col-lg-6 order-2 order-lg-1">
-                                <div class="timeline-bg-content bg-img"
-                                     data-bg="assets/images/timeline/adda-timeline.jpg">
-                                    <h3 class="timeline-bg-title">Let’s see what’s happening to you and your world.
+                            <div class="col-lg-6 order-2 order-lg-1 ">
+                                <div class="timeline-bg-content bg-img "
+                                     data-bg="assets/images/projectImages/background2.jpg">
+                                    <h3 class="timeline-bg-title text-3xl font-bold ">Let’s see what’s happening to you
+                                        and your world.
                                         Welcome
-                                        in Adda.</h3>
+                                        in Blitz. : )</h3>
                                 </div>
                             </div>
                             <div class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-center">
                                 <div class="signup-form-wrapper">
                                     <h1 class="create-acc text-center">Create An Account</h1>
                                     <div class="signup-inner text-center">
-                                        <h3 class="title">Wellcome to Adda</h3>
+                                        <h3 class="title font-extrabold">Welcome to Blitz</h3>
 
                                         <form method="POST" action="{{ route('register') }}" class="signup-inner--form">
                                             @csrf

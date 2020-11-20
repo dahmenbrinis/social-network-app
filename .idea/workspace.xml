@@ -2,12 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/images/projectImages/background.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/banner/advertise.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/banner/banner-small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/banner/profile-banner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/books/book-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/books/book-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/books/book-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/books/book-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/books/book-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/books/book-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/gallery/gallery-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/logo/logo-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/logo/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/photos/photo-blank.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-large-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-large-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-large-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-large-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-large-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-large-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/post/post-large-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sports/sport-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sports/sport-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sports/sport-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sports/sport-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sports/sport-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/sports/sport-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/timeline/adda-timeline.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/projectImages/background2.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/signup.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -199,17 +251,19 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="I:\web\yellow\learning\resources\views" />
-      <recent name="I:\web\yellow\learning\public" />
-      <recent name="I:\web\yellow\learning\resources\js\components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="I:\web\yellow\learning\resources\js" />
       <recent name="I:\web\yellow\learning\resources" />
       <recent name="I:\web\yellow\learning\resources\js\components" />
       <recent name="I:\web\yellow\learning\resources\views" />
       <recent name="I:\web\yellow\learning\resources\views\posts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\web\yellow\learning\public\assets\images\projectImages" />
+      <recent name="I:\web\yellow\learning\public\assets\images\project images" />
+      <recent name="I:\web\yellow\learning\resources\views" />
+      <recent name="I:\web\yellow\learning\public" />
+      <recent name="I:\web\yellow\learning\resources\js\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -327,14 +381,7 @@
       <workItem from="1605702737162" duration="8874000" />
       <workItem from="1605713022056" duration="3316000" />
       <workItem from="1605769336719" duration="12485000" />
-      <workItem from="1605782618992" duration="56322000" />
-    </task>
-    <task id="LOCAL-00011" summary="filling posts table attributes">
-      <created>1604110854728</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1604110854728</updated>
+      <workItem from="1605782618992" duration="57887000" />
     </task>
     <task id="LOCAL-00012" summary="creating CRUD for the posts">
       <created>1604543561541</created>
@@ -672,7 +719,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605878964251</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="adding the photo functionality of the post and some route cleanup">
+      <created>1605893890978</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1605893890978</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -737,7 +791,8 @@
     <MESSAGE value="setting the ui of login/register page and reducing the routes" />
     <MESSAGE value="notification setup" />
     <MESSAGE value="setting the photo of the post" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting the photo of the post" />
+    <MESSAGE value="adding the photo functionality of the post and some route cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding the photo functionality of the post and some route cleanup" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
