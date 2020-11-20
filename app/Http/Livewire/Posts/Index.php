@@ -62,6 +62,6 @@ class Index extends Component
         });
         $tmpPosts = $tmpPosts->merge($user->posts);
         $this->postsCount = $tmpPosts->count();
-        $this->posts = $tmpPosts->take($this->postsPaginated);
+        $this->posts = $tmpPosts->take($this->postsPaginated)->reverse();
     }
 }

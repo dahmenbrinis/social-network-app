@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/dahme.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/dahme.xml" afterDir="false" />
+    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="setting the photo of the post">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts/Create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_19_171656_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_19_171656_create_images_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/image1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/image2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/image3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/image4.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -331,14 +335,7 @@
       <workItem from="1605702737162" duration="8874000" />
       <workItem from="1605713022056" duration="3316000" />
       <workItem from="1605769336719" duration="12485000" />
-      <workItem from="1605782618992" duration="29128000" />
-    </task>
-    <task id="LOCAL-00008" summary="factory for the post model">
-      <created>1604109493921</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1604109493921</updated>
+      <workItem from="1605782618992" duration="46814000" />
     </task>
     <task id="LOCAL-00009" summary="factory for the post model">
       <created>1604110285055</created>
@@ -676,7 +673,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605806665229</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="setting the photo of the post">
+      <created>1605856031100</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1605856031102</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -740,7 +744,8 @@
     <MESSAGE value="setting the ui for the posts , comments" />
     <MESSAGE value="setting the ui of login/register page and reducing the routes" />
     <MESSAGE value="notification setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="notification setup" />
+    <MESSAGE value="setting the photo of the post" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting the photo of the post" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

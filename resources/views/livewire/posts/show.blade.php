@@ -32,7 +32,7 @@
                         </li>
                     </ul>
                 </div>
-        </div>
+            </div>
         @endcan
     </div>
     <!-- post title start -->
@@ -40,37 +40,38 @@
         <p class="text-lg font-semibold">{{$post->title}}</p>
         <p class="post-desc">{{$post->body}}</p>
         <div class="post-thumb-gallery img-gallery">
-            <div class="row no-gutters">
-                <div class="col-8">
-                    <figure class="post-thumb">
-                        <a class="gallery-selector" href="assets/images/post/post-large-2.jpg">
-                            <img src="assets/images/post/post-2.jpg" alt="post image">
-                        </a>
-                    </figure>
-                </div>
-                <div class="col-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <figure class="post-thumb">
-                                <a class="gallery-selector" href="assets/images/post/post-large-3.jpg">
-                                    <img src="assets/images/post/post-3.jpg" alt="post image">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="col-12">
-                            <figure class="post-thumb">
-                                <a class="gallery-selector" href="assets/images/post/post-large-4.jpg">
-                                    <img src="assets/images/post/post-4.jpg" alt="post image">
-                                </a>
-                            </figure>
-                        </div>
-                        <div class="col-12">
-                            <figure class="post-thumb">
-                                <a class="gallery-selector" href="assets/images/post/post-large-5.jpg">
-                                    <img src="assets/images/post/post-5.jpg" alt="post image">
-                                </a>
-                            </figure>
-                        </div>
+            <div class="flex ">
+                @if($post->images->first())
+                    <div class="flex-grow">
+                        <figure class="w-full h-full post-thumb">
+                            <a class="w-full h-full gallery-selector"
+                               href="{{Storage::url($post->images->first()->url)}}">
+                                <img class="w-full h-full" src="{{Storage::url($post->images->first()->url)}}">
+                            </a>
+                        </figure>
+                    </div>
+                @endif
+                <div class=" flex-shrink w-2/5">
+                    <div class="flex flex-col">
+                        @foreach($post->images as $key => $image)
+                            @if($key>0 and $key<4 )
+                                <div class="">
+                                    <figure class="post-thumb">
+                                        <a class="gallery-selector" href="{{Storage::url($image->url)}}">
+                                            <img src="{{Storage::url($image->url)}}" alt="post image">
+                                        </a>
+                                    </figure>
+                                </div>
+                            @elseif($key > 3 )
+                                <div class="hidden">
+                                    <figure class="post-thumb">
+                                        <a class="gallery-selector" href="{{Storage::url($image->url)}}">
+                                            <img src="{{Storage::url($image->url)}}" alt="post image">
+                                        </a>
+                                    </figure>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

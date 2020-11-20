@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Posts;
 
 use App\Notifications\PostAdded;
+use Arr;
 use Auth;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
@@ -14,22 +15,25 @@ class Create extends Component
     public $title = '';
     public $body = '';
     public $images;
+    public $show = false;
     protected $rules = [
         'title' => 'required|max:50',
         'body' => 'required',
-        'image.*' => 'nullable|image|max:25000',
+        'images.*' => 'nullable|image|max:25000',
     ];
 
     public function render()
     {
+//        dump($this->images);
         return view('livewire.posts.create');
     }
 
+
     public function save()
     {
+
         $data = $this->validate();
-//        dd($data);
-        $post = Auth::user()->posts()->create($data);
+        $post = Auth::user()->posts()->create(Arr::except($data, ['images']));
         foreach ($this->images as $image) {
             $post->images()->create(['url' => $image->storePublicly('photos', 'public')]);
         }
