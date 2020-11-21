@@ -45,8 +45,8 @@
                     <div class="flex-grow">
                         <figure class="w-full h-full post-thumb">
                             <a class="w-full h-full gallery-selector"
-                               href="{{Storage::url($post->images->first()->url)}}">
-                                <img class="w-full h-full" src="{{Storage::url($post->images->first()->url)}}">
+                               href="{{$post->images->first()->getUrl()}}">
+                                <img class="w-full h-full" src="{{$post->images->first()->getUrl()}}">
                             </a>
                         </figure>
                     </div>

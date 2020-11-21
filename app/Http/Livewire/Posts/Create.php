@@ -35,8 +35,10 @@ class Create extends Component
         $data = $this->validate();
         $post = Auth::user()->posts()->create(Arr::except($data, ['images']));
         foreach ($this->images as $image) {
-            $post->images()->create(['url' => $image->storePublicly('photos', 'public')]);
+            $post->images()->create(['url' => $image->storePublicly('photos')]);
+//            dd($post->images->first()->getUrl());
         }
+
         $this->emit('postAdded');
         Notification::send(Auth::user()->friends, new PostAdded());
         $this->reset(['title', 'body']);
