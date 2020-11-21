@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReactionController;
+use App\Models\Image;
 use App\Notifications\FreindRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -39,7 +40,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 // route for testing .
 
 Route::get('test1', function () {
-    return view('home');
+
+    return view('test', ['image' => Image::find(19)]);
 })->name('test1');
 Route::get('/test2', [ReactionController::class, 'like'])->name('test2');
 Route::get('test3', function () {
