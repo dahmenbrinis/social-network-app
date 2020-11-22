@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container">
+    <div class="container ">
         <div class="row">
 
             <div class="col-lg-2 order-2 order-lg-1">...</div>

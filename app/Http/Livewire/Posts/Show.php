@@ -22,6 +22,7 @@ class Show extends Component
         return [
             "echo-private:postUpdated.{$this->post->id},PostUpdatedEvent" => 'initData',
             'postUpdated' => 'initData',
+            'commentAdded' => 'initData',
         ];
 
     }

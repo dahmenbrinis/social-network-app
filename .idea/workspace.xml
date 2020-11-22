@@ -2,9 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/images/projectImages/profileCover.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/ShowFriendRequestsNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/ShowFriendRequestsNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts/Create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Posts/Show.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Posts/Show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_000632_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_000632_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_000652_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_000652_create_comments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_000706_create_reactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_000706_create_reactions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_014402_create_friends_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_014402_create_friends_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_015256_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_015256_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_19_171656_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_19_171656_create_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-midle-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-midle-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-midle-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-35.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-37.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/images/profile/profile-small-9.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/about.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/change_password.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/edit.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -190,25 +253,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/images/projectImages" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\web\yellow\learning\resources\js" />
-      <recent name="I:\web\yellow\learning\resources" />
-      <recent name="I:\web\yellow\learning\resources\js\components" />
-      <recent name="I:\web\yellow\learning\resources\views" />
-      <recent name="I:\web\yellow\learning\resources\views\posts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="I:\web\yellow\learning\public\assets\images\projectImages" />
       <recent name="I:\web\yellow\learning\public\assets\images\project images" />
       <recent name="I:\web\yellow\learning\resources\views" />
       <recent name="I:\web\yellow\learning\public" />
       <recent name="I:\web\yellow\learning\resources\js\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\web\yellow\learning\public\assets\images\projectImages" />
+      <recent name="I:\web\yellow\learning\resources\js" />
+      <recent name="I:\web\yellow\learning\resources" />
+      <recent name="I:\web\yellow\learning\resources\js\components" />
+      <recent name="I:\web\yellow\learning\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -223,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.watch">
+  <component name="RunManager" selected="npm.server">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -327,41 +390,11 @@
       <workItem from="1605713022056" duration="3316000" />
       <workItem from="1605769336719" duration="12485000" />
       <workItem from="1605782618992" duration="59413000" />
-    </task>
-    <task id="LOCAL-00013" summary="installing laravel jetstream">
-      <created>1604834783917</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1604834783917</updated>
-    </task>
-    <task id="LOCAL-00014" summary="installing laravel jetstream">
-      <created>1604836505268</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1604836505268</updated>
-    </task>
-    <task id="LOCAL-00015" summary="adding the fried request functionality">
-      <created>1604904236210</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1604904236210</updated>
-    </task>
-    <task id="LOCAL-00016" summary="adding the fried request functionality">
-      <created>1604904438865</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1604904438865</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Merge remote-tracking branch 'origin/main' into main">
-      <created>1604917909259</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1604917909259</updated>
+      <workItem from="1605976870361" duration="7628000" />
+      <workItem from="1605994888810" duration="60000" />
+      <workItem from="1606035759213" duration="6185000" />
+      <workItem from="1606054143947" duration="1640000" />
+      <workItem from="1606064038135" duration="1396000" />
     </task>
     <task id="LOCAL-00018" summary="enhancing the posts controller">
       <created>1604919379166</created>
@@ -671,7 +704,42 @@
       <option name="project" value="LOCAL" />
       <updated>1605895391635</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="adding the photo functionality of the post and some route cleanup">
+      <created>1605959640633</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1605959640633</updated>
+    </task>
+    <task id="LOCAL-00063" summary="adding the photo functionality of the post and some route cleanup">
+      <created>1605962447147</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1605962447147</updated>
+    </task>
+    <task id="LOCAL-00064" summary="adding the photo functionality of the post and some route cleanup">
+      <created>1605964642833</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1605964642833</updated>
+    </task>
+    <task id="LOCAL-00065" summary="compressing the app.js file">
+      <created>1605965460232</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1605965460232</updated>
+    </task>
+    <task id="LOCAL-00066" summary="compressing the app.js file">
+      <created>1605966103392</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1605966103393</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -714,7 +782,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="setting the edit user page" />
     <MESSAGE value="setting the update password action" />
     <MESSAGE value="deleting unused files" />
@@ -737,7 +807,8 @@
     <MESSAGE value="notification setup" />
     <MESSAGE value="setting the photo of the post" />
     <MESSAGE value="adding the photo functionality of the post and some route cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding the photo functionality of the post and some route cleanup" />
+    <MESSAGE value="compressing the app.js file" />
+    <option name="LAST_COMMIT_MESSAGE" value="compressing the app.js file" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

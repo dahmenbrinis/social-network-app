@@ -5,10 +5,12 @@ namespace App\Http\Livewire\Friends;
 use App\Models\User;
 use App\Notifications\FriendRequest;
 use Auth;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 
 class ShowFriendRequestsNotification extends Component
 {
+    use AuthorizesRequests;
     public $friendRequests;
     public $notificationCount = 0;
     public $screen;
@@ -40,6 +42,7 @@ class ShowFriendRequestsNotification extends Component
 
     public function acceptInvitation($user)
     {
+        $this->authorize('acceptFriendRequest', $user);
         $user = User::find($user);
         $user->friendRequests()->syncWithoutDetaching([Auth::id() => ['confirmed' => 1]]);
         Auth::user()->friendRequests()->syncWithoutDetaching([$user->id => ['confirmed' => 1]]);
@@ -48,6 +51,7 @@ class ShowFriendRequestsNotification extends Component
 
     public function denyInvitation($user)
     {
+        $this->authorize('denyFriendRequest', $user);
         Auth::user()->friendRequests()->detach($user);
         $this->initData();
     }

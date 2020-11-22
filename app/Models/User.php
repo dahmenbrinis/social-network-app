@@ -28,6 +28,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'date_of_birth',
+        'gender',
+        'state'
     ];
 
     /**
@@ -60,6 +63,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+
+    public function coverImage()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 
     public function posts()
     {

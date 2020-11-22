@@ -12,8 +12,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    @include('layouts.styles')
     @livewireStyles
+@include('layouts.styles')
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
@@ -25,7 +25,7 @@
     <!-- Page Content -->
     <main class="">
         <div class="main-wrapper">
-            <br><br><br><br>
+            <br><br><br>
             {{ $slot }}
         </div>
     </main>
@@ -35,12 +35,12 @@
 </div>
 
 @stack('modals')
+@include('layouts.scripts')
+<script src="js/app.js"></script>
 @livewireScripts
 {{--@if(config('app.env') == 'local')--}}
 {{--    <script src="http://localhost:35729/livereload.js"></script>--}}
 {{--    <script src="http://127.0.0.1:35729/livereload.js"></script>--}}
 {{--@endif--}}
-@include('layouts.scripts')
-<script src="js/app.js"></script>
 </body>
 </html>

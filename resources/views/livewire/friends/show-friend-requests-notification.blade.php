@@ -49,7 +49,7 @@
     <li class="notification-trigger">
         <a class="msg-trigger-btn relative" href="#b">
             notification
-            @if(!$notificationCount )
+            @if($notificationCount )
                 <div
                     class="absolute w-5 h-5 pt-1 -mr-3 font-hairline rounded-full text-xs text-center text-white bg-red-500 opacity-75 top-0 right-0">
                     {{$notificationCount}}

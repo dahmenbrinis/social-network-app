@@ -1,13 +1,22 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<img src="{{$image->getUrl()}}" alt="">
-</body>
-</html>
+<x-app-layout>
+    @can('sendFriendRequest',\App\Models\User::find(3))
+        worked
+    @endcan
+    <div class="w-2/5 container ">
+        <div class="w-1/5 m-2 ">
+            <livewire:friends.friend-card-actions :user="\App\Models\User::find(6)->id"/>
+        </div>
+        <div class="w-1/5 m-2 ">
+            <livewire:friends.friend-card-actions :user="\App\Models\User::find(6)->id"/>
+        </div>
+        <div class="w-1/5 m-2 ">
+            <livewire:friends.friend-card-actions :user="\App\Models\User::find(6)->id"/>
+        </div>
+        <div class="w-1/5 m-2 ">
+            <livewire:friends.friend-card-actions :user="\App\Models\User::find(6)->id"/>
+        </div>
+        <div class="w-1/5 m-2 ">
+            <livewire:friends.friend-card-actions :user="\App\Models\User::find(6)->id"/>
+        </div>
+    </div>
+</x-app-layout>
