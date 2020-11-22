@@ -23779,17 +23779,8 @@
          */
         window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
-        try {
-            window.Popper = __webpack_require__(!(function webpackMissingModule() {
-                var e = new Error("Cannot find module 'popper.js'");
-                e.code = 'MODULE_NOT_FOUND';
-                throw e;
-            }()))["default"];
-            window.$ = window.jQuery = __webpack_require__(!(function webpackMissingModule() {
-                var e = new Error("Cannot find module 'jquery'");
-                e.code = 'MODULE_NOT_FOUND';
-                throw e;
-            }()));
+        try {// window.Popper = require('popper.js').default;
+            // window.$ = window.jQuery = require('jquery');
         } catch (e) {
         }
         /**

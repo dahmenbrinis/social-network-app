@@ -2,7 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     purge: {
-        enabled: false,
+        enabled: true,
         content: [
             path.resolve('resources/**/*.html'),
             path.resolve('resources/**/*.vue'),
@@ -28,7 +28,7 @@ module.exports = {
     },
 
     plugins: [
-        require('@tailwindcss/ui'),
+        // require('@tailwindcss/ui'),
         require('@fullhuman/postcss-purgecss')
     ],
 };
