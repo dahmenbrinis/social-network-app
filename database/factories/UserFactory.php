@@ -31,7 +31,7 @@ class UserFactory extends Factory
             'name' => $this->faker->name($gender ? 'female' : 'male'),
             'gender' => $gender,
             'date_birth' => $this->faker->dateTimeInInterval('-50 years', '-15 years'),
-            'state' => rand(0, 1),
+            'state' => 0,
         ];
     }
 }

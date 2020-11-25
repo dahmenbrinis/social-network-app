@@ -32,9 +32,31 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 d-none d-md-block">
-                        <div class="profile-edit-panel">
-                            <button class="edit-btn">ADD / ACCEPT</button>
+                    <div class="col-lg-3 col-md-4 d-none d-md-block">
+                        <div class="profile-edit-panel  flex ">
+                            @can('acceptFriendRequest',$user)
+                                <button wire:click="acceptInvitation"
+                                        class="edit-btn font-semibold px-3 m-1 text-md text-white ">
+                                    Accept
+                                </button>
+                                @can('denyFriendRequest',$user)
+                                    <button wire:click="denyInvitation"
+                                            class=" edit-btn font-semibold  px-3 m-1 text-md text-white  bg-gray-200">
+                                        Deny
+                                    </button>
+                                @endcan
+                            @elsecan('sendFriendRequest',$user)
+                                <button wire:click="sendInvitation"
+                                        class="edit-btn font-semibold px-3 m-1 text-md text-white ">
+                                    Send Friend Request
+                                </button>
+                            @elsecan('removeFriend',$user)
+                                <button wire:click="removeFriend"
+                                        class="edit-btn font-semibold p-3 px-3 m-1 text-md text-white ">
+                                    remove from friends list
+                                </button>
+                            @endcan
+
                         </div>
                     </div>
                 </div>

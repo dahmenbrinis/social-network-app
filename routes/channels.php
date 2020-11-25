@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -27,5 +28,19 @@ Broadcast::channel('postUpdated.{post}', function ($user, $post) {
 
 Broadcast::channel('commentsUpdated.{post}', function ($user, $post) {
 //    return  $post->user->friends->contains($user);
+    return true;
+});
+
+Broadcast::channel('messageSent.{receiver}', function ($user, User $receiver) {
+//    return $receiver->friends->contains($user);
+    return true;
+});
+
+Broadcast::channel('online', function ($user) {
+//    return $receiver->friends->contains($user);
+    return $user;
+});
+Broadcast::channel('onlineUser', function ($user, User $receiver) {
+//    return $receiver->friends->contains($user);
     return true;
 });

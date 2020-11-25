@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use DB;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -30,6 +31,7 @@ class UserSeeder extends Seeder
                 $random_user->friends()->syncWithoutDetaching($user);
             }
         });
+        DB::table('friends')->update(['confirmed' => 1]);
 
     }
 }

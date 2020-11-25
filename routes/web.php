@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReactionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserOnlineController;
 use App\Notifications\FreindRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,5 @@ Route::get('test3', function () {
 //    return view('posts.index');
     return 'test3 page';
 })->name('test3');
+Route::middleware('auth:sanctum')->get('/api/user/{user}/online', [UserOnlineController::class, 'online']);
+Route::middleware('auth:sanctum')->get('/api/user/{user}/offline', [UserOnlineController::class, 'offline']);

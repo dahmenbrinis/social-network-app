@@ -11,22 +11,31 @@ class FriendsPolicy
 
     public function sendFriendRequest(User $user, User $targetUser)
     {
+        if ($user->id == $targetUser->id) return false;
         if ($targetUser == null) return false;
         return !($user->hasRequestedFriendInvitation($targetUser) or $user->isFriend($targetUser));
     }
 
     public function acceptFriendRequest(User $user, User $targetUser)
     {
+        if ($user->id == $targetUser->id) return false;
         if ($targetUser == null) return false;
         return !$user->isFriend($targetUser) and $targetUser->hasRequestedFriendInvitation($user);
     }
 
     public function denyFriendRequest(User $user, User $targetUser)
     {
+        if ($user->id == $targetUser->id) return false;
         if ($targetUser == null) return false;
         return !$user->isFriend($targetUser) and $targetUser->hasRequestedFriendInvitation($user);
     }
 
+    public function unfriend(User $user, User $targetUser)
+    {
+        if ($user->id == $targetUser->id) return false;
+        if ($targetUser == null) return false;
+        return $user->isFriend($targetUser);
+    }
     /**
      * Determine whether the user can view any models.
      *
