@@ -127,7 +127,7 @@ class User extends Authenticatable
     // send a message to a specific user this logic should be on the controller side but it is here for the testing purpose .
     public function send_message(User $User, $content)
     {
-        $this->messages_received()->attach($User, ['content' => $content,]);
+        return $this->messages_received()->attach($User, ['content' => $content,]);
     }
 
     // @return the messages sent by the user .
@@ -145,13 +145,14 @@ class User extends Authenticatable
             ->withTimestamps()->withPivot('content');
     }
 
-    public function messages_received_from(User $User)
+    public function conversationWith(User $user)
     {
-        return $this->messages_received->where('id', $User->id);
-    }
-
-    public function messages_sent_to(User $User)
-    {
-        return $this->messages_sent->where('id', $User->id);
+        return Message::where(function ($query) use ($user) {
+            $query->where('sender', $user->id)
+                ->where('receiver', $this->id);
+        })->orWhere(function ($query) use ($user) {
+            $query->where('receiver', $user->id)
+                ->where('sender', $this->id);
+        });
     }
 }

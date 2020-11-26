@@ -1,6 +1,13 @@
-<div x-data="{isOpen : false}">
+<div x-data="{isOpen : true}">
+    <div class="fixed bottom-0 left-0 grid float-right w-4/5 grid-cols-5 px-4 gap-x-2">
+        @foreach($usersChatTabs as $key => $user)
+            @if($key < 5 )
+                <livewire:messages.index :user="$user" :key="'chat-'. $user"/>
+            @endif
+        @endforeach
+    </div>
     <div class="fixed bottom-0 right-0 z-0 flex flex-col flex-col-reverse w-1/5 h-full ">
-        {{--       todo fill this space with somthing--}}
+        {{--       todo fill this space --}}
         <div x-show="isOpen" class="flex flex-col-reverse pt-6 bg-white divide-y shadow-md"
              x-transition:enter="transition ease-out duration-100"
              x-transition:enter-start="transform opacity-0 scale-y-0"
@@ -15,7 +22,7 @@
                        placeholder="Search">
             </div>
             @foreach($users as $user )
-                <div class="flex items-center py-2 cursor-pointer">
+                <div wire:click="openChatTab('{{$user->id}}')" class="flex items-center py-2 cursor-pointer">
                     <div class="relative px-2 mr-2">
                         @if($user->state)
                             <span
@@ -36,4 +43,6 @@
             Chat
         </div>
     </div>
+    {{--    {{dump($usersChatTabs)}}--}}
+
 </div>
