@@ -5,14 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Messages/MessagesNavBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Messages/MessagesNavBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Message.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notifications/MessageSent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/MessageSent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -356,14 +351,7 @@
       <workItem from="1606219630581" duration="2603000" />
       <workItem from="1606223941841" duration="3269000" />
       <workItem from="1606247784592" duration="19943000" />
-      <workItem from="1606351558031" duration="15116000" />
-    </task>
-    <task id="LOCAL-00021" summary="making realtime application">
-      <created>1605175464016</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1605175464016</updated>
+      <workItem from="1606351558031" duration="24338000" />
     </task>
     <task id="LOCAL-00022" summary="making realtime application">
       <created>1605176427812</created>
@@ -701,7 +689,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606331441739</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="chat functionality">
+      <created>1606409541831</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1606409541831</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -771,7 +766,8 @@
     <MESSAGE value="adding the photo functionality of the post and some route cleanup" />
     <MESSAGE value="compressing the app.js file" />
     <MESSAGE value="showing the online users and some fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="showing the online users and some fixes" />
+    <MESSAGE value="chat functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="chat functionality" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

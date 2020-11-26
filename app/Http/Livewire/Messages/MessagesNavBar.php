@@ -25,6 +25,7 @@ class MessagesNavBar extends Component
         $user_id = Auth::id();
         return [
             "echo-notification:App.Models.User.{$user_id},MessageSent" => 'notification',
+            'closeChatTab' => 'closeChatTab',
             'newUser' => '$refresh',
         ];
     }
@@ -40,8 +41,15 @@ class MessagesNavBar extends Component
     public function openChatTab($user_id)
     {
         if (!$this->usersChatTabs->contains($user_id)) {
-            $this->usersChatTabs->push($user_id);
+            $this->usersChatTabs = $this->usersChatTabs->prepend($user_id)->take(5);
         }
+    }
+
+    public function closeChatTab($user_id)
+    {
+        $this->usersChatTabs = $this->usersChatTabs->filter(function ($value, $key) use ($user_id) {
+            return $value != $user_id;
+        });
     }
 
 

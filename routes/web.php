@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FriendsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReactionController;
 use App\Http\Controllers\UserController;
@@ -25,6 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/home', [PostController::class, 'index'])->name('home');
     Route::resource('userProfile', UserController::class);
     Route::resource('post', PostController::class)->except(['index']);
+    Route::get('/friends', [FriendsController::class, 'index']);
 
     Route::get('test', function () {
         return view('test');

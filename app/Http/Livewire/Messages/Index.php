@@ -27,7 +27,6 @@ class Index extends Component
         $user_id = Auth::id();
         return [
             "echo-notification:App.Models.User.{$user_id},MessageSent" => 'notification',
-            'openChatTab' => 'openChatTab',
             'messageSent' => '$refresh',
         ];
     }
@@ -48,6 +47,11 @@ class Index extends Component
         $this->reset('messageBox');
         $this->emitSelf('messageSent');
         Notification::send($this->user, new MessageSent(Auth::id()));
+    }
+
+    public function closeChatTab()
+    {
+        $this->emitUp('closeChatTab', $this->user->id);
     }
 
     public function render()
