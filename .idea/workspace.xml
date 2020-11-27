@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="breakpoint 30% progress">
+    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendCardActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendCardActions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/friends/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/friends/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/friends-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/friends-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -356,14 +352,7 @@
       <workItem from="1606351558031" duration="26227000" />
       <workItem from="1606470738207" duration="10440000" />
       <workItem from="1606491634243" duration="7452000" />
-      <workItem from="1606510759753" duration="826000" />
-    </task>
-    <task id="LOCAL-00026" summary="making realtime application">
-      <created>1605439701272</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1605439701272</updated>
+      <workItem from="1606510759753" duration="1110000" />
     </task>
     <task id="LOCAL-00027" summary="making realtime application">
       <created>1605440065892</created>
@@ -701,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606505434040</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="breakpoint 30% progress">
+      <created>1606511632304</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1606511632305</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
