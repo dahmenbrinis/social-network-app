@@ -10,95 +10,7 @@
                             <ul>
                                 <li class="active"><a href="{{route('home')}}">home</a></li>
                                 {{--                                    todo make these nav notifications buttons work --}}
-                                <li class="msg-trigger"><a class="msg-trigger-btn" href="#a">message</a>
-                                    <div class="message-dropdown" id="a">
-                                        <div class="dropdown-title">
-                                            <p class="recent-msg">recent message</p>
-                                            <div class="message-btn-group">
-                                                <button>New group</button>
-                                                <button>New Message</button>
-                                            </div>
-                                        </div>
-                                        <ul class="dropdown-msg-list">
-                                            <li class="msg-list-item d-flex justify-content-between">
-                                                <!-- profile picture end -->
-                                                <div class="profile-thumb">
-                                                    <figure class="profile-thumb-middle">
-                                                        <img src="assets/images/profile/profile-small-3.jpg"
-                                                             alt="profile picture">
-                                                    </figure>
-                                                </div>
-                                                <!-- profile picture end -->
-
-                                                <!-- message content start -->
-                                                <div class="msg-content">
-                                                    <h6 class="author"><a href="profile.html">Mili Raoulin</a></h6>
-                                                    <p>Many desktop publishing packages and web page editors now use
-                                                        Lorem Ipsum as their default</p>
-                                                </div>
-                                                <!-- message content end -->
-
-                                                <!-- message time start -->
-                                                <div class="msg-time">
-                                                    <p>25 Apr 2019</p>
-                                                </div>
-                                                <!-- message time end -->
-                                            </li>
-                                            <li class="msg-list-item d-flex justify-content-between">
-                                                <!-- profile picture end -->
-                                                <div class="profile-thumb">
-                                                    <figure class="profile-thumb-middle">
-                                                        <img src="assets/images/profile/profile-small-4.jpg"
-                                                             alt="profile picture">
-                                                    </figure>
-                                                </div>
-                                                <!-- profile picture end -->
-
-                                                <!-- message content start -->
-                                                <div class="msg-content">
-                                                    <h6 class="author"><a href="profile.html">Jhon Doe</a></h6>
-                                                    <p>Many desktop publishing packages and web page editors now use
-                                                        Lorem Ipsum as their default</p>
-                                                </div>
-                                                <!-- message content end -->
-
-                                                <!-- message time start -->
-                                                <div class="msg-time">
-                                                    <p>15 May 2019</p>
-                                                </div>
-                                                <!-- message time end -->
-                                            </li>
-                                            <li class="msg-list-item d-flex justify-content-between">
-                                                <!-- profile picture end -->
-                                                <div class="profile-thumb">
-                                                    <figure class="profile-thumb-middle">
-                                                        <img src="assets/images/profile/profile-small-5.jpg"
-                                                             alt="profile picture">
-                                                    </figure>
-                                                </div>
-                                                <!-- profile picture end -->
-
-                                                <!-- message content start -->
-                                                <div class="msg-content">
-                                                    <h6 class="author"><a href="profile.html">Jon Wileyam</a></h6>
-                                                    <p>Many desktop publishing packages and web page editors now use
-                                                        Lorem Ipsum as their default</p>
-                                                </div>
-                                                <!-- message content end -->
-
-                                                <!-- message time start -->
-                                                <div class="msg-time">
-                                                    <p>20 Jun 2019</p>
-                                                </div>
-                                                <!-- message time end -->
-                                            </li>
-                                        </ul>
-                                        <div class="msg-dropdown-footer">
-                                            <button>See all in messenger</button>
-                                            <button>Mark All as Read</button>
-                                        </div>
-                                    </div>
-                                </li>
+                                <livewire:messages.show-messages-notification :screen="'large'"/>
                                 <livewire:friends.show-friend-requests-notification :screen="'large'"/>
 
                             </ul>
@@ -110,10 +22,6 @@
                 <div class="col-md-2">
                     <!-- brand logo start -->
                     <div class="brand-logo text-center">
-                        {{--                        <a href="index.html">--}}
-                        {{--                            --}}{{--                                todo change the logo image--}}
-                        {{--                            <img src="assets/images/logo/logo.png" alt="brand logo">--}}
-                        {{--                        </a>--}}
                         <div class="w-12  ">
                             <x-logo></x-logo>
                         </div>
@@ -125,16 +33,7 @@
                     <div class="header-top-right d-flex align-items-center justify-content-end">
                         <!-- header top search start -->
                         {{--                            todo try to make this search field useful--}}
-                    {{--                        <livewire:friends.show-friend-requests-notification/>--}}
-
-                    {{--                        <div class="header-top-search">--}}
-                    {{--                            <form class="top-search-box">--}}
-                    {{--                                <input type="text" placeholder="Search" class="top-search-field">--}}
-                    {{--                                <button class="top-search-btn"><i class="flaticon-search"></i></button>--}}
-                    {{--                            </form>--}}
-                    {{--                        </div>--}}
-                        <!-- header top search end -->
-                        <!-- profile picture start -->
+                        {{--                        <livewire:friends.show-friend-requests-notification/>--}}
                         <div class="profile-setting-box">
                             <div class="profile-thumb-small">
                                 <a href="javascript:void(0)" class="profile-triger">
@@ -190,7 +89,7 @@
                 <div class="w-10  ">
                     <x-logo></x-logo>
                 </div>
-                </a>
+            </a>
 
             <div class="mobile-menu w-100">
                 <ul>
@@ -203,79 +102,7 @@
                         </button>
                     </li>
                     <li>
-                        <button class="chat-trigger notification"><i class="flaticon-chats"></i>
-                            <span>04</span>
-                        </button>
-                        <div class="mobile-chat-box">
-                            <div class="live-chat-title">
-                                <!-- profile picture end -->
-                                <div class="profile-thumb">
-                                    <a href="profile.html">
-                                        <figure class="profile-thumb-small profile-active">
-                                            <img src="assets/images/profile/profile-small-15.jpg" alt="profile picture">
-                                        </figure>
-                                    </a>
-                                </div>
-                                <!-- profile picture end -->
-                                <div class="posted-author">
-                                    <h6 class="author"><a href="profile.html">Robart Marloyan</a></h6>
-                                    <span class="active-pro">active now</span>
-                                </div>
-                                <div class="live-chat-settings ml-auto">
-                                    <button class="chat-settings"><img src="assets/images/icons/settings.png" alt="">
-                                    </button>
-                                    <button class="close-btn"><img src="assets/images/icons/close.png" alt=""></button>
-                                </div>
-                            </div>
-                            <div class="message-list-inner">
-                                <ul class="message-list custom-scroll ps ps--active-y">
-                                    <li class="text-friends">
-                                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                                            their default model text</p>
-                                        <div class="message-time">10 minute ago</div>
-                                    </li>
-                                    <li class="text-author">
-                                        <p>Many desktop publishing packages and web page editors</p>
-                                        <div class="message-time">5 minute ago</div>
-                                    </li>
-                                    <li class="text-friends">
-                                        <p>packages and web page editors </p>
-                                        <div class="message-time">2 minute ago</div>
-                                    </li>
-                                    <li class="text-friends">
-                                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                                            their default model text</p>
-                                        <div class="message-time">10 minute ago</div>
-                                    </li>
-                                    <li class="text-author">
-                                        <p>Many desktop publishing packages and web page editors</p>
-                                        <div class="message-time">5 minute ago</div>
-                                    </li>
-                                    <li class="text-friends">
-                                        <p>packages and web page editors </p>
-                                        <div class="message-time">2 minute ago</div>
-                                    </li>
-                                    <div class="ps__rail-x" style="left: 0px; bottom: 3px;">
-                                        <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                                    </div>
-                                    <div class="ps__rail-y" style="top: 0px; height: 350px; right: 2px;">
-                                        <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 157px;"></div>
-                                    </div>
-                                </ul>
-                            </div>
-                            <div class="chat-text-field mob-text-box">
-                                <textarea class="live-chat-field custom-scroll ps" placeholder="Text Message"><div
-                                        class="ps__rail-x" style="left: 0px; bottom: 3px;"><div class="ps__thumb-x"
-                                                                                                tabindex="0"
-                                                                                                style="left: 0px; width: 0px;"></div></div><div
-                                        class="ps__rail-y" style="top: 0px; right: 2px;"><div class="ps__thumb-y"
-                                                                                              tabindex="0"
-                                                                                              style="top: 0px; height: 0px;"></div></div></textarea>
-                                <button class="chat-message-send" type="submit" value="submit">
-                                    <img src="assets/images/icons/plane.png" alt="">
-                                </button>
-                            </div>
-                        </div>
+                        <livewire:messages.show-messages-notification :screen="'small'"/>
                     </li>
                     <li>
                         <button class="search-trigger">

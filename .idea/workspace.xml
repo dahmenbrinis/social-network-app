@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Messages/MessagesNavBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Messages/MessagesNavBar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/MessageSent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/MessageSent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/logo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/logo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -351,21 +355,9 @@
       <workItem from="1606219630581" duration="2603000" />
       <workItem from="1606223941841" duration="3269000" />
       <workItem from="1606247784592" duration="19943000" />
-      <workItem from="1606351558031" duration="24338000" />
-    </task>
-    <task id="LOCAL-00022" summary="making realtime application">
-      <created>1605176427812</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1605176427812</updated>
-    </task>
-    <task id="LOCAL-00023" summary="making realtime application">
-      <created>1605422096517</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1605422096517</updated>
+      <workItem from="1606351558031" duration="26227000" />
+      <workItem from="1606470738207" duration="10440000" />
+      <workItem from="1606491634243" duration="715000" />
     </task>
     <task id="LOCAL-00024" summary="making realtime application">
       <created>1605426810922</created>
@@ -696,7 +688,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606409541831</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="chat functionality">
+      <created>1606430660548</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1606430660548</updated>
+    </task>
+    <task id="LOCAL-00072" summary="chat functionality">
+      <created>1606470900329</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1606470900330</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

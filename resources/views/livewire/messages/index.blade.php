@@ -37,7 +37,7 @@
             {{$user->name}}
         </div>
         <button wire:click="closeChatTab"
-                class="absolute right-0 p-2 px-2 text-lg font-semibold text-black rounded hover:bg-gray-800 hover:text-white">
+                class="absolute right-0 p-1 px-2 text-lg font-semibold text-black rounded hover:bg-gray-800 hover:text-white">
             x
         </button>
     </div>

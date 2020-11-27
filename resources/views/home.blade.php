@@ -43,7 +43,6 @@
                 <livewire:posts.index/>
             </div>
             <div class="col-lg-2 order-3">...</div>
-            <livewire:messages.messages-nav-bar/>
         </div>
     </div>
 </x-app-layout>

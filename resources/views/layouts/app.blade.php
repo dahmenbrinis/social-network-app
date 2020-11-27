@@ -29,6 +29,8 @@
             {{ $slot }}
         </div>
     </main>
+    <livewire:messages.messages-nav-bar/>
+
     <div class="scroll-top bg-red-500">
         <i class="bi bi-finger-index"></i>
     </div>

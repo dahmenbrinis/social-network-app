@@ -34,7 +34,7 @@ class MessagesNavBar extends Component
     {
         if ($notification['type'] == MessageSent::class) {
 //            dd($notification['userId']);
-            $this->openChatTab($notification['userId']);
+            $this->openChatTab($notification['senderId']);
         }
     }
 

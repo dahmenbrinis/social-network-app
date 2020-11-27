@@ -9,15 +9,15 @@ use Illuminate\Notifications\Notification;
 class MessageSent extends Notification
 {
     use Queueable;
-    private $userId;
+    private $senderId;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($userId)
+    public function __construct($senderId)
     {
-        $this->userId = $userId;
+        $this->senderId = $senderId;
     }
 
     /**
@@ -41,7 +41,7 @@ class MessageSent extends Notification
     public function toBroadcast($notifiable)
     {
         return new BroadcastMessage([
-            'userId' => $this->userId,
+            'senderId' => $this->senderId,
         ]);
     }
 
@@ -54,7 +54,7 @@ class MessageSent extends Notification
     public function toArray($notifiable)
     {
         return [
-            'userId' => $this->userId,
+            'senderId' => $this->senderId,
         ];
     }
 }
