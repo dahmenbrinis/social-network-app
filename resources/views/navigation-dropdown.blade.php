@@ -1,6 +1,6 @@
 <div class="">
     {{--    on large screen --}}
-    <div class="header-top sticky bg-white d-none d-lg-block">
+    <div class="sticky bg-white header-top d-none d-lg-block">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-5">
@@ -21,8 +21,8 @@
 
                 <div class="col-md-2">
                     <!-- brand logo start -->
-                    <div class="brand-logo text-center">
-                        <div class="w-12  ">
+                    <div class="text-center brand-logo">
+                        <div class="w-12 ">
                             <x-logo></x-logo>
                         </div>
                     </div>
@@ -33,7 +33,11 @@
                     <div class="header-top-right d-flex align-items-center justify-content-end">
                         <!-- header top search start -->
                         {{--                            todo try to make this search field useful--}}
-                        {{--                        <livewire:friends.show-friend-requests-notification/>--}}
+                        {{--                                                <livewire:friends.show-friend-requests-notification/>--}}
+                        <a class='px-10 py-2 font-bold text-black text-md lg:block hover:text-red-500 xs:hidden' 
+                            href="{{route('friends')}}">
+                            Add Friends
+                        </a>
                         <div class="profile-setting-box">
                             <div class="profile-thumb-small">
                                 <a href="javascript:void(0)" class="profile-triger">
@@ -82,11 +86,11 @@
 
 
     {{--    on small screen --}}
-    <div class="mobile-header-wrapper sticky d-block d-lg-none">
+    <div class="sticky mobile-header-wrapper d-block d-lg-none">
         <div class="mobile-header position-relative ">
 
             <a class="pl-3" href="{{route('home')}}">
-                <div class="w-10  ">
+                <div class="w-10 ">
                     <x-logo></x-logo>
                 </div>
             </a>
@@ -118,7 +122,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="pr-3 pt-1">
+            <div class="pt-1 pr-3">
                 <!-- profile picture end -->
                 <div class="profile-thumb profile-setting-box">
                     <a href="javascript:void(0)" class="profile-triger">
@@ -126,7 +130,7 @@
                             <img src="{{Auth::user()->profile_photo_url}}">
                         </figure>
                     </a>
-                    <div class="profile-dropdown text-left" style="display: block;">
+                    <div class="text-left profile-dropdown" style="display: block;">
                         <div class="profile-head">
                             <h5 class="name"><a
                                     href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">{{Auth::user()->name}}</a>
