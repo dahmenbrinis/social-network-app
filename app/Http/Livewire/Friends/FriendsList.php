@@ -16,6 +16,8 @@ class FriendsList extends Component
         $user = Auth::user();
 //        dd($user->friends()->get()->pluck('id'));
         $friends = $this->getFriends($user)->paginate(16);
+
+//        dd($friends);
         return view('livewire.friends.friends-list', compact('friends'));
     }
 

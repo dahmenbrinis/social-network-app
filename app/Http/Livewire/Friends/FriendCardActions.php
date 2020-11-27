@@ -14,9 +14,10 @@ class FriendCardActions extends Component
     public $user;
     public $refresh = false;
 
-    public function mount($user)
+    public function mount(User $user)
     {
-        $this->user = User::find($user);
+//        dd($user);
+        $this->user = $user;
     }
 
     public function render()
