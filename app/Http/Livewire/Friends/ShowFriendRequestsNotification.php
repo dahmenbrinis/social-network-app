@@ -20,6 +20,7 @@ class ShowFriendRequestsNotification extends Component
         $user_id = Auth::id();
         return [
             "echo-notification:App.Models.User.{$user_id},FriendRequest" => 'notification',
+            'refresh' => '$refresh'
         ];
     }
 
@@ -40,13 +41,13 @@ class ShowFriendRequestsNotification extends Component
         return view('livewire.friends.show-friend-requests-notification');
     }
 
-    public function acceptInvitation($user)
+    public function acceptInvitation(User $user)
     {
         $this->authorize('acceptFriendRequest', $user);
-        $user = User::find($user);
         $user->friendRequests()->syncWithoutDetaching([Auth::id() => ['confirmed' => 1]]);
         Auth::user()->friendRequests()->syncWithoutDetaching([$user->id => ['confirmed' => 1]]);
         $this->initData();
+        $this->emitSelf('refresh');
     }
 
     public function denyInvitation($user)

@@ -1,6 +1,6 @@
 @if($screen=='small')
     <div class="mx-3 d-block d-lg-none">
-        <button class="notification request-trigger font-hairline">
+        <button class="notification request-trigger font-hairline" wire:click="notificationSeen">
             <svg class="h-6 w-6 text-gray-800 btn" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round">
@@ -47,7 +47,7 @@
     </div>
 @else
     <li class="notification-trigger">
-        <a class="msg-trigger-btn relative" href="#b">
+        <a class="msg-trigger-btn relative" href="#b" wire:click="notificationSeen">
             notification
             @if($notificationCount )
                 <div
@@ -77,12 +77,18 @@
                                 </h6>
                                 <p class="pt-0">{{$user->pivot->created_at->diffForHumans()}}</p>
                                 <div class="request-btn-inner mt-0">
-                                    <button wire:click="acceptInvitation('{{$user->id}}')" class="frnd-btn opacity-75">
-                                        confirm
-                                    </button>
-                                    <button wire:click="denyInvitation('{{$user->id}}')" class="frnd-btn delete">
-                                        delete
-                                    </button>
+                                    @can('acceptFriendRequest',$user)
+                                        <button wire:click="acceptInvitation('{{$user->id}}')"
+                                                class="frnd-btn opacity-75">
+                                            confirm
+                                        </button>
+                                    @endcan
+                                    @can('denyFriendRequest',$user)
+                                        <button wire:click="denyInvitation('{{$user->id}}')" class="frnd-btn delete">
+                                            delete
+                                        </button>
+                                    @endcan
+
                                 </div>
                             </div>
                         </div>

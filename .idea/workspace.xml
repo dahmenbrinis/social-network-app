@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/users/user-friends.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendCardActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendCardActions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsSuggestionList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsSuggestionList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/FriendsPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/FriendsPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/friends/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/friends/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/friend-card-actions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/friend-card-actions.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/friends-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/friends-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/friends-suggestion-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/friends-suggestion-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/ShowFriendRequestsNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/ShowFriendRequestsNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +192,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/users" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -365,21 +352,7 @@
       <workItem from="1606470738207" duration="10440000" />
       <workItem from="1606491634243" duration="7452000" />
       <workItem from="1606510759753" duration="3396000" />
-      <workItem from="1606520906503" duration="5457000" />
-    </task>
-    <task id="LOCAL-00029" summary="making realtime application">
-      <created>1605445464349</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1605445464349</updated>
-    </task>
-    <task id="LOCAL-00030" summary="making realtime application">
-      <created>1605446403381</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1605446403381</updated>
+      <workItem from="1606520906503" duration="6414000" />
     </task>
     <task id="LOCAL-00031" summary="making realtime application">
       <created>1605447307122</created>
@@ -710,7 +683,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606512745128</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="making the friends invitation functionality">
+      <created>1606526644919</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1606526644919</updated>
+    </task>
+    <task id="LOCAL-00079" summary="making the friends invitation functionality">
+      <created>1606526714370</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1606526714370</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -752,7 +739,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="null" />
     <MESSAGE value="separating the nav-bar from main php file" />
     <MESSAGE value="factory for the post model" />
     <MESSAGE value="remove unused files" />
@@ -777,7 +763,8 @@
     <MESSAGE value="finishing the basic chat functionality" />
     <MESSAGE value="breakpoint" />
     <MESSAGE value="breakpoint 30% progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="breakpoint 30% progress" />
+    <MESSAGE value="making the friends invitation functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="making the friends invitation functionality" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
