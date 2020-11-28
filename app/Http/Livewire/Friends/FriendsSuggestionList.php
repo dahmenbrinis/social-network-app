@@ -15,7 +15,7 @@ class FriendsSuggestionList extends Component
     public function render()
     {
         $user = Auth::user();
-        $suggestedFriends = $this->getSuggestedFriends($user)->paginate(16);
+        $suggestedFriends = $this->getSuggestedFriends($user)->simplePaginate(16);
         return view('livewire.friends.friends-suggestion-list', compact('suggestedFriends'));
     }
 

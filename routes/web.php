@@ -26,7 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/home', [PostController::class, 'index'])->name('home');
     Route::resource('userProfile', UserController::class);
     Route::resource('post', PostController::class)->except(['index']);
-    Route::get('/friends', [FriendsController::class, 'index'])->name('friends');
+    Route::resource('friends', FriendsController::class);
 
     Route::get('test', function () {
         return view('test');

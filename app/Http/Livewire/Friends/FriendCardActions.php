@@ -13,10 +13,12 @@ class FriendCardActions extends Component
     use AuthorizesRequests;
     public $user;
     public $refresh = false;
+    protected $listeners = [
+        'refresh' => '$refresh'
+    ];
 
     public function mount(User $user)
     {
-//        dd($user);
         $this->user = $user;
     }
 
@@ -32,16 +34,14 @@ class FriendCardActions extends Component
         $this->authorize('acceptFriendRequest', $this->user);
         $this->user->friendRequests()->syncWithoutDetaching([Auth::id() => ['confirmed' => 1]]);
         Auth::user()->friendRequests()->syncWithoutDetaching([$this->user->id => ['confirmed' => 1]]);
-        $this->refresh = !$this->refresh;
-
+        $this->emitSelf('refresh');
     }
 
     public function denyInvitation()
     {
         $this->authorize('denyFriendRequest', $this->user);
         Auth::user()->friendRequests()->detach($this->user);
-        $this->refresh = !$this->refresh;
-
+        $this->emitSelf('refresh');
     }
 
     public function sendInvitation()
@@ -49,6 +49,22 @@ class FriendCardActions extends Component
         $this->authorize('sendFriendRequest', $this->user);
         $this->user->friendRequests()->syncWithoutDetaching(Auth::user());
         $this->user->notify(new FriendRequest());
-        $this->refresh = !$this->refresh;
+        $this->emitSelf('refresh');
+    }
+
+    public function cancelInvitation()
+    {
+        $this->authorize('cancelFriendRequest', $this->user);
+        Auth::user()->friendRequests()->detach($this->user);
+        $this->user->friendRequests()->detach(Auth::user());
+        $this->emitSelf('refresh');
+    }
+
+    public function removeFriend()
+    {
+        $this->authorize('removeFriend', $this->user);
+        Auth::user()->friends()->detach($this->user);
+        $this->user->friends()->detach(Auth::user());
+        $this->emitSelf('refresh');
     }
 }

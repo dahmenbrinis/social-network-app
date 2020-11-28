@@ -24,7 +24,7 @@
                                 <nav>
                                     <ul class="main-menu">
                                         <li><a href="#">{{$user->name}}</a></li>
-                                        <li><a href="{{route('friends.show',['friend'=>$user])}}">Friends</a></li>
+                                        <li><a href="#">Friends</a></li>
 
                                         <!-- <li class="d-inline-block d-md-none"><a href="profile.html">edit profile</a></li> -->
                                     </ul>
@@ -64,11 +64,11 @@
         </div>
 
 
-        <div class="container pt-5">
+        <div class=" pt-5">
             <div class="row">
                 <div class="col-lg-2 order-2 order-lg-1">...</div>
                 <div class="col-lg-8 order-1 order-lg-2">
-                    <livewire:user-profile.index :user='$user->id'/>
+                    <livewire:friends.friends-list :user="$user" :key="'friends-list'"/>
                 </div>
                 <div class="col-lg-2 order-3">...</div>
             </div>

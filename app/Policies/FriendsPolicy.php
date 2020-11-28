@@ -30,12 +30,21 @@ class FriendsPolicy
         return !$user->isFriend($targetUser) and $targetUser->hasRequestedFriendInvitation($user);
     }
 
-    public function unfriend(User $user, User $targetUser)
+    public function removeFriend(User $user, User $targetUser)
     {
         if ($user->id == $targetUser->id) return false;
         if ($targetUser == null) return false;
         return $user->isFriend($targetUser);
     }
+
+    public function cancelFriendRequest(User $user, User $targetUser)
+    {
+        if ($user->id == $targetUser->id) return false;
+        if ($targetUser == null) return false;
+        return $user->friendRequests->contains($targetUser) or $targetUser->friendRequests->contains($user);
+    }
+
+
     /**
      * Determine whether the user can view any models.
      *

@@ -34,8 +34,8 @@
                         <!-- header top search start -->
                         {{--                            todo try to make this search field useful--}}
                         {{--                                                <livewire:friends.show-friend-requests-notification/>--}}
-                        <a class='px-10 py-2 font-bold text-black text-md lg:block hover:text-red-500 xs:hidden' 
-                            href="{{route('friends')}}">
+                        <a class='px-10 py-2 font-bold text-black text-md lg:block hover:text-red-500 xs:hidden'
+                           href="{{route('friends.index')}}">
                             Add Friends
                         </a>
                         <div class="profile-setting-box">

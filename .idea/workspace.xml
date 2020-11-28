@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/users/user-friends.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FriendsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FriendsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendCardActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendCardActions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsSuggestionList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/FriendsSuggestionList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/FriendsPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/FriendsPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/friends/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/friends/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/friend-card-actions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/friend-card-actions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/friends-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/friends-list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/friends-suggestion-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/friends-suggestion-list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -190,25 +202,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/images/projectImages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/users" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\web\yellow\learning\resources\views\users" />
+      <recent name="I:\web\yellow\learning\public\assets\images\projectImages" />
+      <recent name="I:\web\yellow\learning\resources\js" />
+      <recent name="I:\web\yellow\learning\resources" />
+      <recent name="I:\web\yellow\learning\resources\js\components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="I:\web\yellow\learning\public\assets\images\projectImages" />
       <recent name="I:\web\yellow\learning\public\assets\images\project images" />
       <recent name="I:\web\yellow\learning\resources\views" />
       <recent name="I:\web\yellow\learning\public" />
       <recent name="I:\web\yellow\learning\resources\js\components" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="I:\web\yellow\learning\public\assets\images\projectImages" />
-      <recent name="I:\web\yellow\learning\resources\js" />
-      <recent name="I:\web\yellow\learning\resources" />
-      <recent name="I:\web\yellow\learning\resources\js\components" />
-      <recent name="I:\web\yellow\learning\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -223,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.watch">
+  <component name="RunManager" selected="npm.server">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -352,21 +364,8 @@
       <workItem from="1606351558031" duration="26227000" />
       <workItem from="1606470738207" duration="10440000" />
       <workItem from="1606491634243" duration="7452000" />
-      <workItem from="1606510759753" duration="1110000" />
-    </task>
-    <task id="LOCAL-00027" summary="making realtime application">
-      <created>1605440065892</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1605440065892</updated>
-    </task>
-    <task id="LOCAL-00028" summary="making realtime application">
-      <created>1605445378388</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1605445378388</updated>
+      <workItem from="1606510759753" duration="3396000" />
+      <workItem from="1606520906503" duration="5457000" />
     </task>
     <task id="LOCAL-00029" summary="making realtime application">
       <created>1605445464349</created>
@@ -697,7 +696,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606511632305</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="breakpoint 30% progress">
+      <created>1606511931109</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1606511931110</updated>
+    </task>
+    <task id="LOCAL-00077" summary="breakpoint 30% progress">
+      <created>1606512745128</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1606512745128</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
