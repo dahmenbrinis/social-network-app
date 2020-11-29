@@ -4,7 +4,21 @@
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Friends/ShowFriendRequestsNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Friends/ShowFriendRequestsNotification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/vendor/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/vendor/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/about.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/friends.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/photos.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/user-friends.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/user-friends.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -353,6 +367,8 @@
       <workItem from="1606491634243" duration="7452000" />
       <workItem from="1606510759753" duration="3396000" />
       <workItem from="1606520906503" duration="6414000" />
+      <workItem from="1606571516555" duration="4700000" />
+      <workItem from="1606660034646" duration="7878000" />
     </task>
     <task id="LOCAL-00031" summary="making realtime application">
       <created>1605447307122</created>

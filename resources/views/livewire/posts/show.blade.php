@@ -43,7 +43,7 @@
             <div class="flex ">
                 @if($post->images->first())
                     <div class="flex-grow">
-                        <figure class="w-full h-full post-thumb">
+                        <figure class="w-full h-full post-thumb py-0.5">
                             <a class="w-full h-full gallery-selector"
                                href="{{$post->images->first()->getUrl()}}">
                                 <img class="w-full h-full" src="{{$post->images->first()->getUrl()}}">
@@ -51,29 +51,31 @@
                         </figure>
                     </div>
                 @endif
-                <div class=" flex-shrink w-2/5">
-                    <div class="flex flex-col">
-                        @foreach($post->images as $key => $image)
-                            @if($key>0 and $key<4 )
-                                <div class="">
-                                    <figure class="post-thumb">
-                                        <a class="gallery-selector" href="{{Storage::url($image->url)}}">
-                                            <img src="{{Storage::url($image->url)}}" alt="post image">
-                                        </a>
-                                    </figure>
-                                </div>
-                            @elseif($key > 3 )
-                                <div class="hidden">
-                                    <figure class="post-thumb">
-                                        <a class="gallery-selector" href="{{Storage::url($image->url)}}">
-                                            <img src="{{Storage::url($image->url)}}" alt="post image">
-                                        </a>
-                                    </figure>
-                                </div>
-                            @endif
-                        @endforeach
+                @if($post->images->count()>1)
+                    <div class="flex flex-col w-2/5">
+                        <div class="flex h-full flex-col justify-center items-center">
+                            @foreach($post->images as $key => $image)
+                                @if($key>0 and $key<5 )
+                                    <div class="flex-grow my-auto">
+                                        <figure class="post-thumb p-0.5">
+                                            <a class="gallery-selector" href="{{Storage::url($image->url)}}">
+                                                <img src="{{Storage::url($image->url)}}" alt="post image">
+                                            </a>
+                                        </figure>
+                                    </div>
+                                @elseif($key > 3 )
+                                    <div class="hidden">
+                                        <figure class="post-thumb">
+                                            <a class="gallery-selector" href="{{Storage::url($image->url)}}">
+                                                <img src="{{Storage::url($image->url)}}" alt="post image">
+                                            </a>
+                                        </figure>
+                                    </div>
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
         <div class="post-meta">

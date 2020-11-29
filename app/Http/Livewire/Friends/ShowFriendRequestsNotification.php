@@ -14,6 +14,7 @@ class ShowFriendRequestsNotification extends Component
     public $friendRequests;
     public $notificationCount = 0;
     public $screen;
+    public $bool = false;
 
     public function getListeners()
     {
@@ -24,20 +25,16 @@ class ShowFriendRequestsNotification extends Component
         ];
     }
 
-    public function initData()
-    {
-        $this->friendRequests = Auth::user()->friendRequests->reverse();
-        $this->notificationCount = Auth::user()->unreadNotifications->where('type', FriendRequest::class)->count();
-    }
 
     public function mount($screen)
     {
         $this->screen = $screen;
-        $this->initData();
     }
 
     public function render()
     {
+        $this->notificationCount = Auth::user()->unreadNotifications->where('type', FriendRequest::class)->count();
+        $this->friendRequests = Auth::user()->friendRequests->reverse();
         return view('livewire.friends.show-friend-requests-notification');
     }
 
@@ -46,27 +43,32 @@ class ShowFriendRequestsNotification extends Component
         $this->authorize('acceptFriendRequest', $user);
         $user->friendRequests()->syncWithoutDetaching([Auth::id() => ['confirmed' => 1]]);
         Auth::user()->friendRequests()->syncWithoutDetaching([$user->id => ['confirmed' => 1]]);
-        $this->initData();
+//        $this->initData();
+//        $this->bool=true;
+        $this->notificationSeen();
         $this->emitSelf('refresh');
     }
 
-    public function denyInvitation($user)
+    public function denyInvitation(User $user)
     {
         $this->authorize('denyFriendRequest', $user);
         Auth::user()->friendRequests()->detach($user);
-        $this->initData();
+//        $this->initData();
+        $this->notificationSeen();
+        $this->emitSelf('refresh');
     }
 
     public function notificationSeen()
     {
         Auth::user()->unreadNotifications->where('type', FriendRequest::class)->markAsRead();
-        $this->notificationCount = 0;
+//        $this->notificationCount = 0;
+        $this->emitSelf('refresh');
     }
 
     public function notification($notification)
     {
         if ($notification['type'] == FriendRequest::class) {
-            $this->initData();
+
         }
     }
 

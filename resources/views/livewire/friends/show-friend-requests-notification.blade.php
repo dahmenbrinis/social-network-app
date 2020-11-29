@@ -1,6 +1,6 @@
 @if($screen=='small')
     <div class="mx-3 d-block d-lg-none">
-        <button class="notification request-trigger font-hairline" wire:click="notificationSeen">
+        <button class="notification request-trigger font-hairline">
             <svg class="h-6 w-6 text-gray-800 btn" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round">
@@ -43,11 +43,16 @@
                     </div>
                 </li>
             @endforelse
+            @if($notificationCount)
+                <div class="msg-dropdown-footer">
+                    <button wire:click="notificationSeen">Mark All as Read</button>
+                </div>
+            @endif
         </ul>
     </div>
 @else
     <li class="notification-trigger">
-        <a class="msg-trigger-btn relative" href="#b" wire:click="notificationSeen">
+        <a class="msg-trigger-btn relative" href="#b">
             notification
             @if($notificationCount )
                 <div
@@ -75,7 +80,7 @@
                                 <h6 class="author opacity-75"><a
                                         href="{{route('userProfile.show',['userProfile'=>$user->id])}}">{{$user->name}}</a>
                                 </h6>
-                                <p class="pt-0">{{$user->pivot->created_at->diffForHumans()}}</p>
+                                {{--                                <p class="pt-0">{{$user->pivot->created_at->diffForHumans()}}</p>--}}
                                 <div class="request-btn-inner mt-0">
                                     @can('acceptFriendRequest',$user)
                                         <button wire:click="acceptInvitation('{{$user->id}}')"
@@ -101,6 +106,11 @@
                     </li>
             @endforelse
             </ul>
+            @if($notificationCount)
+                <div class="msg-dropdown-footer">
+                    <button wire:click="notificationSeen">Mark All as Read</button>
+                </div>
+            @endif
         </div>
     </li>
 @endif

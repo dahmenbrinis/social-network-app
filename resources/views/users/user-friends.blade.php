@@ -4,7 +4,12 @@
             {{ __('Profile') }}
         </h2>
     </x-slot>
-    <div class="-mt-3 ">
+    <div class="-mt-3 relative">
+        <label
+            class="bg-gray-900 ring-1 ring-gray-100 p-2 m-2 absolute text-gray-100 text-lg right-0 top-0 cursor-pointer hover:opacity-25 opacity-75">
+            <span>update Cover</span>
+            <input type='file' class="hidden"/>
+        </label>
         <img class="profile-banner-large bg-img w-full object-center object-cover"
              src="{{($user->coverImage)?$user->coverImage->getUrl():asset('assets/images/projectImages/profileCover.jpg')}}">
         <div class="profile-menu-area bg-white">
@@ -24,7 +29,7 @@
                                 <nav>
                                     <ul class="main-menu">
                                         <li><a href="#">{{$user->name}}</a></li>
-                                        <li><a href="#">Friends</a></li>
+                                        <li><a href="{{route('friends.show',['friend'=>$user])}}">Friends</a></li>
 
                                         <!-- <li class="d-inline-block d-md-none"><a href="profile.html">edit profile</a></li> -->
                                     </ul>
@@ -66,11 +71,11 @@
 
         <div class=" pt-5">
             <div class="row">
-                <div class="col-lg-2 order-2 order-lg-1">...</div>
-                <div class="col-lg-8 order-1 order-lg-2">
+                <div class="col-lg-3 order-2 order-lg-1">...</div>
+                <div class="col-lg-6 order-1 order-lg-2">
                     <livewire:friends.friends-list :user="$user" :key="'friends-list'"/>
                 </div>
-                <div class="col-lg-2 order-3">...</div>
+                <div class="col-lg-3 order-3">...</div>
             </div>
         </div>
     </div>

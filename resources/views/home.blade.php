@@ -1,9 +1,139 @@
 <x-app-layout>
-    <div class="container ">
+    <div class=" container ">
         <div class=" row">
 
-            <div class="col-lg-2 order-2 order-lg-1">...</div>
-            <div class="col-lg-8 order-1 order-lg-2">
+            <div class="col-lg-3 order-2 order-lg-1">
+                <aside class="widget-area">
+                    <div class="card card-profile widget-item p-0">
+                        <div class="profile-banner">
+                            <figure class="profile-banner-small">
+                                <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">
+                                    <img class="h-32 object-cover object-center"
+                                         src="{{(Auth::user()->coverImage)?Auth::user()->coverImage->getUrl():asset('assets/images/projectImages/profileCover.jpg')}}
+                                             " alt="">
+                                </a>
+                                <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}"
+                                   class="profile-thumb-2">
+                                    <img class=" rounded-full object-cover object-center"
+                                         src="{{Auth::user()->profile_photo_url }}" alt="">
+                                </a>
+                            </figure>
+                            <div class="profile-desc text-center">
+                                <h6 class="author"><a
+                                        href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">{{Auth::user()->name}}</a>
+                                </h6>
+                                <p>short profile Description here !</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- widget single item start -->
+                    <div class="card widget-item">
+                        <h4 class="widget-title">Suggested Friends</h4>
+                        <div class="widget-body">
+                            <ul class="like-page-list-wrapper">
+                                <li class="unorder-list">
+                                    <!-- profile picture end -->
+                                    <div class="profile-thumb">
+                                        <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">
+                                            <figure class="profile-thumb-small">
+                                                <img src="{{Auth::user()->profile_photo_url }}"
+                                                     alt="profile picture">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <!-- profile picture end -->
+
+                                    <div class="unorder-list-info">
+                                        <h3 class="list-title"><a
+                                                href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">{{Auth::user()->name}}</a>
+                                        </h3>
+                                        <p class="list-subtitle">5 mutual friends</p>
+                                    </div>
+                                </li>
+                                <li class="unorder-list">
+                                    <!-- profile picture end -->
+                                    <div class="profile-thumb">
+                                        <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">
+                                            <figure class="profile-thumb-small">
+                                                <img src="{{Auth::user()->profile_photo_url }}"
+                                                     alt="profile picture">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <!-- profile picture end -->
+
+                                    <div class="unorder-list-info">
+                                        <h3 class="list-title"><a
+                                                href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">{{Auth::user()->name}}</a>
+                                        </h3>
+                                        <p class="list-subtitle">5 mutual friends</p>
+                                    </div>
+                                </li>
+                                <li class="unorder-list">
+                                    <!-- profile picture end -->
+                                    <div class="profile-thumb">
+                                        <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">
+                                            <figure class="profile-thumb-small">
+                                                <img src="{{Auth::user()->profile_photo_url }}"
+                                                     alt="profile picture">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <!-- profile picture end -->
+
+                                    <div class="unorder-list-info">
+                                        <h3 class="list-title"><a
+                                                href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">{{Auth::user()->name}}</a>
+                                        </h3>
+                                        <p class="list-subtitle">5 mutual friends</p>
+                                    </div>
+                                </li>
+                                <li class="unorder-list">
+                                    <!-- profile picture end -->
+                                    <div class="profile-thumb">
+                                        <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">
+                                            <figure class="profile-thumb-small">
+                                                <img src="{{Auth::user()->profile_photo_url }}"
+                                                     alt="profile picture">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <!-- profile picture end -->
+
+                                    <div class="unorder-list-info">
+                                        <h3 class="list-title"><a
+                                                href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">{{Auth::user()->name}}</a>
+                                        </h3>
+                                        <p class="list-subtitle">5 mutual friends</p>
+                                    </div>
+                                </li>
+                                <li class="unorder-list">
+                                    <!-- profile picture end -->
+                                    <div class="profile-thumb">
+                                        <a href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">
+                                            <figure class="profile-thumb-small">
+                                                <img src="{{Auth::user()->profile_photo_url }}"
+                                                     alt="profile picture">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <!-- profile picture end -->
+
+                                    <div class="unorder-list-info">
+                                        <h3 class="list-title"><a
+                                                href="{{route('userProfile.show',['userProfile'=>Auth::id()])}}">{{Auth::user()->name}}</a>
+                                        </h3>
+                                        <p class="list-subtitle">5 mutual friends</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- widget single item end -->
+                </aside>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 ">
 
                 <div class="card card-small">
                     <div class="share-box-inner">
@@ -42,7 +172,7 @@
 
                 <livewire:posts.index/>
             </div>
-            <div class="col-lg-2 order-3">...</div>
+            <div class="col-lg-3 order-3">...</div>
         </div>
     </div>
 </x-app-layout>
