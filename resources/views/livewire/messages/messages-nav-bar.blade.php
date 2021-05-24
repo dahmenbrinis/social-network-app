@@ -1,6 +1,6 @@
 <div x-data="{isOpen : false}">
     <div
-        class="fixed bottom-0 left-0 grid float-right w-4/5 xl:grid-cols-5 lg:grid-cols-4 sm:grid-cols-2  md:grid-cols-2 px-4 gap-x-2">
+        class="fixed bottom-0 left-0 grid float-right w-4/5 xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2  md:grid-cols-2 px-4 gap-x-2">
         @foreach($usersChatTabs as $key => $user)
             @if($key < 5 )
                 <livewire:messages.index :user="$user" :key="'chat-'. $user"/>
@@ -9,7 +9,7 @@
     </div>
     <div class="fixed bottom-0 right-0 z-0 flex flex-col flex-col-reverse w-1/5 h-full ">
         {{--       todo fill this space --}}
-        <div x-show="isOpen" class="flex flex-col-reverse pt-6 bg-white divide-y shadow-md"
+        <div x-show="isOpen" class="flex flex-col-reverse pt-6 bg-white divide-y shadow"
              x-transition:enter="transition ease-out duration-100"
              x-transition:enter-start="transform opacity-0 scale-y-0"
              x-transition:enter-end="transform opacity-100 scale-y-100"
@@ -40,7 +40,7 @@
             @endforeach
 
         </div>
-        <div @click="{isOpen = !isOpen}" class="px-4 py-2 text-lg font-semibold bg-gray-200 shadow cursor-pointer">
+        <div @click="{isOpen = !isOpen}" class="px-4 py-2 text-lg font-bold bg-gray-300 shadow-xl cursor-pointer">
             Chat
         </div>
     </div>

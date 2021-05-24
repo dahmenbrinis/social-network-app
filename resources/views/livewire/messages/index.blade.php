@@ -20,11 +20,11 @@
             @foreach($messages as $message )
                 {{--                {{dd($message->sender)}}--}}
                 @if($message->sender == Auth::id())
-                    <div class="float-right w-10/12 p-3 bg-red-500 rounded-br-none shadow-md opacity-75 rounded-2xl">
+                    <div class="float-right w-10/12 p-3 bg-blue-500 rounded-br-none shadow-md opacity-75 rounded-2xl">
                         <p class="font-semibold text-white break-words text-md">{{$message->content}}</p>
                     </div>
                 @else
-                    <div class="float-left w-10/12 p-3 bg-white rounded-bl-none shadow-md rounded-2xl">
+                    <div class="float-left w-10/12 p-3 bg-gray-300 rounded-bl-none shadow-md rounded-2xl">
                         <p class="font-semibold text-black break-words text-md">{{$message->content}}</p>
                     </div>
                 @endif
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div
-        class="relative flex items-center justify-center max-h-full py-2 font-semibold text-justify text-red-500 bg-white rounded shadow cursor-pointer text-md">
+        class="relative flex items-center justify-center max-h-full py-2 font-semibold text-justify text-red-500 bg-gray-300 rounded shadow cursor-pointer text-md">
         <div @click="{isOpen = !isOpen}" class="">
             {{$user->name}}
         </div>
