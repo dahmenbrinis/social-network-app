@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="setting the friends request notification">
+    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/show-messages-notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/show-messages-notification.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -360,14 +354,7 @@
       <workItem from="1606520906503" duration="6414000" />
       <workItem from="1606571516555" duration="4700000" />
       <workItem from="1606660034646" duration="7878000" />
-      <workItem from="1621877765981" duration="5670000" />
-    </task>
-    <task id="LOCAL-00031" summary="making realtime application">
-      <created>1605447307122</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1605447307122</updated>
+      <workItem from="1621877765981" duration="6472000" />
     </task>
     <task id="LOCAL-00032" summary="making realtime application">
       <created>1605447594340</created>
@@ -705,7 +692,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606526714370</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="testing the notification functionality .&#10;some packages updates .&#10;ui rework .">
+      <created>1621886577721</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1621886577723</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -747,7 +741,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="separating the nav-bar from main php file" />
     <MESSAGE value="factory for the post model" />
     <MESSAGE value="remove unused files" />
     <MESSAGE value="filling posts table attributes" />
@@ -772,7 +765,8 @@
     <MESSAGE value="breakpoint" />
     <MESSAGE value="breakpoint 30% progress" />
     <MESSAGE value="making the friends invitation functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="making the friends invitation functionality" />
+    <MESSAGE value="testing the notification functionality .&#10;some packages updates .&#10;ui rework ." />
+    <option name="LAST_COMMIT_MESSAGE" value="testing the notification functionality .&#10;some packages updates .&#10;ui rework ." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
