@@ -35,7 +35,7 @@ class Index extends Component
     {
 //        dd($notification);
         if ($notification['type'] == MessageSent::class) {
-            $this->initData();
+            //$this->initData();
         }
     }
 
