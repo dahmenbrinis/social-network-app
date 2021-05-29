@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Messages/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +225,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.server">
+  <component name="RunManager" selected="npm.watch">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
@@ -354,21 +358,8 @@
       <workItem from="1606520906503" duration="6414000" />
       <workItem from="1606571516555" duration="4700000" />
       <workItem from="1606660034646" duration="7878000" />
-      <workItem from="1621877765981" duration="6472000" />
-    </task>
-    <task id="LOCAL-00032" summary="making realtime application">
-      <created>1605447594340</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1605447594340</updated>
-    </task>
-    <task id="LOCAL-00033" summary="making realtime application">
-      <created>1605454277317</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1605454277317</updated>
+      <workItem from="1621877765981" duration="7352000" />
+      <workItem from="1622309702350" duration="1952000" />
     </task>
     <task id="LOCAL-00034" summary="making realtime application">
       <created>1605486875817</created>
@@ -699,7 +690,21 @@
       <option name="project" value="LOCAL" />
       <updated>1621886577723</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="testing the notification functionality .&#10;some packages updates .&#10;ui rework .">
+      <created>1621887235976</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1621887235976</updated>
+    </task>
+    <task id="LOCAL-00082" summary="testing the notification functionality .&#10;some packages updates .&#10;ui rework .">
+      <created>1621887482772</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1621887482772</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
