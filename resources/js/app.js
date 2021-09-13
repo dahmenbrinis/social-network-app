@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('./code');
 //
 // window.Vue = require('vue');
 
@@ -30,3 +31,21 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: '#app',
 // });
+module.exports = {
+    plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

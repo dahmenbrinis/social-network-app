@@ -5,6 +5,7 @@
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
         "server": "php artisan serve ",
+        "css": "npx tailwindcss -i resources/css/app.css -c tailwind.config.js -o public/css/app.css --jit --watch",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
@@ -26,9 +27,9 @@
     },
     "dependencies": {
         "alpinejs": "^2.8.2",
-        "autoprefixer": "^9.8.6",
+        "autoprefixer": "^10.3.4",
         "lodash": "latest",
-        "postcss": "^7.0.36",
+        "postcss": "^8.3.6",
         "tailwindcss": "^2.2.15"
     }
 }

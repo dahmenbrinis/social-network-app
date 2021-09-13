@@ -17,7 +17,6 @@
         </div>
 
         <div class="modal-footer">
-
             <label class="cursor-pointer mr-4 px-2 hover:text-red-500">
                 <svg class="w-7 h-7 font-extrabold text-2xl" fill="currentColor"
                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
