@@ -15,7 +15,8 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
-        Post::factory(500)->create();
+        Post::factory(1000)->create();
+
         Post::first()->update(['user_id' => User::first()->id]);
     }
 }

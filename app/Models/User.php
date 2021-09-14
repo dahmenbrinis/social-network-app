@@ -109,13 +109,15 @@ class User extends Authenticatable
 
     public function suggestedFriends()
     {
-        $friends_suggestion = new Collection();
 
+        $friends_suggestion = new Collection();
         $this->friends->each(function ($friend) use (&$friends_suggestion) {
             $friends_suggestion = $friends_suggestion->merge(
                 $friend->friends->except($this->friends->push($this)->pluck('id')->toArray())
             );
         });
+        if ($friends_suggestion->count() < 1) $friends_suggestion = User::all(5);
+        $friends_suggestion = $friends_suggestion->slice(5, 5);
         return User::whereIn('id', $friends_suggestion->pluck('id'));
     }
 

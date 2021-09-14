@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
-
+const path = require('path');
 module.exports = {
+    mode: 'jit',
     purge: {
         enabled: true,
         content: [
@@ -18,8 +19,8 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                'red-500': "#ff6c6c",
-                // 'red-500':"#dc4734"
+                'red-alternative': "#ff6c6c",
+                'red-primary': "#dc4734"
             }
         },
     },
@@ -32,6 +33,6 @@ module.exports = {
 
     plugins: [
         // require('@tailwindcss/ui'),
-        require('@fullhuman/postcss-purgecss')
+        // require('@fullhuman/postcss-purgecss')
     ],
 };
