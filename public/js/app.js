@@ -19,16 +19,16 @@
                     if (key in obj) {
                         Object.defineProperty(obj, key, {
                             value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
+                            enumerable: true,
+                            configurable: true,
+                            writable: true
+                        });
+                    } else {
+                        obj[key] = value;
+                    }
 
-    return obj;
-  }
+                    return obj;
+                }
 
   function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
@@ -109,8 +109,8 @@
   function debounce(func, wait) {
     var timeout;
     return function () {
-      var context = this,
-          args = arguments;
+        var context = this,
+            args = arguments;
 
         var later = function later() {
             timeout = null;
@@ -588,19 +588,19 @@
   } // This was taken from VueJS 2.* core. Thanks Vue!
 
   function parseForExpression(expression) {
-    let forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
-    let stripParensRE = /^\(|\)$/g;
+      let forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
+      let stripParensRE = /^\(|\)$/g;
       let forAliasRE = /([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/;
       let inMatch = String(expression).match(forAliasRE);
-    if (!inMatch) return;
-    let res = {};
-    res.items = inMatch[2].trim();
-    let item = inMatch[1].trim().replace(stripParensRE, '');
-    let iteratorMatch = item.match(forIteratorRE);
+      if (!inMatch) return;
+      let res = {};
+      res.items = inMatch[2].trim();
+      let item = inMatch[1].trim().replace(stripParensRE, '');
+      let iteratorMatch = item.match(forIteratorRE);
 
-    if (iteratorMatch) {
-      res.item = item.replace(forIteratorRE, '').trim();
-      res.index = iteratorMatch[1].trim();
+      if (iteratorMatch) {
+          res.item = item.replace(forIteratorRE, '').trim();
+          res.index = iteratorMatch[1].trim();
 
       if (iteratorMatch[2]) {
         res.collection = iteratorMatch[2].trim();
@@ -629,19 +629,19 @@
   }
 
   function evaluateItemsAndReturnEmptyIfXIfIsPresentAndFalseOnElement(component, el, iteratorNames, extraVars) {
-    let ifAttribute = getXAttrs(el, component, 'if')[0];
+      let ifAttribute = getXAttrs(el, component, 'if')[0];
 
-    if (ifAttribute && !component.evaluateReturnExpression(el, ifAttribute.expression)) {
-      return [];
-    }
+      if (ifAttribute && !component.evaluateReturnExpression(el, ifAttribute.expression)) {
+          return [];
+      }
 
-    let items = component.evaluateReturnExpression(el, iteratorNames.items, extraVars); // This adds support for the `i in n` syntax.
+      let items = component.evaluateReturnExpression(el, iteratorNames.items, extraVars); // This adds support for the `i in n` syntax.
 
       if (isNumeric(items) && items >= 0) {
           items = Array.from(Array(items).keys(), i => i + 1);
       }
 
-    return items;
+      return items;
   }
 
   function addElementInLoopAfterCurrentEl(templateEl, currentEl) {
@@ -665,8 +665,8 @@
               return tmpNextEl.parentElement.insertBefore(tmpNextEl, nextEl);
           }
 
-      tmpNextEl = tmpNextEl.nextElementSibling && tmpNextEl.nextElementSibling.__x_for_key !== undefined ? tmpNextEl.nextElementSibling : false;
-    }
+          tmpNextEl = tmpNextEl.nextElementSibling && tmpNextEl.nextElementSibling.__x_for_key !== undefined ? tmpNextEl.nextElementSibling : false;
+      }
   }
 
   function removeAnyLeftOverElementsFromPreviousUpdate(currentEl, component) {
@@ -686,21 +686,21 @@
     var value = component.evaluateReturnExpression(el, expression, extraVars);
 
     if (attrName === 'value') {
-      if (Alpine.ignoreFocusedForValueBinding && document.activeElement.isSameNode(el)) return; // If nested model key is undefined, set the default value to empty string.
+        if (Alpine.ignoreFocusedForValueBinding && document.activeElement.isSameNode(el)) return; // If nested model key is undefined, set the default value to empty string.
 
         if (value === undefined && String(expression).match(/\./)) {
             value = '';
         }
 
-      if (el.type === 'radio') {
-        // Set radio value from x-bind:value, if no "value" attribute exists.
-        // If there are any initial state values, radio will have a correct
-        // "checked" value since x-bind:value is processed before x-model.
-        if (el.attributes.value === undefined && attrType === 'bind') {
-          el.value = value;
-        } else if (attrType !== 'bind') {
-          el.checked = checkedAttrLooseCompare(el.value, value);
-        }
+        if (el.type === 'radio') {
+            // Set radio value from x-bind:value, if no "value" attribute exists.
+            // If there are any initial state values, radio will have a correct
+            // "checked" value since x-bind:value is processed before x-model.
+            if (el.attributes.value === undefined && attrType === 'bind') {
+                el.value = value;
+            } else if (attrType !== 'bind') {
+                el.checked = checkedAttrLooseCompare(el.value, value);
+            }
       } else if (el.type === 'checkbox') {
         // If we are explicitly binding a string to the :value, set the string,
         // If the value is a boolean, leave it alone, it will be set to "on"
@@ -741,7 +741,7 @@
       } else {
           const originalClasses = el.__x_original_classes || [];
           const newClasses = value ? convertClassStringToArray(value) : [];
-        el.setAttribute('class', arrayUnique(originalClasses.concat(newClasses)).join(' '));
+          el.setAttribute('class', arrayUnique(originalClasses.concat(newClasses)).join(' '));
       }
     } else {
       attrName = modifiers.includes('camel') ? camelCase(attrName) : attrName; // If an attribute's bound value is null, undefined or false, remove the attribute
@@ -770,12 +770,12 @@
   }
 
   function handleTextDirective(el, output, expression) {
-    // If nested model key is undefined, set the default value to empty string.
+      // If nested model key is undefined, set the default value to empty string.
       if (output === undefined && String(expression).match(/\./)) {
           output = '';
       }
 
-    el.textContent = output;
+      el.textContent = output;
   }
 
   function handleHtmlDirective(component, el, expression, extraVars) {
@@ -908,27 +908,27 @@
               }
 
               if (isKeyEvent(event)) {
-          if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
-            return;
-          }
-        }
+                  if (isListeningForASpecificKeyThatHasntBeenPressed(e, modifiers)) {
+                      return;
+                  }
+              }
 
-        if (modifiers.includes('prevent')) e.preventDefault();
-        if (modifiers.includes('stop')) e.stopPropagation(); // If the .self modifier isn't present, or if it is present and
-        // the target element matches the element we are registering the
+              if (modifiers.includes('prevent')) e.preventDefault();
+              if (modifiers.includes('stop')) e.stopPropagation(); // If the .self modifier isn't present, or if it is present and
+              // the target element matches the element we are registering the
         // event on, run the handler
 
         if (!modifiers.includes('self') || e.target === el) {
           const returnValue = runListenerHandler(component, expression, e, extraVars);
-          returnValue.then(value => {
-            if (value === false) {
-              e.preventDefault();
-            } else {
-                if (modifiers.includes('once')) {
-                    listenerTarget.removeEventListener(event, handler, options);
+            returnValue.then(value => {
+                if (value === false) {
+                    e.preventDefault();
+                } else {
+                    if (modifiers.includes('once')) {
+                        listenerTarget.removeEventListener(event, handler, options);
+                    }
                 }
-            }
-          });
+            });
         }
           };
       }
@@ -1456,14 +1456,14 @@
 
   class Component {
     constructor(el, componentForClone = null) {
-      this.$el = el;
-      const dataAttr = this.$el.getAttribute('x-data');
-      const dataExpression = dataAttr === '' ? '{}' : dataAttr;
-      const initExpression = this.$el.getAttribute('x-init');
-      let dataExtras = {
-        $el: this.$el
-      };
-      let canonicalComponentElementReference = componentForClone ? componentForClone.$el : this.$el;
+        this.$el = el;
+        const dataAttr = this.$el.getAttribute('x-data');
+        const dataExpression = dataAttr === '' ? '{}' : dataAttr;
+        const initExpression = this.$el.getAttribute('x-init');
+        let dataExtras = {
+            $el: this.$el
+        };
+        let canonicalComponentElementReference = componentForClone ? componentForClone.$el : this.$el;
         Object.entries(Alpine.magicProperties).forEach(([name, callback]) => {
             Object.defineProperty(dataExtras, `$${name}`, {
                 get: function get() {
@@ -1472,15 +1472,15 @@
             });
         });
         this.unobservedData = componentForClone ? componentForClone.getUnobservedData() : saferEval(el, dataExpression, dataExtras);
-      // Construct a Proxy-based observable. This will be used to handle reactivity.
+        // Construct a Proxy-based observable. This will be used to handle reactivity.
 
-      let {
-        membrane,
-        data
-      } = this.wrapDataInObservable(this.unobservedData);
-      this.$data = data;
-      this.membrane = membrane; // After making user-supplied data methods reactive, we can now add
-      // our magic properties to the original data for access.
+        let {
+            membrane,
+            data
+        } = this.wrapDataInObservable(this.unobservedData);
+        this.$data = data;
+        this.membrane = membrane; // After making user-supplied data methods reactive, we can now add
+        // our magic properties to the original data for access.
 
       this.unobservedData.$el = this.$el;
       this.unobservedData.$refs = this.getRefsProxy();
@@ -1503,16 +1503,16 @@
 
 
       Object.entries(Alpine.magicProperties).forEach(([name, callback]) => {
-        Object.defineProperty(this.unobservedData, `$${name}`, {
-          get: function get() {
-              return callback(canonicalComponentElementReference, this.$el);
-          }
-        });
+          Object.defineProperty(this.unobservedData, `$${name}`, {
+              get: function get() {
+                  return callback(canonicalComponentElementReference, this.$el);
+              }
+          });
       });
-      /* MODERN-ONLY:END */
+        /* MODERN-ONLY:END */
 
-      this.showDirectiveStack = [];
-      this.showDirectiveLastElement;
+        this.showDirectiveStack = [];
+        this.showDirectiveLastElement;
         componentForClone || Alpine.onBeforeComponentInitializeds.forEach(callback => callback(this));
         var initReturnedCallback; // If x-init is present AND we aren't cloning (skip x-init on clone)
 
@@ -1539,9 +1539,9 @@
             initReturnedCallback.call(this.$data);
         }
 
-      componentForClone || setTimeout(() => {
-        Alpine.onComponentInitializeds.forEach(callback => callback(this));
-      }, 0);
+        componentForClone || setTimeout(() => {
+            Alpine.onComponentInitializeds.forEach(callback => callback(this));
+        }, 0);
     }
 
     getUnobservedData() {
@@ -1607,13 +1607,13 @@
           // If it's not the current one.
           if (!el.isSameNode(this.$el)) {
             // Initialize it if it's not.
-            if (!el.__x) initializeComponentCallback(el); // Now we'll let that sub-component deal with itself.
+              if (!el.__x) initializeComponentCallback(el); // Now we'll let that sub-component deal with itself.
 
-            return false;
+              return false;
           }
         }
 
-        return callback(el);
+          return callback(el);
       });
     }
 
@@ -1629,8 +1629,8 @@
               if (!componentForClone) el.__x = new Component(el);
           });
           this.executeAndClearRemainingShowDirectiveStack();
-      this.executeAndClearNextTickStack(rootEl);
-    }
+          this.executeAndClearNextTickStack(rootEl);
+      }
 
       initializeElement(el, extraVars, shouldRegisterListeners = true) {
           // To support class attribute merging, we have to know what the element's
@@ -1643,11 +1643,12 @@
           this.resolveBoundAttributes(el, true, extraVars);
       }
 
-    updateElements(rootEl, extraVars = () => {}) {
-      this.walkAndSkipNestedComponents(rootEl, el => {
-        // Don't touch spawns from for loop (and check if the root is actually a for loop in a parent, don't skip it.)
-        if (el.__x_for_key !== undefined && !el.isSameNode(this.$el)) return false;
-        this.updateElement(el, extraVars);
+      updateElements(rootEl, extraVars = () => {
+      }) {
+          this.walkAndSkipNestedComponents(rootEl, el => {
+              // Don't touch spawns from for loop (and check if the root is actually a for loop in a parent, don't skip it.)
+              if (el.__x_for_key !== undefined && !el.isSameNode(this.$el)) return false;
+              this.updateElement(el, extraVars);
       }, el => {
         el.__x = new Component(el);
       });
@@ -1867,15 +1868,15 @@
               await domReady();
           }
 
-      this.discoverComponents(el => {
-        this.initializeComponent(el);
-      }); // It's easier and more performant to just support Turbolinks than listen
-      // to MutationObserver mutations at the document level.
+          this.discoverComponents(el => {
+              this.initializeComponent(el);
+          }); // It's easier and more performant to just support Turbolinks than listen
+          // to MutationObserver mutations at the document level.
 
-      document.addEventListener("turbolinks:load", () => {
-        this.discoverUninitializedComponents(el => {
-          this.initializeComponent(el);
-        });
+          document.addEventListener("turbolinks:load", () => {
+              this.discoverUninitializedComponents(el => {
+                  this.initializeComponent(el);
+              });
       });
       this.listenForNewUninitializedComponentsAtRunTime();
     },
@@ -1964,9 +1965,10 @@
 })));
 
 
-/***/ }),
+            /***/
+        }),
 
-/***/ "./node_modules/axios/index.js":
+        /***/ "./node_modules/axios/index.js":
         /*!*************************************!*\
           !*** ./node_modules/axios/index.js ***!
           \*************************************/
@@ -1977,7 +1979,7 @@
             /***/
         }),
 
-/***/ "./node_modules/axios/lib/adapters/xhr.js":
+        /***/ "./node_modules/axios/lib/adapters/xhr.js":
         /*!************************************************!*\
           !*** ./node_modules/axios/lib/adapters/xhr.js ***!
           \************************************************/
@@ -1992,95 +1994,95 @@
             var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./node_modules/axios/lib/helpers/buildURL.js");
             var buildFullPath = __webpack_require__(/*! ../core/buildFullPath */ "./node_modules/axios/lib/core/buildFullPath.js");
             var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "./node_modules/axios/lib/helpers/parseHeaders.js");
-var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "./node_modules/axios/lib/helpers/isURLSameOrigin.js");
-var createError = __webpack_require__(/*! ../core/createError */ "./node_modules/axios/lib/core/createError.js");
+            var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "./node_modules/axios/lib/helpers/isURLSameOrigin.js");
+            var createError = __webpack_require__(/*! ../core/createError */ "./node_modules/axios/lib/core/createError.js");
 
-module.exports = function xhrAdapter(config) {
-  return new Promise(function dispatchXhrRequest(resolve, reject) {
-    var requestData = config.data;
-      var requestHeaders = config.headers;
-      var responseType = config.responseType;
+            module.exports = function xhrAdapter(config) {
+                return new Promise(function dispatchXhrRequest(resolve, reject) {
+                    var requestData = config.data;
+                    var requestHeaders = config.headers;
+                    var responseType = config.responseType;
 
-    if (utils.isFormData(requestData)) {
-      delete requestHeaders['Content-Type']; // Let the browser set it
-    }
+                    if (utils.isFormData(requestData)) {
+                        delete requestHeaders['Content-Type']; // Let the browser set it
+                    }
 
-    var request = new XMLHttpRequest();
+                    var request = new XMLHttpRequest();
 
-    // HTTP basic authentication
-    if (config.auth) {
-      var username = config.auth.username || '';
-        var password = config.auth.password ? unescape(encodeURIComponent(config.auth.password)) : '';
-        requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
-    }
+                    // HTTP basic authentication
+                    if (config.auth) {
+                        var username = config.auth.username || '';
+                        var password = config.auth.password ? unescape(encodeURIComponent(config.auth.password)) : '';
+                        requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+                    }
 
-      var fullPath = buildFullPath(config.baseURL, config.url);
-      request.open(config.method.toUpperCase(), buildURL(fullPath, config.params, config.paramsSerializer), true);
+                    var fullPath = buildFullPath(config.baseURL, config.url);
+                    request.open(config.method.toUpperCase(), buildURL(fullPath, config.params, config.paramsSerializer), true);
 
-      // Set the request timeout in MS
-      request.timeout = config.timeout;
+                    // Set the request timeout in MS
+                    request.timeout = config.timeout;
 
-      function onloadend() {
-          if (!request) {
-              return;
-          }
-          // Prepare the response
-          var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
-          var responseData = !responseType || responseType === 'text' || responseType === 'json' ?
-              request.responseText : request.response;
-          var response = {
-              data: responseData,
-              status: request.status,
-              statusText: request.statusText,
-              headers: responseHeaders,
-              config: config,
-              request: request
-          };
+                    function onloadend() {
+                        if (!request) {
+                            return;
+                        }
+                        // Prepare the response
+                        var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
+                        var responseData = !responseType || responseType === 'text' || responseType === 'json' ?
+                            request.responseText : request.response;
+                        var response = {
+                            data: responseData,
+                            status: request.status,
+                            statusText: request.statusText,
+                            headers: responseHeaders,
+                            config: config,
+                            request: request
+                        };
 
-          settle(resolve, reject, response);
+                        settle(resolve, reject, response);
 
-          // Clean up request
-          request = null;
-      }
+                        // Clean up request
+                        request = null;
+                    }
 
-      if ('onloadend' in request) {
-          // Use onloadend if available
-          request.onloadend = onloadend;
-      } else {
-          // Listen for ready state to emulate onloadend
-          request.onreadystatechange = function handleLoad() {
-              if (!request || request.readyState !== 4) {
-                  return;
-              }
+                    if ('onloadend' in request) {
+                        // Use onloadend if available
+                        request.onloadend = onloadend;
+                    } else {
+                        // Listen for ready state to emulate onloadend
+                        request.onreadystatechange = function handleLoad() {
+                            if (!request || request.readyState !== 4) {
+                                return;
+                            }
 
-              // The request errored out and we didn't get a response, this will be
-              // handled by onerror instead
-              // With one exception: request that using file: protocol, most browsers
-              // will return status as 0 even though it's a successful request
-              if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
-                  return;
-              }
-              // readystate handler is calling before onerror or ontimeout handlers,
-              // so we should call onloadend on the next 'tick'
-              setTimeout(onloadend);
-          };
-      }
+                            // The request errored out and we didn't get a response, this will be
+                            // handled by onerror instead
+                            // With one exception: request that using file: protocol, most browsers
+                            // will return status as 0 even though it's a successful request
+                            if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+                                return;
+                            }
+                            // readystate handler is calling before onerror or ontimeout handlers,
+                            // so we should call onloadend on the next 'tick'
+                            setTimeout(onloadend);
+                        };
+                    }
 
-      // Handle browser request cancellation (as opposed to a manual cancellation)
-      request.onabort = function handleAbort() {
-          if (!request) {
-              return;
-          }
+                    // Handle browser request cancellation (as opposed to a manual cancellation)
+                    request.onabort = function handleAbort() {
+                        if (!request) {
+                            return;
+                        }
 
-          reject(createError('Request aborted', config, 'ECONNABORTED', request));
+                        reject(createError('Request aborted', config, 'ECONNABORTED', request));
 
-          // Clean up request
-      request = null;
-    };
+                        // Clean up request
+                        request = null;
+                    };
 
-    // Handle low level network errors
-    request.onerror = function handleError() {
-      // Real errors are hidden from us by the browser
+                    // Handle low level network errors
+                    request.onerror = function handleError() {
+                        // Real errors are hidden from us by the browser
       // onerror should only fire if it's a network error
       reject(createError('Network Error', config, null, request));
 
@@ -2121,44 +2123,44 @@ module.exports = function xhrAdapter(config) {
     // Add headers to the request
     if ('setRequestHeader' in request) {
       utils.forEach(requestHeaders, function setRequestHeader(val, key) {
-        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
-          // Remove Content-Type if data is undefined
-          delete requestHeaders[key];
-        } else {
-          // Otherwise add header to the request
-          request.setRequestHeader(key, val);
-        }
+          if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+              // Remove Content-Type if data is undefined
+              delete requestHeaders[key];
+          } else {
+              // Otherwise add header to the request
+              request.setRequestHeader(key, val);
+          }
       });
     }
 
-      // Add withCredentials to request if needed
-      if (!utils.isUndefined(config.withCredentials)) {
-          request.withCredentials = !!config.withCredentials;
-      }
+                    // Add withCredentials to request if needed
+                    if (!utils.isUndefined(config.withCredentials)) {
+                        request.withCredentials = !!config.withCredentials;
+                    }
 
-      // Add responseType to request if needed
-      if (responseType && responseType !== 'json') {
-          request.responseType = config.responseType;
-      }
+                    // Add responseType to request if needed
+                    if (responseType && responseType !== 'json') {
+                        request.responseType = config.responseType;
+                    }
 
-      // Handle progress if needed
-      if (typeof config.onDownloadProgress === 'function') {
-          request.addEventListener('progress', config.onDownloadProgress);
-      }
+                    // Handle progress if needed
+                    if (typeof config.onDownloadProgress === 'function') {
+                        request.addEventListener('progress', config.onDownloadProgress);
+                    }
 
-      // Not all browsers support upload events
-      if (typeof config.onUploadProgress === 'function' && request.upload) {
-          request.upload.addEventListener('progress', config.onUploadProgress);
-    }
+                    // Not all browsers support upload events
+                    if (typeof config.onUploadProgress === 'function' && request.upload) {
+                        request.upload.addEventListener('progress', config.onUploadProgress);
+                    }
 
-    if (config.cancelToken) {
-      // Handle cancellation
-      config.cancelToken.promise.then(function onCanceled(cancel) {
-        if (!request) {
-          return;
-        }
+                    if (config.cancelToken) {
+                        // Handle cancellation
+                        config.cancelToken.promise.then(function onCanceled(cancel) {
+                            if (!request) {
+                                return;
+                            }
 
-        request.abort();
+                            request.abort();
         reject(cancel);
         // Clean up request
         request = null;
@@ -2192,15 +2194,15 @@ module.exports = function xhrAdapter(config) {
             var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ "./node_modules/axios/lib/core/mergeConfig.js");
             var defaults = __webpack_require__(/*! ./defaults */ "./node_modules/axios/lib/defaults.js");
 
-/**
- * Create an instance of Axios
- *
- * @param {Object} defaultConfig The default config for the instance
- * @return {Axios} A new instance of Axios
- */
-function createInstance(defaultConfig) {
-  var context = new Axios(defaultConfig);
-  var instance = bind(Axios.prototype.request, context);
+            /**
+             * Create an instance of Axios
+             *
+             * @param {Object} defaultConfig The default config for the instance
+             * @return {Axios} A new instance of Axios
+             */
+            function createInstance(defaultConfig) {
+                var context = new Axios(defaultConfig);
+                var instance = bind(Axios.prototype.request, context);
 
   // Copy axios.prototype to instance
   utils.extend(instance, Axios.prototype, context);
@@ -2215,12 +2217,12 @@ function createInstance(defaultConfig) {
 var axios = createInstance(defaults);
 
 // Expose Axios class to allow class inheritance
-axios.Axios = Axios;
+            axios.Axios = Axios;
 
 // Factory for creating new instances
-axios.create = function create(instanceConfig) {
-  return createInstance(mergeConfig(axios.defaults, instanceConfig));
-};
+            axios.create = function create(instanceConfig) {
+                return createInstance(mergeConfig(axios.defaults, instanceConfig));
+            };
 
 // Expose Cancel & CancelToken
             axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ "./node_modules/axios/lib/cancel/Cancel.js");
@@ -2245,7 +2247,7 @@ axios.create = function create(instanceConfig) {
             /***/
         }),
 
-/***/ "./node_modules/axios/lib/cancel/Cancel.js":
+        /***/ "./node_modules/axios/lib/cancel/Cancel.js":
         /*!*************************************************!*\
           !*** ./node_modules/axios/lib/cancel/Cancel.js ***!
           \*************************************************/
@@ -2290,8 +2292,8 @@ module.exports = Cancel;
              * A `CancelToken` is an object that can be used to request cancellation of an operation.
              *
              * @class
- * @param {Function} executor The executor function.
- */
+             * @param {Function} executor The executor function.
+             */
 function CancelToken(executor) {
   if (typeof executor !== 'function') {
     throw new TypeError('executor must be a function.');
@@ -2360,7 +2362,7 @@ module.exports = CancelToken;
             /***/
         }),
 
-/***/ "./node_modules/axios/lib/core/Axios.js":
+        /***/ "./node_modules/axios/lib/core/Axios.js":
         /*!**********************************************!*\
           !*** ./node_modules/axios/lib/core/Axios.js ***!
           \**********************************************/
@@ -2377,14 +2379,15 @@ module.exports = CancelToken;
             var validator = __webpack_require__(/*! ../helpers/validator */ "./node_modules/axios/lib/helpers/validator.js");
 
             var validators = validator.validators;
-/**
- * Create a new instance of Axios
- *
- * @param {Object} instanceConfig The default config for the instance
- */
-function Axios(instanceConfig) {
-  this.defaults = instanceConfig;
-  this.interceptors = {
+
+            /**
+             * Create a new instance of Axios
+             *
+             * @param {Object} instanceConfig The default config for the instance
+             */
+            function Axios(instanceConfig) {
+                this.defaults = instanceConfig;
+                this.interceptors = {
     request: new InterceptorManager(),
     response: new InterceptorManager()
   };
@@ -2398,16 +2401,16 @@ function Axios(instanceConfig) {
 Axios.prototype.request = function request(config) {
   /*eslint no-param-reassign:0*/
   // Allow for axios('example/url'[, config]) a la fetch API
-  if (typeof config === 'string') {
-    config = arguments[1] || {};
-    config.url = arguments[0];
-  } else {
-    config = config || {};
-  }
+    if (typeof config === 'string') {
+        config = arguments[1] || {};
+        config.url = arguments[0];
+    } else {
+        config = config || {};
+    }
 
-  config = mergeConfig(this.defaults, config);
+    config = mergeConfig(this.defaults, config);
 
-  // Set config.method
+    // Set config.method
     if (config.method) {
         config.method = config.method.toLowerCase();
     } else if (this.defaults.method) {
@@ -2599,12 +2602,12 @@ module.exports = InterceptorManager;
             /**
              * Creates a new URL by combining the baseURL with the requestedURL,
              * only when the requestedURL is not already an absolute URL.
- * If the requestURL is absolute, this function returns the requestedURL untouched.
- *
- * @param {string} baseURL The base URL
- * @param {string} requestedURL Absolute or relative URL to combine
- * @returns {string} The combined full path
- */
+             * If the requestURL is absolute, this function returns the requestedURL untouched.
+             *
+             * @param {string} baseURL The base URL
+             * @param {string} requestedURL Absolute or relative URL to combine
+             * @returns {string} The combined full path
+             */
 module.exports = function buildFullPath(baseURL, requestedURL) {
   if (baseURL && !isAbsoluteURL(requestedURL)) {
     return combineURLs(baseURL, requestedURL);
@@ -2630,12 +2633,12 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
              * Create an Error with the specified message, config, error code, request and response.
              *
              * @param {string} message The error message.
- * @param {Object} config The config.
- * @param {string} [code] The error code (for example, 'ECONNABORTED').
- * @param {Object} [request] The request.
- * @param {Object} [response] The response.
- * @returns {Error} The created error.
- */
+             * @param {Object} config The config.
+             * @param {string} [code] The error code (for example, 'ECONNABORTED').
+             * @param {Object} [request] The request.
+             * @param {Object} [response] The response.
+             * @returns {Error} The created error.
+             */
 module.exports = function createError(message, config, code, request, response) {
   var error = new Error(message);
   return enhanceError(error, config, code, request, response);
@@ -2659,13 +2662,13 @@ module.exports = function createError(message, config, code, request, response) 
             var defaults = __webpack_require__(/*! ../defaults */ "./node_modules/axios/lib/defaults.js");
 
             /**
- * Throws a `Cancel` if cancellation has been requested.
- */
-function throwIfCancellationRequested(config) {
-  if (config.cancelToken) {
-    config.cancelToken.throwIfRequested();
-  }
-}
+             * Throws a `Cancel` if cancellation has been requested.
+             */
+            function throwIfCancellationRequested(config) {
+                if (config.cancelToken) {
+                    config.cancelToken.throwIfRequested();
+                }
+            }
 
 /**
  * Dispatch a request to the server using the configured adapter.
@@ -2692,16 +2695,16 @@ module.exports = function dispatchRequest(config) {
         config.headers.common || {},
         config.headers[config.method] || {},
         config.headers
-  );
+    );
 
-  utils.forEach(
-    ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
-    function cleanHeaderConfig(method) {
-      delete config.headers[method];
-    }
-  );
+    utils.forEach(
+        ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
+        function cleanHeaderConfig(method) {
+            delete config.headers[method];
+        }
+    );
 
-  var adapter = config.adapter || defaults.adapter;
+    var adapter = config.adapter || defaults.adapter;
 
   return adapter(config).then(function onAdapterResolution(response) {
       throwIfCancellationRequested(config);
@@ -2752,10 +2755,10 @@ module.exports = function dispatchRequest(config) {
              * @param {Error} error The error to update.
              * @param {Object} config The config.
              * @param {string} [code] The error code (for example, 'ECONNABORTED').
- * @param {Object} [request] The request.
- * @param {Object} [response] The response.
- * @returns {Error} The error.
- */
+             * @param {Object} [request] The request.
+             * @param {Object} [response] The response.
+             * @returns {Error} The error.
+             */
 module.exports = function enhanceError(error, config, code, request, response) {
   error.config = config;
   if (code) {
@@ -2805,10 +2808,10 @@ module.exports = function enhanceError(error, config, code, request, response) {
              * Config-specific merge-function which creates a new config-object
              * by merging two configuration objects together.
              *
- * @param {Object} config1
- * @param {Object} config2
- * @returns {Object} New object resulting from merging config2 to config1
- */
+             * @param {Object} config1
+             * @param {Object} config2
+             * @returns {Object} New object resulting from merging config2 to config1
+             */
 module.exports = function mergeConfig(config1, config2) {
   // eslint-disable-next-line no-param-reassign
   config2 = config2 || {};
@@ -2903,9 +2906,9 @@ module.exports = function mergeConfig(config1, config2) {
              * Resolve or reject a Promise based on response status.
              *
              * @param {Function} resolve A function that resolves the promise.
- * @param {Function} reject A function that rejects the promise.
- * @param {object} response The response.
- */
+             * @param {Function} reject A function that rejects the promise.
+             * @param {object} response The response.
+             */
 module.exports = function settle(resolve, reject, response) {
   var validateStatus = response.config.validateStatus;
   if (!response.status || !validateStatus || validateStatus(response.status)) {
@@ -2939,13 +2942,13 @@ module.exports = function settle(resolve, reject, response) {
             /**
              * Transform the data for a request or a response
              *
- * @param {Object|String} data The data to be transformed
- * @param {Array} headers The headers for the request or response
- * @param {Array|Function} fns A single function or Array of functions
- * @returns {*} The resulting transformed data
- */
-module.exports = function transformData(data, headers, fns) {
-    var context = this || defaults;
+             * @param {Object|String} data The data to be transformed
+             * @param {Array} headers The headers for the request or response
+             * @param {Array|Function} fns A single function or Array of functions
+             * @returns {*} The resulting transformed data
+             */
+            module.exports = function transformData(data, headers, fns) {
+                var context = this || defaults;
   /*eslint no-param-reassign:0*/
   utils.forEach(fns, function transform(fn) {
       data = fn.call(context, data, headers);
@@ -2976,14 +2979,14 @@ module.exports = function transformData(data, headers, fns) {
                 'Content-Type': 'application/x-www-form-urlencoded'
             };
 
-function setContentTypeIfUnset(headers, value) {
-  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
-    headers['Content-Type'] = value;
-  }
-}
+            function setContentTypeIfUnset(headers, value) {
+                if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
+                    headers['Content-Type'] = value;
+                }
+            }
 
 function getDefaultAdapter() {
-  var adapter;
+    var adapter;
     if (typeof XMLHttpRequest !== 'undefined') {
         // For browsers use XHR adapter
         adapter = __webpack_require__(/*! ./adapters/xhr */ "./node_modules/axios/lib/adapters/xhr.js");
@@ -3026,9 +3029,9 @@ function getDefaultAdapter() {
                     if (utils.isFormData(data) ||
                         utils.isArrayBuffer(data) ||
                         utils.isBuffer(data) ||
-      utils.isStream(data) ||
-      utils.isFile(data) ||
-      utils.isBlob(data)
+                        utils.isStream(data) ||
+                        utils.isFile(data) ||
+                        utils.isBlob(data)
                     ) {
                         return data;
                     }
@@ -3046,27 +3049,27 @@ function getDefaultAdapter() {
                     return data;
                 }],
 
-  transformResponse: [function transformResponse(data) {
-      var transitional = this.transitional;
-      var silentJSONParsing = transitional && transitional.silentJSONParsing;
-      var forcedJSONParsing = transitional && transitional.forcedJSONParsing;
-      var strictJSONParsing = !silentJSONParsing && this.responseType === 'json';
+                transformResponse: [function transformResponse(data) {
+                    var transitional = this.transitional;
+                    var silentJSONParsing = transitional && transitional.silentJSONParsing;
+                    var forcedJSONParsing = transitional && transitional.forcedJSONParsing;
+                    var strictJSONParsing = !silentJSONParsing && this.responseType === 'json';
 
-      if (strictJSONParsing || (forcedJSONParsing && utils.isString(data) && data.length)) {
-          try {
-              return JSON.parse(data);
-          } catch (e) {
-              if (strictJSONParsing) {
-                  if (e.name === 'SyntaxError') {
-                      throw enhanceError(e, this, 'E_JSON_PARSE');
-                  }
-                  throw e;
-              }
-          }
-      }
+                    if (strictJSONParsing || (forcedJSONParsing && utils.isString(data) && data.length)) {
+                        try {
+                            return JSON.parse(data);
+                        } catch (e) {
+                            if (strictJSONParsing) {
+                                if (e.name === 'SyntaxError') {
+                                    throw enhanceError(e, this, 'E_JSON_PARSE');
+                                }
+                                throw e;
+                            }
+                        }
+                    }
 
-      return data;
-  }],
+                    return data;
+                }],
 
   /**
    * A timeout in milliseconds to abort a request. If set to 0 (default) a
@@ -3119,9 +3122,9 @@ module.exports = defaults;
                     for (var i = 0; i < args.length; i++) {
                         args[i] = arguments[i];
                     }
-    return fn.apply(thisArg, args);
-  };
-};
+                    return fn.apply(thisArg, args);
+                };
+            };
 
 
 /***/ }),
@@ -3138,12 +3141,8 @@ module.exports = defaults;
             var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
 
             function encode(val) {
-                return encodeURIComponent(val).replace(/%3A/gi, ':').replace(/%24/g, '$').
-    replace(/%2C/gi, ',').
-    replace(/%20/g, '+').
-    replace(/%5B/gi, '[').
-    replace(/%5D/gi, ']');
-}
+                return encodeURIComponent(val).replace(/%3A/gi, ':').replace(/%24/g, '$').replace(/%2C/gi, ',').replace(/%20/g, '+').replace(/%5B/gi, '[').replace(/%5D/gi, ']');
+            }
 
 /**
  * Build a URL by appending params to the end
@@ -3220,7 +3219,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
              * @param {string} baseURL The base URL
              * @param {string} relativeURL The relative URL
              * @returns {string} The combined URL
- */
+             */
 module.exports = function combineURLs(baseURL, relativeURL) {
   return relativeURL
     ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
@@ -3245,14 +3244,14 @@ module.exports = function combineURLs(baseURL, relativeURL) {
                 utils.isStandardBrowserEnv() ?
 
                     // Standard browser envs support document.cookie
-    (function standardBrowserEnv() {
-      return {
-        write: function write(name, value, expires, path, domain, secure) {
-          var cookie = [];
-          cookie.push(name + '=' + encodeURIComponent(value));
+                    (function standardBrowserEnv() {
+                        return {
+                            write: function write(name, value, expires, path, domain, secure) {
+                                var cookie = [];
+                                cookie.push(name + '=' + encodeURIComponent(value));
 
-          if (utils.isNumber(expires)) {
-            cookie.push('expires=' + new Date(expires).toGMTString());
+                                if (utils.isNumber(expires)) {
+                                    cookie.push('expires=' + new Date(expires).toGMTString());
           }
 
           if (utils.isString(path)) {
@@ -3358,14 +3357,14 @@ module.exports = function combineURLs(baseURL, relativeURL) {
                 utils.isStandardBrowserEnv() ?
 
                     // Standard browser envs have full support of the APIs needed to test
-  // whether the request URL is of the same origin as current location.
-    (function standardBrowserEnv() {
-      var msie = /(msie|trident)/i.test(navigator.userAgent);
-      var urlParsingNode = document.createElement('a');
-      var originURL;
+                    // whether the request URL is of the same origin as current location.
+                    (function standardBrowserEnv() {
+                        var msie = /(msie|trident)/i.test(navigator.userAgent);
+                        var urlParsingNode = document.createElement('a');
+                        var originURL;
 
-      /**
-    * Parse a URL to discover it's components
+                        /**
+                         * Parse a URL to discover it's components
     *
     * @param {String} url The URL to be parsed
     * @returns {Object}
@@ -3437,10 +3436,10 @@ module.exports = function combineURLs(baseURL, relativeURL) {
                 utils.forEach(headers, function processHeader(value, name) {
                     if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
                         headers[normalizedName] = value;
-      delete headers[name];
-    }
-  });
-};
+                        delete headers[name];
+                    }
+                });
+            };
 
 
 /***/ }),
@@ -3460,10 +3459,10 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 // c.f. https://nodejs.org/api/http.html#http_message_headers
             var ignoreDuplicateOf = [
                 'age', 'authorization', 'content-length', 'content-type', 'etag',
-  'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
-  'last-modified', 'location', 'max-forwards', 'proxy-authorization',
-  'referer', 'retry-after', 'user-agent'
-];
+                'expires', 'from', 'host', 'if-modified-since', 'if-unmodified-since',
+                'last-modified', 'location', 'max-forwards', 'proxy-authorization',
+                'referer', 'retry-after', 'user-agent'
+            ];
 
 /**
  * Parse headers into an object
@@ -3524,19 +3523,19 @@ module.exports = function parseHeaders(headers) {
              * Common use case would be to use `Function.prototype.apply`.
              *
              *  ```js
- *  function f(x, y, z) {}
- *  var args = [1, 2, 3];
- *  f.apply(null, args);
- *  ```
- *
- * With `spread` this example can be re-written.
- *
- *  ```js
- *  spread(function(x, y, z) {})([1, 2, 3]);
- *  ```
- *
- * @param {Function} callback
- * @returns {Function}
+             *  function f(x, y, z) {}
+             *  var args = [1, 2, 3];
+             *  f.apply(null, args);
+             *  ```
+             *
+             * With `spread` this example can be re-written.
+             *
+             *  ```js
+             *  spread(function(x, y, z) {})([1, 2, 3]);
+             *  ```
+             *
+             * @param {Function} callback
+             * @returns {Function}
              */
             module.exports = function spread(callback) {
                 return function wrap(arr) {
@@ -4005,16 +4004,16 @@ module.exports = {
   isArrayBufferView: isArrayBufferView,
   isString: isString,
   isNumber: isNumber,
-  isObject: isObject,
-  isPlainObject: isPlainObject,
-  isUndefined: isUndefined,
-  isDate: isDate,
-  isFile: isFile,
-  isBlob: isBlob,
-  isFunction: isFunction,
-  isStream: isStream,
-  isURLSearchParams: isURLSearchParams,
-  isStandardBrowserEnv: isStandardBrowserEnv,
+    isObject: isObject,
+    isPlainObject: isPlainObject,
+    isUndefined: isUndefined,
+    isDate: isDate,
+    isFile: isFile,
+    isBlob: isBlob,
+    isFunction: isFunction,
+    isStream: isStream,
+    isURLSearchParams: isURLSearchParams,
+    isStandardBrowserEnv: isStandardBrowserEnv,
     forEach: forEach,
     merge: merge,
     extend: extend,
@@ -4153,11 +4152,11 @@ module.exports = {
                 for (var i = 0; i < props.length; i++) {
                     var descriptor = props[i];
                     descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
+                    descriptor.configurable = true;
+                    if ("value" in descriptor) descriptor.writable = true;
+                    Object.defineProperty(target, descriptor.key, descriptor);
+                }
+            }
 
 function _createClass(Constructor, protoProps, staticProps) {
   if (protoProps) _defineProperties(Constructor.prototype, protoProps);
@@ -4522,14 +4521,14 @@ var PusherChannel = /*#__PURE__*/function (_Channel) {
   }, {
       key: "subscribed",
       value: function subscribed(callback) {
-      this.on('pusher:subscription_succeeded', function () {
-        callback();
-      });
-      return this;
-    }
-    /**
-     * Register a callback to be called anytime a subscription error occurs.
-     */
+          this.on('pusher:subscription_succeeded', function () {
+              callback();
+          });
+          return this;
+      }
+      /**
+       * Register a callback to be called anytime a subscription error occurs.
+       */
 
   }, {
     key: "error",
@@ -4991,13 +4990,13 @@ var NullChannel = /*#__PURE__*/function (_Channel) {
      */
 
   }, {
-    key: "stopListening",
+      key: "stopListening",
       value: function stopListening(event, callback) {
           return this;
       }
-    /**
-     * Register a callback to be called anytime a subscription succeeds.
-     */
+      /**
+       * Register a callback to be called anytime a subscription succeeds.
+       */
 
   }, {
     key: "subscribed",
@@ -5718,11 +5717,11 @@ var Echo = /*#__PURE__*/function () {
             /***/
         }),
 
-/***/ "./node_modules/lodash/lodash.js":
-/*!***************************************!*\
-  !*** ./node_modules/lodash/lodash.js ***!
-  \***************************************/
-/***/ (function(module, exports, __webpack_require__) {
+        /***/ "./node_modules/lodash/lodash.js":
+        /*!***************************************!*\
+          !*** ./node_modules/lodash/lodash.js ***!
+          \***************************************/
+        /***/ (function (module, exports, __webpack_require__) {
 
             /* module decorator */
             module = __webpack_require__.nmd(module);
@@ -5737,13 +5736,13 @@ var Echo = /*#__PURE__*/function () {
             ;(function () {
 
                 /** Used as a safe reference for `undefined` in pre-ES5 environments. */
-  var undefined;
+                var undefined;
 
-  /** Used as the semantic version number. */
-  var VERSION = '4.17.21';
+                /** Used as the semantic version number. */
+                var VERSION = '4.17.21';
 
-  /** Used as the size to enable large array optimizations. */
-  var LARGE_ARRAY_SIZE = 200;
+                /** Used as the size to enable large array optimizations. */
+                var LARGE_ARRAY_SIZE = 200;
 
   /** Error message constants. */
   var CORE_ERROR_TEXT = 'Unsupported core-js use. Try https://npms.io/search?q=ponyfill.',
@@ -6144,40 +6143,40 @@ var Echo = /*#__PURE__*/function () {
   var stringEscapes = {
     '\\': '\\',
     "'": "'",
-    '\n': 'n',
-    '\r': 'r',
-    '\u2028': 'u2028',
-    '\u2029': 'u2029'
+      '\n': 'n',
+      '\r': 'r',
+      '\u2028': 'u2028',
+      '\u2029': 'u2029'
   };
 
-  /** Built-in method references without a dependency on `root`. */
-  var freeParseFloat = parseFloat,
-      freeParseInt = parseInt;
+                /** Built-in method references without a dependency on `root`. */
+                var freeParseFloat = parseFloat,
+                    freeParseInt = parseInt;
 
                 /** Detect free variable `global` from Node.js. */
                 var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g && __webpack_require__.g.Object === Object && __webpack_require__.g;
 
-  /** Detect free variable `self`. */
-  var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+                /** Detect free variable `self`. */
+                var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
 
-  /** Used as a reference to the global object. */
-  var root = freeGlobal || freeSelf || Function('return this')();
+                /** Used as a reference to the global object. */
+                var root = freeGlobal || freeSelf || Function('return this')();
 
-  /** Detect free variable `exports`. */
-  var freeExports =  true && exports && !exports.nodeType && exports;
+                /** Detect free variable `exports`. */
+                var freeExports = true && exports && !exports.nodeType && exports;
 
                 /** Detect free variable `module`. */
                 var freeModule = freeExports && "object" == 'object' && module && !module.nodeType && module;
 
-  /** Detect the popular CommonJS extension `module.exports`. */
-  var moduleExports = freeModule && freeModule.exports === freeExports;
+                /** Detect the popular CommonJS extension `module.exports`. */
+                var moduleExports = freeModule && freeModule.exports === freeExports;
 
-  /** Detect free variable `process` from Node.js. */
-  var freeProcess = moduleExports && freeGlobal.process;
+                /** Detect free variable `process` from Node.js. */
+                var freeProcess = moduleExports && freeGlobal.process;
 
-  /** Used to access faster Node.js helpers. */
-  var nodeUtil = (function() {
-    try {
+                /** Used to access faster Node.js helpers. */
+                var nodeUtil = (function () {
+                    try {
       // Use `util.types` for Node.js 10+.
       var types = freeModule && freeModule.require && freeModule.require('util').types;
 
@@ -22911,13 +22910,13 @@ var Echo = /*#__PURE__*/function () {
 
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if (true) {
-    // Expose Lodash on the global object to prevent errors when Lodash is
-    // loaded by a script tag in the presence of an AMD loader.
-    // See http://requirejs.org/docs/errors.html#mismatch for more details.
-    // Use `_.noConflict` to remove Lodash from the global object.
-    root._ = _;
+      // Expose Lodash on the global object to prevent errors when Lodash is
+      // loaded by a script tag in the presence of an AMD loader.
+      // See http://requirejs.org/docs/errors.html#mismatch for more details.
+      // Use `_.noConflict` to remove Lodash from the global object.
+      root._ = _;
 
-    // Define as an anonymous module so, through path mapping, it can be
+      // Define as an anonymous module so, through path mapping, it can be
       // referenced as the "underscore" module.
       !(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
           return _;
@@ -22976,7 +22975,7 @@ var Echo = /*#__PURE__*/function () {
 // function because try/catches deoptimize in certain engines.
 
             var cachedSetTimeout;
-var cachedClearTimeout;
+            var cachedClearTimeout;
 
 function defaultSetTimout() {
     throw new Error('setTimeout has not been defined');
@@ -23170,11 +23169,12 @@ process.umask = function() { return 0; };
              */
 
             (function webpackUniversalModuleDefinition(root, factory) {
-	if(true)
-		module.exports = factory();
-	else {}
-})(window, function() {
-return /******/ (function(modules) { // webpackBootstrap
+                if (true)
+                    module.exports = factory();
+                else {
+                }
+            })(window, function() {
+return /******/ (function (modules) { // webpackBootstrap
     /******/ 	// The module cache
     /******/
     var installedModules = {};
@@ -23779,16 +23779,17 @@ function decode(arr) {
                     this.lastId = 0;
                     this.prefix = prefix;
                     this.name = name;
-    }
-    ScriptReceiverFactory.prototype.create = function (callback) {
-        this.lastId++;
-        var number = this.lastId;
-        var id = this.prefix + number;
-        var name = this.name + '[' + number + ']';
-        var called = false;
-        var callbackWrapper = function () {
-            if (!called) {
-                callback.apply(null, arguments);
+                }
+
+                ScriptReceiverFactory.prototype.create = function (callback) {
+                    this.lastId++;
+                    var number = this.lastId;
+                    var id = this.prefix + number;
+                    var name = this.name + '[' + number + ']';
+                    var called = false;
+                    var callbackWrapper = function () {
+                        if (!called) {
+                            callback.apply(null, arguments);
                 called = true;
             }
         };
@@ -27765,12 +27766,14 @@ var pusher_Pusher = (function () {
     Pusher.auth_callbacks = runtime.auth_callbacks;
     return Pusher;
 }());
-/* harmony default export */ var core_pusher = __webpack_exports__["default"] = (pusher_Pusher);
-function checkAppKey(key) {
-    if (key === null || key === undefined) {
-        throw 'You must pass your app key when you instantiate Pusher.';
-    }
-}
+            /* harmony default export */
+            var core_pusher = __webpack_exports__["default"] = (pusher_Pusher);
+
+            function checkAppKey(key) {
+                if (key === null || key === undefined) {
+                    throw 'You must pass your app key when you instantiate Pusher.';
+                }
+            }
 
             runtime.setup(pusher_Pusher);
 
