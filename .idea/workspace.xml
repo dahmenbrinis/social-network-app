@@ -16,7 +16,7 @@
       <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Notifications/MessageSent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/MessageSent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/reverb.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reverb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
@@ -435,7 +435,7 @@
       <workItem from="1631558388295" duration="112000" />
       <workItem from="1631558683696" duration="2028000" />
       <workItem from="1631561994656" duration="404000" />
-      <workItem from="1731981421678" duration="15090000" />
+      <workItem from="1731981421678" duration="15147000" />
     </task>
     <task id="LOCAL-00034" summary="making realtime application">
       <created>1605486875817</created>
@@ -780,7 +780,7 @@
       <option name="project" value="LOCAL" />
       <updated>1621887482772</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
