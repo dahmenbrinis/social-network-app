@@ -8,8 +8,8 @@
     ],
     "license": "MIT",
     "require": {
-      "fakerphp/faker": "^1.24",
         "php": "^7.3|^8.0",
+      "fakerphp/faker": "^1.24",
         "guzzlehttp/guzzle": "^7.0.1",
       "laravel/framework": "^10.0",
       "laravel/jetstream": "^4.0",
@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
       "laravel/ui": "^4.5",
       "livewire/livewire": "^3.0",
+      "livewire/volt": "^1.6",
       "pusher/pusher-php-server": "^7.2"
     },
     "require-dev": {
