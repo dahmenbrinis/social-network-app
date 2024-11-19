@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @livewireStyles
     @include('layouts.styles')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
 </head>
