@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Reaction;
-use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class ReactionController extends Controller
 {

@@ -35,12 +35,12 @@
                         {{--                            todo try to make this search field useful--}}
                         {{--                                                <livewire:friends.show-friend-requests-notification/>--}}
                         <a class='px-10 py-2 font-bold text-black text-md lg:block hover:text-red-500 xs:hidden'
-                           href="{{route('friends.index')}}">
+                           href="{{route('friends.index')}}" wire:navigate>
                             Add Friends
                         </a>
                         <div class="profile-setting-box">
                             <div class="profile-thumb-small">
-                                <a href="javascript:void(0)" class="profile-triger">
+                                <a href="javascript:void(0)" class="profile-triger" wire:navigate>
                                     <figure>
                                         <img src="{{Auth::user()->profile_photo_url}}">
                                     </figure>
@@ -50,17 +50,19 @@
                                         <h5 class="name"><a
                                                 href="{{route('userProfile.show',['userProfile'=>Auth::user()])}}">{{Auth::user()->name}}</a>
                                         </h5>
-                                        <a class="mail"
+                                        <a class="mail" wire:navigate
                                            href="{{route('userProfile.show',['userProfile'=>Auth::user()])}}">{{Auth::user()->email}}</a>
                                     </div>
                                     <div class="profile-body">
                                         <ul>
                                             <li>
-                                                <a href="{{route('userProfile.show',['userProfile'=>Auth::user()->id])}}"><i
+                                                <a href="{{route('userProfile.show',['userProfile'=>Auth::user()->id])}}"
+                                                   wire:navigate><i
                                                         class="flaticon-user"></i>Profile</a></li>
                                         </ul>
                                         <ul>
-                                            <li><a href="{{route('profile.show')}}"><i class="flaticon-settings"></i>Setting</a>
+                                            <li><a href="{{route('profile.show')}}" wire:navigate><i
+                                                            class="flaticon-settings"></i>Setting</a>
                                             </li>
                                             <li>
 
@@ -89,7 +91,7 @@
     <div class="sticky mobile-header-wrapper d-block d-lg-none">
         <div class="mobile-header position-relative ">
 
-            <a class="pl-3" href="{{route('home')}}">
+            <a class="pl-3" href="{{route('home')}}" wire:navigate>
                 <div class="w-10 ">
                     <x-logo></x-logo>
                 </div>
@@ -125,7 +127,7 @@
             <div class="pt-1 pr-3">
                 <!-- profile picture end -->
                 <div class="profile-thumb profile-setting-box">
-                    <a href="javascript:void(0)" class="profile-triger">
+                    <a href="javascript:void(0)" class="profile-triger" wire:navigate>
                         <figure class="profile-thumb-middle">
                             <img src="{{Auth::user()->profile_photo_url}}">
                         </figure>

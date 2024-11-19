@@ -3,8 +3,8 @@
 namespace App\Livewire\Posts;
 
 use App\Notifications\PostAdded;
-use Auth;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 

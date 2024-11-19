@@ -5,6 +5,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -69,40 +71,40 @@ class User extends Authenticatable
         return $this->morphOne(Image::class, 'imageable');
     }
 
-    public function posts()
+    public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
     }
 
-    public function comments()
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
 
-    public function reactions()
+    public function reactions(): BelongsToMany
     {
         return $this->belongsToMany(Post::class, 'reactions', 'user_id', 'post_id')->using(Reaction::class);
     }
 
-    public function friendRequests()
+    public function friendRequests(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'friends', 'profile_id1', 'profile_id2')
             ->withTimestamps()->withPivot('confirmed')->withPivot('confirmed')->wherePivot('confirmed', 0);
     }
 
-    public function friends()
+    public function friends(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'friends', 'profile_id2', 'profile_id1')
             ->withTimestamps()->withPivot('confirmed')->wherePivot('confirmed', 1);
     }
 
 
-    public function isFriend($user)
+    public function isFriend($user): bool
     {
         return (boolean)$this->friends->contains($user);
     }
 
-    public function hasRequestedFriendInvitation($user)
+    public function hasRequestedFriendInvitation($user): bool
     {
         return (boolean)$user->friendRequests->contains($this);
     }

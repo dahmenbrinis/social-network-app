@@ -31,7 +31,7 @@
                      x-on:confirming-delete-user.window="setTimeout(() => $refs.password.focus(), 250)">
                     <x-jet-input type="password" class="mt-1 block w-3/4" placeholder="{{ __('Password') }}"
                                  x-ref="password"
-                                 wire:model="password"
+                                 wire:model.live="password"
                                  wire:keydown.enter="deleteUser"/>
 
                     <x-jet-input-error for="password" class="mt-2"/>

@@ -19,7 +19,7 @@
                 <li class="pb-2 mb-2 border-b ">
                     <div class="frnd-request-member">
                         <figure class="request-thumb overflow-hidden rounded-full ">
-                            <a href="{{route('userProfile.show',['userProfile'=>$user->id])}}">
+                            <a href="{{route('userProfile.show',['userProfile'=>$user->id])}}" wire:navigate>
                                 <img class="w-full h-full" src="{{$user->profile_photo_url}}" alt="proflie author">
                             </a>
                         </figure>

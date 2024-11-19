@@ -4,8 +4,8 @@ namespace App\Livewire\Friends;
 
 use App\Models\User;
 use App\Notifications\FriendRequest;
-use Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ShowFriendRequestsNotification extends Component

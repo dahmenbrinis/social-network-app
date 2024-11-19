@@ -4,8 +4,9 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 import './bootstrap';
-import './code';
+// import './code';
 //
 // window.Vue = require('vue');
 
@@ -31,12 +32,6 @@ import './code';
 // const app = new Vue({
 //     el: '#app',
 // });
-module.exports = {
-    plugins: {
-        tailwindcss: {},
-        autoprefixer: {},
-    }
-}
 
 
 

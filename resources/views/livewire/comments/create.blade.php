@@ -4,7 +4,7 @@
             @error('content')border-2 border-red-400 @enderror">
         @csrf
         <div class="flex-grow mr-12  ">
-            <input wire:model.blur="content" placeholder="Add comment"
+            <input wire:model.live.blur="content" placeholder="Add comment"
                    class="w-full h-full focus:outline-none  border-l ml-4"
                    type="text">
         </div>

@@ -8,12 +8,10 @@
         </div>
         <div class="modal-body  ">
             <div class="flex">
-                <input class="  border px-3 py-2 my-2 "
-                       placeholder="Post Title" wire:model.blur="title">
+                <input class="border px-3 py-2 my-2 bg-red-600" placeholder="Post Title" wire:model.live="title">
             </div>
-            <textarea class="w-full h-24 resize-y border p-3  my-2 "
-                      placeholder="Say Something" wire:model.blur="body">
-                        </textarea>
+            <textarea class="w-full h-24 resize-y border p-3  my-2" placeholder="Say Something">
+            </textarea>
         </div>
 
         <div class="modal-footer">
@@ -27,7 +25,8 @@
             </label>
 
             <button wire:click="save" wire:loading.remove wire:target="images" type="submit" data-dismiss="modal"
-                    class="post-share-btn px-5 ">post
+                    class="post-share-btn px-5">
+                post
             </button>
             <button wire:loading wire:target="images" type="button" class="post-share-btn px-5 " disabled>
                 <svg class="animate-spin h-3 w-3 mx-2 text-white " xmlns="http://www.w3.org/2000/svg" fill="none"

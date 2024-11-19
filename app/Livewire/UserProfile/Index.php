@@ -4,7 +4,7 @@ namespace App\Livewire\UserProfile;
 
 use App\Models\User;
 use App\Notifications\PostAdded;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 

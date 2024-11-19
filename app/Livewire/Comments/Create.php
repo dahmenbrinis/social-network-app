@@ -4,7 +4,7 @@ namespace App\Livewire\Comments;
 
 use App\Events\CommentsEvent;
 use App\Events\PostUpdatedEvent;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Create extends Component
@@ -32,7 +32,7 @@ class Create extends Component
         $this->reset(['content']);
         session()->flash('message', "added successfully");
         // emit the event .
-        $this->emitUp('commentAdded');
+        $this->dispatch('commentAdded');
         event(new CommentsEvent($this->post->id));
         event(new PostUpdatedEvent($this->post->id));
 

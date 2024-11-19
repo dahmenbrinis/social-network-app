@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Comment;
 use App\Models\Post;
-use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -42,7 +42,6 @@ class CommentController extends Controller
         $data = $request->validate([
             'content' => 'required|max:200',
         ]);
-//        dd($data->content);
         Auth::user()->comments()->attach($post, $data);
         return redirect()->route('dashboard');
     }

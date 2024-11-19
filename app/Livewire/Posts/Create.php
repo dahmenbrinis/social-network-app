@@ -3,8 +3,8 @@
 namespace App\Livewire\Posts;
 
 use App\Notifications\PostAdded;
-use Arr;
-use Auth;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -25,7 +25,6 @@ class Create extends Component
 
     public function render()
     {
-//        dump($this->images);
         return view('livewire.posts.create');
     }
 

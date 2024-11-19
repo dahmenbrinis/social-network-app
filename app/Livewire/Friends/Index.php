@@ -5,7 +5,7 @@ namespace App\Livewire\Friends;
 
 use App\Models\User;
 use App\Notifications\FriendRequest;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 

@@ -16,7 +16,7 @@
       "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.5",
       "laravel/ui": "^4.5",
-      "livewire/livewire": "^3.0",
+      "livewire/livewire": "^3.5",
       "livewire/volt": "^1.6",
       "pusher/pusher-php-server": "^7.2"
     },

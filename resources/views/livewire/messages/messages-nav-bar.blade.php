@@ -40,10 +40,10 @@
             @endforeach
 
         </div>
-        <div @click="{isOpen = !isOpen}" class="px-4 py-2 text-lg font-bold bg-gray-300 shadow-xl cursor-pointer">
+        <div x-on:click="isOpen = !isOpen" class="px-4 py-2 text-lg font-bold bg-gray-300 shadow-xl cursor-pointer">
             Chat
         </div>
     </div>
-    {{--    {{dump($usersChatTabs)}}--}}
+    {{dump($usersChatTabs)}}
 
 </div>

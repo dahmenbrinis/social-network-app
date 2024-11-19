@@ -13,7 +13,7 @@
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
                 <x-jet-label for="name" value="{{ __('Token Name') }}"/>
-                <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model="createApiTokenForm.name"
+                <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.live="createApiTokenForm.name"
                              autofocus/>
                 <x-jet-input-error for="name" class="mt-2"/>
             </div>
@@ -27,7 +27,7 @@
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                             <label class="flex items-center">
                                 <input type="checkbox" class="form-checkbox" value="{{ $permission }}"
-                                       wire:model="createApiTokenForm.permissions">
+                                       wire:model.live="createApiTokenForm.permissions">
                                 <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
                             </label>
                         @endforeach
@@ -132,7 +132,7 @@
                 @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                     <label class="flex items-center">
                         <input type="checkbox" class="form-checkbox" value="{{ $permission }}"
-                               wire:model="updateApiTokenForm.permissions">
+                               wire:model.live="updateApiTokenForm.permissions">
                         <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
                     </label>
                 @endforeach

@@ -3,7 +3,7 @@
 namespace App\Livewire\Friends;
 
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 

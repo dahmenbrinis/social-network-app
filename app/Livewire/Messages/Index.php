@@ -4,8 +4,8 @@ namespace App\Livewire\Messages;
 
 use App\Models\User;
 use App\Notifications\MessageSent;
-use Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -52,7 +52,7 @@ class Index extends Component
 
     public function closeChatTab()
     {
-        $this->emitUp('closeChatTab', $this->user->id);
+        $this->dispatch('closeChatTab', $this->user->id);
     }
 
     public function render()

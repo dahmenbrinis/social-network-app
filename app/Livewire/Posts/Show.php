@@ -4,8 +4,8 @@ namespace App\Livewire\Posts;
 
 use App\Events\PostUpdatedEvent;
 use App\Notifications\PostAdded;
-use Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 
@@ -63,6 +63,6 @@ class Show extends Component
         }
         $this->initData();
         event(new PostUpdatedEvent($this->post->id));
-        $this->emitself('postUpdated');
+        $this->dispatch('postUpdated');
     }
 }

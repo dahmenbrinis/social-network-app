@@ -3,8 +3,8 @@
 namespace App\Livewire\Messages;
 
 use App\Notifications\MessageSent;
-use Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ShowMessagesNotification extends Component

@@ -1,17 +1,13 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    mode: 'jit',
-    purge: {
-        enabled: true,
-        content: ['resources/**/*.html', 'resources/**/*.vue', 'resources/**/*.php'
-            // path.resolve('resources/**/*.html'),
-            // path.resolve('resources/**/*.vue'),
-            // path.resolve('resources/**/*.jsx'),
-            // path.resolve('resources/**/*.php'),
-            // path.resolve('resources/index.php'),
-        ],
-    },
+    content: ['resources/**/*.html', 'resources/**/*.vue', 'resources/**/*.php'
+        // path.resolve('resources/**/*.html'),
+        // path.resolve('resources/**/*.vue'),
+        // path.resolve('resources/**/*.jsx'),
+        // path.resolve('resources/**/*.php'),
+        // path.resolve('resources/index.php'),
+    ],
 
     theme: {
         extend: {
