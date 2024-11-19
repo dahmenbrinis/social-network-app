@@ -7,50 +7,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="updated from laravel 8 to 10">
-      <change afterPath="$PROJECT_DIR$/resources/js/echo.js" afterDir="false" />
+    <list default="true" id="04b5c4c2-80ca-4c5e-88e1-7ae4428259dd" name="Default Changelist" comment="fixed alpine issue">
+      <change beforePath="$PROJECT_DIR$/.idea/learning.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/learning.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Comments/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Comments/Create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Friends/FriendCardActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Friends/FriendCardActions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Friends/FriendsSuggestionList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Friends/FriendsSuggestionList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Friends/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Friends/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Friends/ShowFriendRequestsNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Friends/ShowFriendRequestsNotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Messages/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Messages/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Messages/MessagesNavBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Messages/MessagesNavBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Messages/ShowMessagesNotification.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Messages/ShowMessagesNotification.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Posts/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Posts/Create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/Posts/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Posts/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Livewire/Comments/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Comments/Index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Livewire/Posts/Show.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/Posts/Show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Livewire/UserProfile/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Livewire/UserProfile/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/MessageSent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/MessageSent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/broadcasting.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/broadcasting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_014402_create_friends_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_014402_create_friends_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_24_015256_create_messages_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_24_015256_create_messages_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/reverb.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/reverb.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/api/api-token-manager.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/api/api-token-manager.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/comments/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/comments/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/friends/show-friend-requests-notification.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/echo.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/echo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/messages-nav-bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/messages/show-messages-notification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/messages/show-messages-notification.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/delete-user-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/delete-user-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/logout-other-browser-sessions-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/logout-other-browser-sessions-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/update-password-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/update-password-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/update-profile-information-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/update-profile-information-form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/jetstream/components/confirms-password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/jetstream/components/confirms-password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/posts/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +217,19 @@
       <path value="$PROJECT_DIR$/vendor/spatie/error-solutions" />
       <path value="$PROJECT_DIR$/vendor/laravel/prompts" />
       <path value="$PROJECT_DIR$/vendor/livewire/volt" />
+      <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/laravel/reverb" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/clue/redis-react" />
+      <path value="$PROJECT_DIR$/vendor/clue/redis-protocol" />
+      <path value="$PROJECT_DIR$/vendor/ratchet/rfc6455" />
     </include_path>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -446,7 +435,7 @@
       <workItem from="1631558388295" duration="112000" />
       <workItem from="1631558683696" duration="2028000" />
       <workItem from="1631561994656" duration="404000" />
-      <workItem from="1731981421678" duration="8099000" />
+      <workItem from="1731981421678" duration="15090000" />
     </task>
     <task id="LOCAL-00034" summary="making realtime application">
       <created>1605486875817</created>
@@ -791,7 +780,7 @@
       <option name="project" value="LOCAL" />
       <updated>1621887482772</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -832,7 +821,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="remove unused files" />
     <MESSAGE value="filling posts table attributes" />
     <MESSAGE value="creating CRUD for the posts" />
     <MESSAGE value="installing laravel jetstream" />
@@ -857,7 +845,8 @@
     <MESSAGE value="making the friends invitation functionality" />
     <MESSAGE value="testing the notification functionality .&#10;some packages updates .&#10;ui rework ." />
     <MESSAGE value="updated from laravel 8 to 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated from laravel 8 to 10" />
+    <MESSAGE value="fixed alpine issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed alpine issue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

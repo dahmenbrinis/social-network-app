@@ -2,6 +2,8 @@
 
 namespace App\Livewire\Comments;
 
+use App\Models\Post;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class Index extends Component
@@ -11,13 +13,11 @@ class Index extends Component
     public $commentSize;
     public $canShowMore = false;
 
-    public function getListeners()
+    public function getListeners(): array
     {
         return [
             "echo-private:commentsUpdated.{$this->post->id},CommentsEvent" => '$refresh',
             'commentAdded' => '$refresh',
-            'showMore' => 'showMore',
-            'showComments' => 'showComments',
         ];
     }
 
@@ -28,28 +28,30 @@ class Index extends Component
         return view('livewire.comments.index', compact('comments'));
     }
 
-    public function mount($post)
+    public function mount($post): void
     {
         $this->commentSizeSteps = 3;
         $this->commentSize = 0;
         $this->post = $post;
     }
 
-    public function showMore()
+    #[On('showMore')]
+    public function showMore(): void
     {
         if ($this->post->comments->count() > $this->commentSize) {
             $this->commentSize += $this->commentSizeSteps;
         }
     }
 
-    public function showComments($post)
+    #[On('showComments')]
+    public function showComments(Post $post): void
     {
-        if ($this->post->id == $post) {
+        if ($this->post->id == $post->id) {
             $this->commentSize = ($this->commentSize == $this->commentSizeSteps) ? 0 : $this->commentSizeSteps;
         }
     }
 
-    public function hideComments()
+    public function hideComments(): void
     {
         $this->commentSize = 0;
     }

@@ -27,7 +27,6 @@ return [
     */
 
     'servers' => [
-
         'reverb' => [
             'host' => env('REVERB_SERVER_HOST', '0.0.0.0'),
             'port' => env('REVERB_SERVER_PORT', 8080),
@@ -82,7 +81,7 @@ return [
                 ],
                 'allowed_origins' => ['*'],
                 'ping_interval' => env('REVERB_APP_PING_INTERVAL', 60),
-                'activity_timeout' => env('REVERB_APP_ACTIVITY_TIMEOUT', 30),
+                'activity_timeout' => env('REVERB_APP_ACTIVITY_TIMEOUT', 10),
                 'max_message_size' => env('REVERB_APP_MAX_MESSAGE_SIZE', 10_000),
             ],
         ],

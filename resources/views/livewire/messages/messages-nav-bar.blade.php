@@ -1,4 +1,4 @@
-<div x-data="{isOpen : false}">
+<div x-data="{isOpen : true}">
     <div
         class="fixed bottom-0 left-0 grid float-right w-4/5 xl:grid-cols-4 lg:grid-cols-4 sm:grid-cols-2  md:grid-cols-2 px-4 gap-x-2">
         @foreach($usersChatTabs as $key => $user)
@@ -44,6 +44,5 @@
             Chat
         </div>
     </div>
-    {{dump($usersChatTabs)}}
 
 </div>

@@ -3,8 +3,10 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Notifications\Messages\BroadcastMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Queue\SerializesModels;
 
 class MessageSent extends Notification
 {
@@ -26,7 +28,7 @@ class MessageSent extends Notification
      * @param mixed $notifiable
      * @return array
      */
-    public function via($notifiable)
+    public function via($notifiable): array
     {
         return ['database', 'broadcast'];
     }
@@ -38,7 +40,7 @@ class MessageSent extends Notification
      * @param mixed $notifiable
      * @return BroadcastMessage
      */
-    public function toBroadcast($notifiable)
+    public function toBroadcast(mixed $notifiable): BroadcastMessage
     {
         return new BroadcastMessage([
             'senderId' => $this->senderId,

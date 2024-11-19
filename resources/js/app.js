@@ -6,7 +6,7 @@
 
 
 import './bootstrap';
-// import './code';
+import './code';
 //
 // window.Vue = require('vue');
 

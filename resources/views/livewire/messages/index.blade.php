@@ -33,7 +33,7 @@
     </div>
     <div
         class="relative flex items-center justify-center max-h-full py-2 font-semibold text-justify text-red-500 bg-gray-300 rounded shadow cursor-pointer text-md">
-        <div @click="{isOpen = !isOpen}" class="">
+        <div @click="isOpen = !isOpen" class="">
             {{$user->name}}
         </div>
         <button wire:click="closeChatTab"

@@ -87,7 +87,7 @@
             </button>
             <ul class="comment-share-meta">
                 <li>
-                    <button wire:click="$dispatch('showComments' , '{{$post->id}}')">
+                    <button wire:click="$dispatch('showComments' ,  { post: {{ $post->id }} })">
                         <i class="bi bi-chat-bubble"></i>
                         <span>{{$commentsCount}}</span>
                     </button>
@@ -101,9 +101,6 @@
             </ul>
         </div>
 
-
-        {{--                        todo make these buttons work --}}
-        {{--                             todo show the comments of the post --}}
         <livewire:comments.index :post="$post" :key="'comments-'.$post->id"/>
         <livewire:comments.create :post="$post"/>
     </div>
