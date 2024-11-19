@@ -12,8 +12,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @livewireStyles
-@include('layouts.styles')
-
+    @include('layouts.styles')
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.js" defer></script>
 </head>
@@ -38,7 +37,7 @@
 @stack('modals')
 @include('layouts.scripts')
 @livewireScripts
-<script src="js/app.js"></script>
+{{--<script src="js/app.js"></script>--}}
 {{--@if(config('app.env') == 'local')--}}
 {{--    <script src="http://localhost:35729/livereload.js"></script>--}}
 {{--    <script src="http://127.0.0.1:35729/livereload.js"></script>--}}

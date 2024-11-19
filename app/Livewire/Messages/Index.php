@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Messages;
+namespace App\Livewire\Messages;
 
 use App\Models\User;
 use App\Notifications\MessageSent;
@@ -14,6 +14,7 @@ class Index extends Component
 {
     use WithPagination;
     use AuthorizesRequests;
+
     public $user;
     public $messageBox;
 
@@ -45,7 +46,7 @@ class Index extends Component
         Auth::user()->send_message($this->user, $this->messageBox);
 //        dd($messsage);
         $this->reset('messageBox');
-        $this->emitSelf('messageSent');
+        $this->dispatch('messageSent')->self();
         Notification::send($this->user, new MessageSent(Auth::id()));
     }
 

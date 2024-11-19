@@ -9,9 +9,9 @@
          x-transition:leave-end="transform opacity-0 scale-y-0"
     >
         <div class="flex justify-between bg-red-200 rounded-sm shadow-md ">
-            <form wire:submit.prevent="message"
+            <form wire:submit="message"
                   class="w-full h-full p-2 font-bold bg-gray-50 text-md ring-4 ring-blue-100">
-                <input wire:model="messageBox" type="text" placeholder="Message">
+                <input wire:model.live="messageBox" type="text" placeholder="Message">
             </form>
 
         </div>

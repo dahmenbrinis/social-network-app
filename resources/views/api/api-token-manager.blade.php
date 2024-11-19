@@ -13,7 +13,7 @@
             <!-- Token Name -->
             <div class="col-span-6 sm:col-span-4">
                 <x-jet-label for="name" value="{{ __('Token Name') }}"/>
-                <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="createApiTokenForm.name"
+                <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model="createApiTokenForm.name"
                              autofocus/>
                 <x-jet-input-error for="name" class="mt-2"/>
             </div>
@@ -27,7 +27,7 @@
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                             <label class="flex items-center">
                                 <input type="checkbox" class="form-checkbox" value="{{ $permission }}"
-                                       wire:model.defer="createApiTokenForm.permissions">
+                                       wire:model="createApiTokenForm.permissions">
                                 <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
                             </label>
                         @endforeach
@@ -99,7 +99,7 @@
 @endif
 
 <!-- Token Value Modal -->
-    <x-jet-dialog-modal wire:model="displayingToken">
+    <x-jet-dialog-modal wire:model.live="displayingToken">
         <x-slot name="title">
             {{ __('API Token') }}
         </x-slot>
@@ -122,7 +122,7 @@
     </x-jet-dialog-modal>
 
     <!-- API Token Permissions Modal -->
-    <x-jet-dialog-modal wire:model="managingApiTokenPermissions">
+    <x-jet-dialog-modal wire:model.live="managingApiTokenPermissions">
         <x-slot name="title">
             {{ __('API Token Permissions') }}
         </x-slot>
@@ -132,7 +132,7 @@
                 @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
                     <label class="flex items-center">
                         <input type="checkbox" class="form-checkbox" value="{{ $permission }}"
-                               wire:model.defer="updateApiTokenForm.permissions">
+                               wire:model="updateApiTokenForm.permissions">
                         <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
                     </label>
                 @endforeach
@@ -152,7 +152,7 @@
     </x-jet-dialog-modal>
 
     <!-- Delete Token Confirmation Modal -->
-    <x-jet-confirmation-modal wire:model="confirmingApiTokenDeletion">
+    <x-jet-confirmation-modal wire:model.live="confirmingApiTokenDeletion">
         <x-slot name="title">
             {{ __('Delete API Token') }}
         </x-slot>

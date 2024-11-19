@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\UserProfile;
+namespace App\Livewire\UserProfile;
 
 use App\Models\User;
 use App\Notifications\PostAdded;
@@ -11,6 +11,7 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+
     public $user;
     public $posts;
     public $postsPaginationSteps;

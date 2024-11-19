@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Posts;
+namespace App\Livewire\Posts;
 
 use App\Notifications\PostAdded;
 use Auth;
@@ -11,6 +11,7 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+
     public $posts;
     public $postsPaginationSteps;
     public $postsPaginated;
@@ -34,6 +35,19 @@ class Index extends Component
         $this->initData();
     }
 
+    public function initData()
+    {
+//        dump('hit');
+        $user = Auth::user();
+        $tmpPosts = new Collection();
+        $user->friends->each(function ($friend) use (&$tmpPosts) {
+            $tmpPosts = $tmpPosts->merge($friend->posts);
+        });
+        $tmpPosts = $tmpPosts->merge($user->posts);
+        $this->postsCount = $tmpPosts->count();
+        $this->posts = $tmpPosts->take($this->postsPaginated)->reverse();
+    }
+
     public function render()
     {
         return view('livewire.posts.index');
@@ -50,18 +64,5 @@ class Index extends Component
     {
         $this->postsPaginated += $this->postsPaginationSteps;
         $this->initData();
-    }
-
-    public function initData()
-    {
-//        dump('hit');
-        $user = Auth::user();
-        $tmpPosts = new Collection();
-        $user->friends->each(function ($friend) use (&$tmpPosts) {
-            $tmpPosts = $tmpPosts->merge($friend->posts);
-        });
-        $tmpPosts = $tmpPosts->merge($user->posts);
-        $this->postsCount = $tmpPosts->count();
-        $this->posts = $tmpPosts->take($this->postsPaginated)->reverse();
     }
 }

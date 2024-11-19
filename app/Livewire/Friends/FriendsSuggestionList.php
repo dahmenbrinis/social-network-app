@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Friends;
+namespace App\Livewire\Friends;
 
 use App\Models\User;
 use Auth;
@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 class FriendsSuggestionList extends Component
 {
     use WithPagination;
+
     public $search = '';
 
     public function render()

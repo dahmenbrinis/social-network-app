@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Friends;
+namespace App\Livewire\Friends;
 
 use App\Models\User;
 use App\Notifications\FriendRequest;
@@ -11,6 +11,7 @@ use Livewire\Component;
 class FriendCardActions extends Component
 {
     use AuthorizesRequests;
+
     public $user;
     public $refresh = false;
     protected $listeners = [
@@ -34,14 +35,14 @@ class FriendCardActions extends Component
         $this->authorize('acceptFriendRequest', $this->user);
         $this->user->friendRequests()->syncWithoutDetaching([Auth::id() => ['confirmed' => 1]]);
         Auth::user()->friendRequests()->syncWithoutDetaching([$this->user->id => ['confirmed' => 1]]);
-        $this->emitSelf('refresh');
+        $this->dispatch('refresh')->self();
     }
 
     public function denyInvitation()
     {
         $this->authorize('denyFriendRequest', $this->user);
         Auth::user()->friendRequests()->detach($this->user);
-        $this->emitSelf('refresh');
+        $this->dispatch('refresh')->self();
     }
 
     public function sendInvitation()
@@ -49,7 +50,7 @@ class FriendCardActions extends Component
         $this->authorize('sendFriendRequest', $this->user);
         $this->user->friendRequests()->syncWithoutDetaching(Auth::user());
         $this->user->notify(new FriendRequest());
-        $this->emitSelf('refresh');
+        $this->dispatch('refresh')->self();
     }
 
     public function cancelInvitation()
@@ -57,7 +58,7 @@ class FriendCardActions extends Component
         $this->authorize('cancelFriendRequest', $this->user);
         Auth::user()->friendRequests()->detach($this->user);
         $this->user->friendRequests()->detach(Auth::user());
-        $this->emitSelf('refresh');
+        $this->dispatch('refresh')->self();
     }
 
     public function removeFriend()
@@ -65,6 +66,6 @@ class FriendCardActions extends Component
         $this->authorize('removeFriend', $this->user);
         Auth::user()->friends()->detach($this->user);
         $this->user->friends()->detach(Auth::user());
-        $this->emitSelf('refresh');
+        $this->dispatch('refresh')->self();
     }
 }

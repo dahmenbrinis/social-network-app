@@ -1,6 +1,6 @@
 <div>
     <div class="relative">
-        <input type="text" wire:model="search" class="w-full text-md  rounded my-4 p-3" placeholder="Search">
+        <input type="text" wire:model.live="search" class="w-full text-md  rounded my-4 p-3" placeholder="Search">
     </div>
     <div>
         <div class="sm:rounded-lg grid grid-cols-3 gap-4">

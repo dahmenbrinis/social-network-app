@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Posts;
+namespace App\Livewire\Posts;
 
 use App\Events\PostUpdatedEvent;
 use Livewire\Component;
@@ -18,7 +18,7 @@ class Delete extends Component
     {
 //        dd($this->post);
         $this->post->delete();
-        $this->emit('postUpdated');
+        $this->dispatch('postUpdated');
         event(new PostUpdatedEvent());
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Friends;
+namespace App\Livewire\Friends;
 
 
 use App\Models\User;
@@ -12,6 +12,7 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+
     public $search = '';
 
     public function addFriend($user)
@@ -26,7 +27,7 @@ class Index extends Component
 //        dump($user->friendRequests);
 //        dump(Auth::user()->hasRequestedFriendInvitation($user));
 //            event(new FriendRequest($user->id));
-//        $this->emit('s');
+//        $this->dispatch('s');
     }
 
     public function removeFriend($user)

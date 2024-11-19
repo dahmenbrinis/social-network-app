@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Comments;
+namespace App\Livewire\Comments;
 
 use Livewire\Component;
 
@@ -48,6 +48,7 @@ class Index extends Component
             $this->commentSize = ($this->commentSize == $this->commentSizeSteps) ? 0 : $this->commentSizeSteps;
         }
     }
+
     public function hideComments()
     {
         $this->commentSize = 0;

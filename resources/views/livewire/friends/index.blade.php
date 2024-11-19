@@ -1,6 +1,6 @@
 <div class="py-6">
     <div class="relative w-full ">
-        <input type="text" wire:model="search" class="w-full p-5 text-lg rounded-full shadow outline-none">
+        <input type="text" wire:model.live="search" class="w-full p-5 text-lg rounded-full shadow outline-none">
         <svg class="absolute top-0 right-0 w-8 h-8 mx-6 my-4 text-black" viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"/>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Friends;
+namespace App\Livewire\Friends;
 
 use App\Models\User;
 use App\Notifications\FriendRequest;
@@ -11,6 +11,7 @@ use Livewire\Component;
 class ShowFriendRequestsNotification extends Component
 {
     use AuthorizesRequests;
+
     public $friendRequests;
     public $notificationCount = 0;
     public $screen;
@@ -46,7 +47,14 @@ class ShowFriendRequestsNotification extends Component
 //        $this->initData();
 //        $this->bool=true;
         $this->notificationSeen();
-        $this->emitSelf('refresh');
+        $this->dispatch('refresh')->self();
+    }
+
+    public function notificationSeen()
+    {
+        Auth::user()->unreadNotifications->where('type', FriendRequest::class)->markAsRead();
+//        $this->notificationCount = 0;
+        $this->dispatch('refresh')->self();
     }
 
     public function denyInvitation(User $user)
@@ -55,14 +63,7 @@ class ShowFriendRequestsNotification extends Component
         Auth::user()->friendRequests()->detach($user);
 //        $this->initData();
         $this->notificationSeen();
-        $this->emitSelf('refresh');
-    }
-
-    public function notificationSeen()
-    {
-        Auth::user()->unreadNotifications->where('type', FriendRequest::class)->markAsRead();
-//        $this->notificationCount = 0;
-        $this->emitSelf('refresh');
+        $this->dispatch('refresh')->self();
     }
 
     public function notification($notification)

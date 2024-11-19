@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Friends;
+namespace App\Livewire\Friends;
 
 use App\Models\User;
 use Livewire\Component;
@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 class FriendsList extends Component
 {
     use WithPagination;
+
     public $search = '';
     public $user;
 
@@ -16,6 +17,7 @@ class FriendsList extends Component
     {
         $this->user = $user;
     }
+
     public function render()
     {
         $friends = $this->user

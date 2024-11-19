@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Posts;
+namespace App\Livewire\Posts;
 
 use App\Notifications\PostAdded;
 use Arr;
@@ -12,6 +12,7 @@ use Livewire\WithFileUploads;
 class Create extends Component
 {
     use WithFileUploads;
+
     public $title = '';
     public $body = '';
     public $images;
@@ -42,7 +43,7 @@ class Create extends Component
             }
         }
 
-        $this->emit('postAdded');
+        $this->dispatch('postAdded');
         Notification::send(Auth::user()->friends, new PostAdded());
         $this->reset(['title', 'body']);
 

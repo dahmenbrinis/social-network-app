@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Messages;
+namespace App\Livewire\Messages;
 
 use App\Notifications\MessageSent;
 use Auth;

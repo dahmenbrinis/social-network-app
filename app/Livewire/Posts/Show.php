@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Posts;
+namespace App\Livewire\Posts;
 
 use App\Events\PostUpdatedEvent;
 use App\Notifications\PostAdded;
@@ -12,6 +12,7 @@ use Livewire\Component;
 class Show extends Component
 {
     use AuthorizesRequests;
+
     public $post;
     public $likes;
     public $commentsCount;
@@ -27,13 +28,6 @@ class Show extends Component
 
     }
 
-    public function initData()
-    {
-        $this->likes = $this->post->reactions->count();
-        $this->commentsCount = $this->post->comments->count();
-    }
-
-
     public function render()
     {
         return view('livewire.posts.show');
@@ -45,11 +39,17 @@ class Show extends Component
         $this->post = $post;
     }
 
+    public function initData()
+    {
+        $this->likes = $this->post->reactions->count();
+        $this->commentsCount = $this->post->comments->count();
+    }
+
     public function delete()
     {
         $this->authorize('delete', $this->post);
         $this->post->delete();
-        $this->emit('postAdded');
+        $this->dispatch('postAdded');
         Notification::send(Auth::user()->friends, new PostAdded());
     }
 

@@ -87,7 +87,7 @@
             </button>
             <ul class="comment-share-meta">
                 <li>
-                    <button wire:click="$emit('showComments' , '{{$post->id}}')">
+                    <button wire:click="$dispatch('showComments' , '{{$post->id}}')">
                         <i class="bi bi-chat-bubble"></i>
                         <span>{{$commentsCount}}</span>
                     </button>
